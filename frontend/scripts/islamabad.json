@@ -1,0 +1,272 @@
+{
+  "authorities": {
+    "CDA": {
+      "plot_sizes": {
+        "3 Marla": {
+          "plot_size": "3 Marla",
+          "max_floors": 2,
+          "max_height_ft": 30,
+          "FAR": "1:1.2",
+          "ground_coverage_percent": 60,
+          "building_regulations": {
+            "ground_coverage": 60,
+            "FAR": "1:1.2",
+            "max_height": 30
+          },
+          "setbacks": {
+            "front": 5,
+            "rear": 0,
+            "side": 5
+          },
+          "floors": {
+            "ground": { "bedrooms_max": 1, "bathrooms_max": 2, "kitchen": true, "lounge": true, "garage": false },
+            "first": { "bedrooms_max": 2, "bathrooms_max": 2, "kitchen": true, "lounge": true, "balcony": true }
+          }
+        },
+        "5 Marla": {
+          "plot_size": "5 Marla",
+          "max_floors": 2,
+          "max_height_ft": 30,
+          "FAR": "1:1.2",
+          "ground_coverage_percent": 60,
+          "building_regulations": {
+            "ground_coverage": 60,
+            "FAR": "1:1.2",
+            "max_height": 30
+          },
+          "setbacks": {
+            "front": 5,
+            "rear": 5,
+            "side": 5
+          },
+          "floors": {
+            "ground": { "bedrooms_max": 2, "bathrooms_max": 2, "kitchen": true, "lounge": true, "garage": true },
+            "first": { "bedrooms_max": 2, "bathrooms_max": 2, "kitchen": true, "lounge": true, "balcony": true }
+          }
+        },
+        "10 Marla": {
+          "plot_size": "10 Marla",
+          "max_floors": 3,
+          "max_height_ft": 30,
+          "FAR": "1:0.9",
+          "ground_coverage_percent": 50,
+          "building_regulations": {
+            "ground_coverage": 50,
+            "FAR": "1:0.9",
+            "max_height": 30
+          },
+          "setbacks": {
+            "front": 5,
+            "rear": 7,
+            "side": 5
+          },
+          "floors": {
+            "ground": { "bedrooms_max": 3, "bathrooms_max": 3, "kitchen": true, "lounge": true, "garage": true },
+            "first": { "bedrooms_max": 3, "bathrooms_max": 3, "kitchen": true, "lounge": true, "balcony": true },
+            "second": { "bedrooms_max": 2, "bathrooms_max": 2, "kitchen": true, "lounge": true, "balcony": true }
+          }
+        },
+        "1 Kanal": {
+          "plot_size": "1 Kanal",
+          "max_floors": 3,
+          "max_height_ft": 30,
+          "FAR": "1:0.9",
+          "ground_coverage_percent": 50,
+          "building_regulations": {
+            "ground_coverage": 50,
+            "FAR": "1:0.9",
+            "max_height": 30
+          },
+          "setbacks": {
+            "front": 5,
+            "rear": 7,
+            "side": 5
+          },
+          "floors": {
+            "ground": { "bedrooms_max": 3, "bathrooms_max": 3, "kitchen": true, "lounge": true, "garage": true },
+            "first": { "bedrooms_max": 4, "bathrooms_max": 4, "kitchen": true, "lounge": true, "balcony": true },
+            "second": { "bedrooms_max": 3, "bathrooms_max": 3, "kitchen": true, "lounge": true, "balcony": true }
+          }
+        }
+      }
+    },
+    "DHA": {
+      "plot_sizes": {
+        "3 Marla": {
+          "plot_size": "3 Marla",
+          "max_floors": 2,
+          "max_height_ft": 30,
+          "FAR": "Not specified",
+          "ground_coverage_percent": 70,
+          "building_regulations": {
+            "ground_coverage": 70,
+            "FAR": "Not specified",
+            "max_height": 30
+          },
+          "setbacks": {
+            "front": 5,
+            "rear": 3,
+            "side": 0
+          },
+          "floors": {
+            "ground": { "bedrooms_max": 1, "bathrooms_max": 2, "kitchen": true, "lounge": true, "garage": false },
+            "first": { "bedrooms_max": 2, "bathrooms_max": 2, "kitchen": true, "lounge": true, "balcony": true }
+          }
+        },
+        "5 Marla": {
+          "plot_size": "5 Marla",
+          "max_floors": 2,
+          "max_height_ft": 30,
+          "FAR": "Not specified",
+          "ground_coverage_percent": 70,
+          "building_regulations": {
+            "ground_coverage": 70,
+            "FAR": "Not specified",
+            "max_height": 30
+          },
+          "setbacks": {
+            "front": 5,
+            "rear": 3,
+            "side": 0
+          },
+          "floors": {
+            "ground": { "bedrooms_max": 2, "bathrooms_max": 2, "kitchen": true, "lounge": true, "garage": true },
+            "first": { "bedrooms_max": 2, "bathrooms_max": 2, "kitchen": true, "lounge": true, "balcony": true }
+          }
+        },
+        "10 Marla": {
+          "plot_size": "10 Marla",
+          "max_floors": 2,
+          "max_height_ft": 30,
+          "FAR": "Not specified",
+          "ground_coverage_percent": 65,
+          "building_regulations": {
+            "ground_coverage": 65,
+            "FAR": "Not specified",
+            "max_height": 30
+          },
+          "setbacks": {
+            "front": 5,
+            "rear": 5,
+            "side": 3
+          },
+          "floors": {
+            "ground": { "bedrooms_max": 3, "bathrooms_max": 3, "kitchen": true, "lounge": true, "garage": true },
+            "first": { "bedrooms_max": 3, "bathrooms_max": 3, "kitchen": true, "lounge": true, "balcony": true }
+          }
+        },
+        "1 Kanal": {
+          "plot_size": "1 Kanal",
+          "max_floors": 2,
+          "max_height_ft": 30,
+          "FAR": "Not specified",
+          "ground_coverage_percent": 65,
+          "building_regulations": {
+            "ground_coverage": 65,
+            "FAR": "Not specified",
+            "max_height": 30
+          },
+          "setbacks": {
+            "front": 10,
+            "rear": 5,
+            "side": 5
+          },
+          "floors": {
+            "ground": { "bedrooms_max": 3, "bathrooms_max": 3, "kitchen": true, "lounge": true, "garage": true },
+            "first": { "bedrooms_max": 4, "bathrooms_max": 4, "kitchen": true, "lounge": true, "balcony": true }
+          }
+        }
+      }
+    },
+    "Bahria Town": {
+      "plot_sizes": {
+        "3 Marla": {
+          "plot_size": "3 Marla",
+          "max_floors": 2,
+          "max_height_ft": 28,
+          "FAR": "Not specified",
+          "ground_coverage_percent": 70,
+          "building_regulations": {
+            "ground_coverage": 70,
+            "FAR": "Not specified",
+            "max_height": 28
+          },
+          "setbacks": {
+            "front": 5,
+            "rear": 3,
+            "side": 0
+          },
+          "floors": {
+            "ground": { "bedrooms_max": 1, "bathrooms_max": 2, "kitchen": true, "lounge": true, "garage": false },
+            "first": { "bedrooms_max": 2, "bathrooms_max": 2, "kitchen": true, "lounge": true, "balcony": true }
+          }
+        },
+        "5 Marla": {
+          "plot_size": "5 Marla",
+          "max_floors": 2,
+          "max_height_ft": 30,
+          "FAR": "Not specified",
+          "ground_coverage_percent": 75,
+          "building_regulations": {
+            "ground_coverage": 75,
+            "FAR": "Not specified",
+            "max_height": 30
+          },
+          "setbacks": {
+            "front": 5,
+            "rear": 5,
+            "side": 0
+          },
+          "floors": {
+            "ground": { "bedrooms_max": 2, "bathrooms_max": 2, "kitchen": true, "lounge": true, "garage": true },
+            "first": { "bedrooms_max": 2, "bathrooms_max": 2, "kitchen": true, "lounge": true, "balcony": true }
+          }
+        },
+        "10 Marla": {
+          "plot_size": "10 Marla",
+          "max_floors": 3,
+          "max_height_ft": 38,
+          "FAR": "Not specified",
+          "ground_coverage_percent": 65,
+          "building_regulations": {
+            "ground_coverage": 65,
+            "FAR": "Not specified",
+            "max_height": 38
+          },
+          "setbacks": {
+            "front": 10,
+            "rear": 7,
+            "side": 5
+          },
+          "floors": {
+            "ground": { "bedrooms_max": 3, "bathrooms_max": 3, "kitchen": true, "lounge": true, "garage": true },
+            "first": { "bedrooms_max": 3, "bathrooms_max": 3, "kitchen": true, "lounge": true, "balcony": true },
+            "second": { "bedrooms_max": 2, "bathrooms_max": 2, "kitchen": true, "lounge": true, "balcony": true }
+          }
+        },
+        "1 Kanal": {
+          "plot_size": "1 Kanal",
+          "max_floors": 3,
+          "max_height_ft": 42,
+          "FAR": "Not specified",
+          "ground_coverage_percent": 60,
+          "building_regulations": {
+            "ground_coverage": 60,
+            "FAR": "Not specified",
+            "max_height": 42
+          },
+          "setbacks": {
+            "front": 15,
+            "rear": 10,
+            "side": 7
+          },
+          "floors": {
+            "ground": { "bedrooms_max": 3, "bathrooms_max": 3, "kitchen": true, "lounge": true, "garage": true },
+            "first": { "bedrooms_max": 4, "bathrooms_max": 4, "kitchen": true, "lounge": true, "balcony": true },
+            "second": { "bedrooms_max": 3, "bathrooms_max": 3, "kitchen": true, "lounge": true, "balcony": true }
+          }
+        }
+      }
+    }
+  }
+}

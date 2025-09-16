@@ -1,0 +1,544 @@
+{
+  "metadata": {
+    "city": "Islamabad",
+    "province": "Federal Capital Territory",
+    "country": "Pakistan",
+    "authorities": [
+      {
+        "name": "Capital Development Authority (CDA)",
+        "source": "Islamabad Capital Territory Building Control Regulations 2020 (Amended 2024)",
+        "jurisdiction": "Islamabad, Federal Capital Territory, Pakistan",
+        "last_updated": "May 2024",
+        "website": "https://cda.gov.pk",
+        "note": "Latest amendments include increased FAR for large commercial plots, revised payment structure"
+      },
+      {
+        "name": "Defence Housing Authority (DHA)",
+        "source": "DHA Construction & Development Regulations",
+        "jurisdiction": "DHA Islamabad, Federal Capital Territory, Pakistan",
+        "last_updated": "2024",
+        "note": "Consistent regulations across all DHA cities"
+      },
+      {
+        "name": "Bahria Town",
+        "source": "Bahria Town Building Control Department Bylaws",
+        "jurisdiction": "Bahria Town Islamabad, Federal Capital Territory, Pakistan",
+        "last_updated": "2024",
+        "note": "Latest construction policies and SOPs"
+      }
+    ],
+    "combined_date": "2024-2025",
+    "disclaimer": "This document combines regulations from multiple authorities. Always verify current regulations with respective authorities before construction."
+  },
+  "plot_sizes": {
+    "3-marla": {
+      "CDA": {
+        "max_floors": 2,
+        "max_height_ft": 30,
+        "FAR": "1:1.2",
+        "ground_coverage_percent": 60,
+        "mandatory_open_spaces": {
+          "front": "30 ft frontage minimum",
+          "side": "5 ft",
+          "rear": "N/A"
+        },
+        "parking": "Optional",
+        "special_rules": [
+          "25% payment required for building plan approval (2024 amendment)",
+          "Plot possession granted upon 50% payment (2024 amendment)",
+          "15% discount for lump sum payments, 20% for overseas Pakistanis (2024 amendment)"
+        ],
+        "floors": {
+          "ground": { "bedrooms_max": 1, "bathrooms_max": 2, "kitchen": true, "lounge": true, "garage": false },
+          "first": { "bedrooms_max": 2, "bathrooms_max": 2, "kitchen": true, "lounge": true, "balcony": true }
+        }
+      },
+      "DHA": {
+        "max_floors": 2,
+        "max_height_ft": 30,
+        "FAR": "Not specified",
+        "ground_coverage_percent": 70,
+        "upper_coverage_percent": 60,
+        "mandatory_open_spaces": {
+          "front": "5ft",
+          "rear": "3ft",
+          "side": "Not required"
+        },
+        "parking": "1 car space",
+        "special_rules": [
+          "No tube wells allowed",
+          "No direct motor on supply line",
+          "Servant quarter not allowed",
+          "Swimming pool not allowed",
+          "Rainwater harvesting mandatory",
+          "Approved elevations only"
+        ],
+        "floors": {
+          "ground": { "bedrooms_max": 1, "bathrooms_max": 2, "kitchen": true, "lounge": true, "garage": false },
+          "first": { "bedrooms_max": 2, "bathrooms_max": 2, "kitchen": true, "lounge": true, "balcony": true }
+        }
+      },
+      "Bahria": {
+        "max_floors": 2,
+        "max_height_ft": 28,
+        "FAR": "Not specified",
+        "ground_coverage_percent": 70,
+        "upper_coverage_percent": 60,
+        "mandatory_open_spaces": {
+          "front": "5ft",
+          "rear": "3ft",
+          "side": "Not required"
+        },
+        "parking": "1 car space",
+        "special_rules": [
+          "Only approved architectural designs allowed",
+          "Uniform elevation requirements",
+          "Underground water tank mandatory (6x4x4 ft)",
+          "Building Control Department approval required at each stage",
+          "Excavation clearance required"
+        ],
+        "floors": {
+          "ground": { "bedrooms_max": 1, "bathrooms_max": 2, "kitchen": true, "lounge": true, "garage": false },
+          "first": { "bedrooms_max": 2, "bathrooms_max": 2, "kitchen": true, "lounge": true, "balcony": true }
+        }
+      }
+    },
+    "5-marla": {
+      "CDA": {
+        "max_floors": 2,
+        "max_height_ft": 30,
+        "FAR": "1:1.2",
+        "ground_coverage_percent": 60,
+        "mandatory_open_spaces": {
+          "front": "30 ft frontage minimum",
+          "side": "5 ft",
+          "rear": "5 ft"
+        },
+        "parking": "Optional",
+        "special_rules": [
+          "25% payment required for building plan approval (2024 amendment)",
+          "Plot possession granted upon 50% payment (2024 amendment)",
+          "15% discount for lump sum payments, 20% for overseas Pakistanis (2024 amendment)"
+        ],
+        "floors": {
+          "ground": { "bedrooms_max": 2, "bathrooms_max": 2, "kitchen": true, "lounge": true, "garage": true },
+          "first": { "bedrooms_max": 2, "bathrooms_max": 2, "kitchen": true, "lounge": true, "balcony": true }
+        }
+      },
+      "DHA": {
+        "max_floors": 2,
+        "max_height_ft": 30,
+        "FAR": "Not specified",
+        "ground_coverage_percent": 70,
+        "upper_coverage_percent": 60,
+        "mandatory_open_spaces": {
+          "front": "5ft",
+          "rear": "3ft",
+          "side": "Not required"
+        },
+        "parking": "1 car space",
+        "special_rules": [
+          "No tube wells allowed",
+          "No direct motor on supply line",
+          "Servant quarter not allowed",
+          "Swimming pool not allowed",
+          "Rainwater harvesting mandatory"
+        ],
+        "floors": {
+          "ground": { "bedrooms_max": 2, "bathrooms_max": 2, "kitchen": true, "lounge": true, "garage": true },
+          "first": { "bedrooms_max": 2, "bathrooms_max": 2, "kitchen": true, "lounge": true, "balcony": true }
+        }
+      },
+      "Bahria": {
+        "max_floors": 2,
+        "max_height_ft": 30,
+        "FAR": "Not specified",
+        "ground_coverage_percent": 75,
+        "upper_coverage_percent": 65,
+        "mandatory_open_spaces": {
+          "front": "5ft",
+          "rear": "5ft",
+          "side": "Not required"
+        },
+        "parking": "1 car space",
+        "special_rules": [
+          "Only approved architectural designs allowed",
+          "Underground water tank mandatory (7x5x4 ft)",
+          "Uniform elevation requirements"
+        ],
+        "floors": {
+          "ground": { "bedrooms_max": 2, "bathrooms_max": 2, "kitchen": true, "lounge": true, "garage": true },
+          "first": { "bedrooms_max": 2, "bathrooms_max": 2, "kitchen": true, "lounge": true, "balcony": true }
+        }
+      }
+    },
+    "7-marla": {
+      "CDA": {
+        "max_floors": 2,
+        "max_height_ft": 30,
+        "FAR": "1:1.05",
+        "ground_coverage_percent": 60,
+        "mandatory_open_spaces": {
+          "front": "30 ft frontage minimum",
+          "side": "5 ft (one side)",
+          "rear": "5 ft"
+        },
+        "parking": "1 car space",
+        "special_rules": [
+          "25% payment required for building plan approval (2024 amendment)",
+          "Plot possession granted upon 50% payment (2024 amendment)",
+          "15% discount for lump sum payments, 20% for overseas Pakistanis (2024 amendment)"
+        ],
+        "floors": {
+          "ground": { "bedrooms_max": 2, "bathrooms_max": 3, "kitchen": true, "lounge": true, "garage": true },
+          "first": { "bedrooms_max": 3, "bathrooms_max": 2, "kitchen": true, "lounge": true, "balcony": true }
+        }
+      },
+      "DHA": {
+        "max_floors": 2,
+        "max_height_ft": 30,
+        "FAR": "Not specified",
+        "ground_coverage_percent": 70,
+        "upper_coverage_percent": 60,
+        "mandatory_open_spaces": {
+          "front": "5ft",
+          "rear": "3ft",
+          "side": "3ft (one side)"
+        },
+        "parking": "1-2 car spaces",
+        "special_rules": [
+          "No tube wells allowed",
+          "Servant quarter not allowed",
+          "Swimming pool not allowed",
+          "Rainwater harvesting mandatory"
+        ],
+        "floors": {
+          "ground": { "bedrooms_max": 2, "bathrooms_max": 3, "kitchen": true, "lounge": true, "garage": true },
+          "first": { "bedrooms_max": 3, "bathrooms_max": 2, "kitchen": true, "lounge": true, "balcony": true }
+        }
+      },
+      "Bahria": {
+        "max_floors": 3,
+        "max_height_ft": 35,
+        "FAR": "Not specified",
+        "ground_coverage_percent": 75,
+        "upper_coverage_percent": 65,
+        "mandatory_open_spaces": {
+          "front": "7ft",
+          "rear": "5ft",
+          "side": "3ft (one side)"
+        },
+        "parking": "2 car spaces",
+        "special_rules": [
+          "Only approved architectural designs allowed",
+          "Underground water tank mandatory (8x6x4 ft)",
+          "Green area requirements"
+        ],
+        "floors": {
+          "ground": { "bedrooms_max": 2, "bathrooms_max": 3, "kitchen": true, "lounge": true, "garage": true },
+          "first": { "bedrooms_max": 3, "bathrooms_max": 2, "kitchen": true, "lounge": true, "balcony": true },
+          "second": {
+            "bedrooms_max": 2,
+            "bathrooms_max": 1,
+            "lounge": true,
+            "kitchen": { "allowed": true, "optional": true },
+            "balcony": true
+          }
+        }
+      }
+    },
+    "10-marla": {
+      "CDA": {
+        "max_floors": 3,
+        "max_height_ft": 30,
+        "FAR": "1:0.9",
+        "ground_coverage_percent": 50,
+        "upper_coverage_percent": 50,
+        "mandatory_open_spaces": {
+          "front": "30 ft frontage minimum",
+          "side": "5 ft both sides",
+          "rear": "7 ft"
+        },
+        "parking": "2 car spaces",
+        "special_rules": [
+          "25% payment required for building plan approval (2024 amendment)",
+          "Plot possession granted upon 50% payment (2024 amendment)",
+          "15% discount for lump sum payments, 20% for overseas Pakistanis (2024 amendment)"
+        ],
+        "floors": {
+          "ground": { "bedrooms_max": 3, "bathrooms_max": 3, "kitchen": true, "lounge": true, "garage": true },
+          "first": { "bedrooms_max": 3, "bathrooms_max": 3, "kitchen": true, "lounge": true, "balcony": true },
+          "second": {
+            "bedrooms_max": 2,
+            "bathrooms_max": 2,
+            "kitchen": { "allowed": true, "optional": true },
+            "lounge": true,
+            "balcony": true
+          }
+        }
+      },
+      "DHA": {
+        "max_floors": 2,
+        "max_height_ft": 30,
+        "FAR": "Not specified",
+        "ground_coverage_percent": 65,
+        "upper_coverage_percent": 55,
+        "mandatory_open_spaces": {
+          "front": "5ft",
+          "rear": "5ft",
+          "side": "3ft (one side)"
+        },
+        "parking": "2 car spaces",
+        "special_rules": [
+          "No tube wells allowed",
+          "Servant quarter allowed",
+          "Swimming pool not allowed",
+          "Rainwater harvesting mandatory"
+        ],
+        "floors": {
+          "ground": { "bedrooms_max": 3, "bathrooms_max": 3, "kitchen": true, "lounge": true, "garage": true },
+          "first": { "bedrooms_max": 3, "bathrooms_max": 3, "kitchen": true, "lounge": true, "balcony": true }
+        }
+      },
+      "Bahria": {
+        "max_floors": 3,
+        "max_height_ft": 38,
+        "FAR": "Not specified",
+        "ground_coverage_percent": 65,
+        "upper_coverage_percent": 55,
+        "mandatory_open_spaces": {
+          "front": "10ft",
+          "rear": "7ft",
+          "side": "5ft (one side)"
+        },
+        "parking": "2-3 car spaces",
+        "special_rules": [
+          "Only approved architectural designs allowed",
+          "Underground water tank mandatory (10x7x5 ft)",
+          "Servant quarter allowed with approval"
+        ],
+        "floors": {
+          "ground": { "bedrooms_max": 3, "bathrooms_max": 3, "kitchen": true, "lounge": true, "garage": true },
+          "first": { "bedrooms_max": 3, "bathrooms_max": 3, "kitchen": true, "lounge": true, "balcony": true },
+          "second": {
+            "bedrooms_max": 2,
+            "bathrooms_max": 2,
+            "kitchen": { "allowed": true, "optional": true },
+            "lounge": true,
+            "balcony": true
+          }
+        }
+      }
+    },
+    "1-kanal": {
+      "CDA": {
+        "max_floors": 3,
+        "max_height_ft": 30,
+        "FAR": "1:0.9",
+        "ground_coverage_percent": 50,
+        "upper_coverage_percent": 50,
+        "mandatory_open_spaces": {
+          "front": "30 ft frontage minimum",
+          "side": "5 ft both sides",
+          "rear": "7 ft"
+        },
+        "parking": "3 car spaces",
+        "special_rules": [
+          "25% payment required for building plan approval (2024 amendment)",
+          "Plot possession granted upon 50% payment (2024 amendment)",
+          "15% discount for lump sum payments, 20% for overseas Pakistanis (2024 amendment)"
+        ],
+        "floors": {
+          "ground": { "bedrooms_max": 3, "bathrooms_max": 3, "kitchen": true, "lounge": true, "garage": true },
+          "first": { "bedrooms_max": 4, "bathrooms_max": 4, "kitchen": true, "lounge": true, "balcony": true },
+          "second": {
+            "bedrooms_max": 3,
+            "bathrooms_max": 3,
+            "kitchen": { "allowed": true, "optional": true },
+            "lounge": true,
+            "balcony": true
+          }
+        }
+      },
+      "DHA": {
+        "max_floors": 2,
+        "max_height_ft": 30,
+        "FAR": "Not specified",
+        "ground_coverage_percent": 65,
+        "upper_coverage_percent": 55,
+        "mandatory_open_spaces": {
+          "front": "10ft",
+          "rear": "5ft",
+          "side": "5ft (both sides)"
+        },
+        "parking": "2-3 car spaces",
+        "special_rules": [
+          "No tube wells allowed",
+          "Servant quarter allowed",
+          "Swimming pool allowed with approval",
+          "Rainwater harvesting mandatory"
+        ],
+        "floors": {
+          "ground": { "bedrooms_max": 3, "bathrooms_max": 3, "kitchen": true, "lounge": true, "garage": true },
+          "first": { "bedrooms_max": 4, "bathrooms_max": 4, "kitchen": true, "lounge": true, "balcony": true }
+        }
+      },
+      "Bahria": {
+        "max_floors": 3,
+        "max_height_ft": 42,
+        "FAR": "Not specified",
+        "ground_coverage_percent": 60,
+        "upper_coverage_percent": 50,
+        "mandatory_open_spaces": {
+          "front": "15ft",
+          "rear": "10ft",
+          "side": "7ft (both sides)"
+        },
+        "parking": "3 car spaces",
+        "special_rules": [
+          "Only approved architectural designs allowed",
+          "Underground water tank mandatory (12x8x6 ft)",
+          "Swimming pool allowed with approval",
+          "Servant quarter allowed"
+        ],
+        "floors": {
+          "ground": { "bedrooms_max": 3, "bathrooms_max": 3, "kitchen": true, "lounge": true, "garage": true },
+          "first": { "bedrooms_max": 4, "bathrooms_max": 4, "kitchen": true, "lounge": true, "balcony": true },
+          "second": {
+            "bedrooms_max": 3,
+            "bathrooms_max": 3,
+            "kitchen": { "allowed": true, "optional": true },
+            "lounge": true,
+            "balcony": true
+          }
+        }
+      }
+    },
+    "2-kanal": {
+      "CDA": {
+        "max_floors": 3,
+        "max_height_ft": 30,
+        "FAR": "1:0.9",
+        "ground_coverage_percent": 50,
+        "upper_coverage_percent": 45,
+        "mandatory_open_spaces": {
+          "front": "30 ft frontage minimum",
+          "side": "10 ft both sides",
+          "rear": "10 ft"
+        },
+        "parking": "4 car spaces",
+        "special_rules": [
+          "25% payment required for building plan approval (2024 amendment)",
+          "Plot possession granted upon 50% payment (2024 amendment)",
+          "15% discount for lump sum payments, 20% for overseas Pakistanis (2024 amendment)"
+        ],
+        "floors": {
+          "ground": { "bedrooms_max": 4, "bathrooms_max": 4, "kitchen": true, "lounge": true, "garage": true },
+          "first": { "bedrooms_max": 4, "bathrooms_max": 4, "kitchen": true, "lounge": true, "balcony": true },
+          "second": {
+            "bedrooms_max": 4,
+            "bathrooms_max": 4,
+            "kitchen": { "allowed": true, "optional": true },
+            "lounge": true,
+            "balcony": true
+          }
+        }
+      },
+      "DHA": {
+        "max_floors": 2,
+        "max_height_ft": 30,
+        "FAR": "Not specified",
+        "ground_coverage_percent": 65,
+        "upper_coverage_percent": 55,
+        "mandatory_open_spaces": {
+          "front": "10ft",
+          "rear": "5ft",
+          "side": "5ft (both sides)"
+        },
+        "parking": "3-4 car spaces",
+        "special_rules": [
+          "No tube wells allowed",
+          "Servant quarter allowed",
+          "Swimming pool allowed",
+          "Rainwater harvesting mandatory"
+        ],
+        "floors": {
+          "ground": { "bedrooms_max": 4, "bathrooms_max": 4, "kitchen": true, "lounge": true, "garage": true },
+          "first": { "bedrooms_max": 4, "bathrooms_max": 4, "kitchen": true, "lounge": true, "balcony": true }
+        }
+      },
+      "Bahria": {
+        "max_floors": 3,
+        "max_height_ft": 45,
+        "FAR": "Not specified",
+        "ground_coverage_percent": 50,
+        "upper_coverage_percent": 40,
+        "mandatory_open_spaces": {
+          "front": "20ft",
+          "rear": "15ft",
+          "side": "10ft (both sides)"
+        },
+        "parking": "4 car spaces",
+        "special_rules": [
+          "Only approved architectural designs allowed",
+          "Underground water tank mandatory (15x10x6 ft)",
+          "Swimming pool allowed",
+          "Servant quarter allowed",
+          "Large green area requirements"
+        ],
+        "floors": {
+          "ground": { "bedrooms_max": 4, "bathrooms_max": 4, "kitchen": true, "lounge": true, "garage": true },
+          "first": { "bedrooms_max": 4, "bathrooms_max": 4, "kitchen": true, "lounge": true, "balcony": true },
+          "second": {
+            "bedrooms_max": 4,
+            "bathrooms_max": 4,
+            "kitchen": { "allowed": true, "optional": true },
+            "lounge": true,
+            "balcony": true
+          }
+        }
+      }
+    }
+  },
+  "dimensions": {
+    "doors": {
+      "main_door": { "width_ft": 4, "height_ft": 7.5 },
+      "room_door": { "width_ft": 3, "height_ft": 7 },
+      "bathroom_door": { "width_ft": 2.5, "height_ft": 7 },
+      "main_gate": { "width_ft": 10, "height_ft": 7 },
+      "wicket_gate": { "width_ft": 3.5, "height_ft": 7 }
+    },
+    "windows": {
+      "bedroom": { "width_ft": 4, "height_ft": 5 },
+      "lounge": { "width_ft": 6, "height_ft": 5 },
+      "kitchen": { "width_ft": 4, "height_ft": 4 },
+      "bathroom": { "width_ft": 2, "height_ft": 2 }
+    },
+    "fixtures": {
+      "stair_width_ft": 3.5,
+      "balcony_railing_height_ft": 3,
+      "counter_height_ft": 3,
+      "wardrobe_depth_ft": 2
+    }
+  },
+  "room_sizes": {
+    "bedroom_small": { "min": [10, 10], "comfortable": [10, 12] },
+    "bedroom_master": { "min": [12, 14], "comfortable": [14, 16] },
+    "bath_attached": { "min": [5, 7], "comfortable": [6, 8] },
+    "bath_common": { "min": [5, 6], "comfortable": [6, 7] },
+    "kitchen_closed": { "min": [7, 10], "comfortable": [8, 12] },
+    "kitchen_open": { "min": [8, 8], "comfortable": [8, 10] },
+    "lounge_tv": { "min": [12, 14], "comfortable": [14, 16] },
+    "drawing_room": { "min": [12, 14], "comfortable": [14, 18] },
+    "garage_single": { "min": [10, 15], "comfortable": [12, 18] },
+    "garage_double": { "min": [16, 18], "comfortable": [18, 20] },
+    "store": { "min": [5, 5], "comfortable": [6, 8] },
+    "balcony": { "min_width": 3, "max_width": 5 }
+  },
+  "rooftop": {
+    "allowed": true,
+    "allowedStructures": ["stair mumty", "water tank", "solar panels"],
+    "usage": ["access", "laundry", "storage", "solar power installation"],
+    "maxBuiltUpArea_pct": 15
+  }
+}

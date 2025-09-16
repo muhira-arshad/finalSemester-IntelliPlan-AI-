@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* White */
+    --foreground: 222.2 84% 4.9%; /* Dark Blue/Black */
+
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 222.2 84% 4.9%; /* Dark Blue/Black */
+
+    --popover: 0 0% 100%; /* White */
+    --popover-foreground: 222.2 84% 4.9%; /* Dark Blue/Black */
+
+    --primary: 40 90% 50%; /* Yellow-500 */
+    --primary-foreground: 222.2 84% 4.9%; /* Dark Blue/Black (for text on primary) */
+
+    --secondary: 210 40% 96.1%; /* Light Gray */
+    --secondary-foreground: 222.2 47.4% 11.2%; /* Dark Blue (for text on secondary) */
+
+    --muted: 210 40% 96.1%; /* Light Gray */
+    --muted-foreground: 215.4 16.3% 46.9%; /* Gray */
+
+    --accent: 210 40% 96.1%; /* Light Gray */
+    --accent-foreground: 222.2 47.4% 11.2%; /* Dark Blue */
+
+    --destructive: 0 84.2% 60.2%; /* Red */
+    --destructive-foreground: 210 40% 98%; /* Off-white */
+
+    --border: 214.3 31.8% 91.4%; /* Light Gray */
+    --input: 214.3 31.8% 91.4%; /* Light Gray */
+    --ring: 40 90% 50%; /* Yellow-500 */
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%; /* Dark Blue/Black */
+    --foreground: 210 40% 98%; /* Off-white */
+
+    --card: 222.2 84% 4.9%; /* Dark Blue/Black */
+    --card-foreground: 210 40% 98%; /* Off-white */
+
+    --popover: 222.2 84% 4.9%; /* Dark Blue/Black */
+    --popover-foreground: 210 40% 98%; /* Off-white */
+
+    --primary: 40 90% 50%; /* Yellow-500 */
+    --primary-foreground: 222.2 84% 4.9%; /* Dark Blue/Black (for text on primary) */
+
+    --secondary: 217.2 32.6% 17.5%; /* Dark Gray */
+    --secondary-foreground: 210 40% 98%; /* Off-white (for text on secondary) */
+
+    --muted: 217.2 32.6% 17.5%; /* Dark Gray */
+    --muted-foreground: 215 20.2% 65.1%; /* Light Gray */
+
+    --accent: 217.2 32.6% 17.5%; /* Dark Gray */
+    --accent-foreground: 210 40% 98%; /* Off-white */
+
+    --destructive: 0 62.8% 30.6%; /* Dark Red */
+    --destructive-foreground: 210 40% 98%; /* Off-white */
+
+    --border: 217.2 32.6% 17.5%; /* Dark Gray */
+    --input: 217.2 32.6% 17.5%; /* Dark Gray */
+    --ring: 40 90% 50%; /* Yellow-500 */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom font for headings */
+.font-heading {
+  font-family:
+    ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 700; /* Bold */
+  line-height: 1.2;
+  letter-spacing: -0.025em; /* Slightly tighter letter spacing */
+}
+
+/* Neon hover effect for buttons */
+.btn-neon-hover {
+  box-shadow: none;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.btn-neon-hover:hover {
+  box-shadow: 0 0 5px var(--primary), 0 0 15px var(--primary), 0 0 30px var(--primary);
+}
+
+/* Specific adjustments for button text colors */
+.dark .btn-primary-text {
+  color: hsl(var(--primary-foreground)); /* Ensure dark text on yellow in dark mode */
+}
+
+.light .btn-primary-text {
+  color: hsl(var(--primary-foreground)); /* Ensure dark text on yellow in light mode */
+}
+
+.dark .btn-secondary-text {
+  color: hsl(var(--secondary-foreground)); /* Ensure light text on dark gray in dark mode */
+}
+
+.light .btn-secondary-text {
+  color: hsl(var(--secondary-foreground)); /* Ensure dark text on light gray in light mode */
+}
