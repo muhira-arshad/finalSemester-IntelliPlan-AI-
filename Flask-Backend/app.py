@@ -2,14 +2,15 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS
 import json
 import os
-import re
+import time
+import traceback
 
 app = Flask(__name__)
 CORS(app)
 
-# ---------------------------
-# Load City-specific JSON Files
-# ---------------------------
+# -------------------------
+# Load city data
+# -------------------------
 def load_city_data():
     """Load data from three separate city JSON files"""
     cities_data = {}
@@ -27,535 +28,330 @@ def load_city_data():
             print(f"✅ Loaded {city} data from {filename}")
         except FileNotFoundError:
             print(f"⚠️ Warning: {filename} not found for {city}")
-            cities_data[city] = {}
+            cities_data[city] = {"authorities": {}}
     
     return cities_data
 
 CITIES_DATA = load_city_data()
 
-# ---------------------------
-# Enhanced Helper Functions for City-based Structure
-# ---------------------------
-def transform_plot_size_key(key):
-    """Convert plot size to frontend format (e.g., '3 Marla' -> '3-marla')"""
-    return key.lower().replace(" ", "-")
-
-def get_reverse_plot_size_key(frontend_key):
-    """Convert frontend format back to JSON format (e.g., '3-marla' -> '3 Marla')"""
-    parts = frontend_key.split("-")
-    if len(parts) == 2:
-        return f"{parts[0].title()} {parts[1].title()}"
-    return frontend_key.title()
-
-def available_cities():
-    """Get all available cities"""
-    return list(CITIES_DATA.keys())
-
-def available_authorities_for_city(city):
-    """Get all available authorities for a specific city"""
-    city_data = CITIES_DATA.get(city, {})
-    residential_data = city_data.get("residential", {})
-    if not residential_data:
-        return []
+def analyze_data():
+    """Analyze and display loaded data"""
+    print("\n🏠 City-based Residential Housing Regulations Backend Starting...")
+    print(f"📍 Loaded cities: {', '.join(CITIES_DATA.keys())}")
     
-    # Get authorities from first plot size
-    first_plot = next(iter(residential_data), None)
-    if first_plot:
-        return list(residential_data[first_plot].keys())
-    return []
-
-def get_city_authority_data(city, plot_size, authority):
-    """Get specific authority data for a plot size in a city"""
-    city_data = CITIES_DATA.get(city, {})
-    residential_data = city_data.get("residential", {})
-    plot_data = residential_data.get(plot_size, {})
-    return plot_data.get(authority, {})
-
-def get_city_residential_data(city):
-    """Get residential data for a specific city"""
-    return CITIES_DATA.get(city, {}).get("residential", {})
-
-def get_bedrooms_range(plot_size, authority, city):
-    """Get bedroom range based on plot size, authority, and city regulations"""
-    ranges = {
-        "3 Marla": {"min": 1, "max": 2},
-        "5 Marla": {"min": 2, "max": 3},
-        "7 Marla": {"min": 2, "max": 4},
-        "10 Marla": {"min": 3, "max": 5},
-        "1 Kanal": {"min": 4, "max": 7},
-        "2 Kanal": {"min": 5, "max": 8}
-    }
-    return ranges.get(plot_size, {"min": 2, "max": 3})
-
-def get_washrooms_range(plot_size, authority, city):
-    """Get washroom range based on plot size, authority, and city regulations"""
-    ranges = {
-        "3 Marla": {"min": 1, "max": 2},
-        "5 Marla": {"min": 2, "max": 3},
-        "7 Marla": {"min": 3, "max": 4},
-        "10 Marla": {"min": 3, "max": 5},
-        "1 Kanal": {"min": 4, "max": 6},
-        "2 Kanal": {"min": 5, "max": 8}
-    }
-    return ranges.get(plot_size, {"min": 1, "max": 3})
-
-def parse_boolean_from_rules(rules, keyword):
-    """Return True/False/None based on presence of 'allowed'/'not allowed' with keyword."""
-    if not rules:
-        return None
-    keyword = keyword.lower()
-    for rule in rules:
-        s = rule.lower()
-        if keyword in s:
-            if "not allowed" in s or "not permitted" in s or "prohibited" in s:
-                return False
-            if "allowed" in s or "permitted" in s or "can be" in s:
-                return True
-    return None
-
-def get_allowed_features(city, plot_size, authority, auth_data):
-    """Determine allowed features based on city-specific bylaws data"""
-    special_rules = auth_data.get("special_rules", [])
-    city_data = CITIES_DATA.get(city, {})
-    additional_rules = city_data.get("residential", {}).get(plot_size, {}).get("additional_rules", {})
-
-    # Parse features from rules
-    servant_allowed = parse_boolean_from_rules(special_rules, "servant quarter")
-    pool_allowed = parse_boolean_from_rules(special_rules, "swimming pool")
+    for city, data in CITIES_DATA.items():
+        authorities = data.get("authorities", {})
+        num_authorities = len(authorities)
+        total_plot_sizes = sum(len(auth.get("plot_sizes", {})) for auth in authorities.values())
+        print(f"   {city}: {num_authorities} authorities, {total_plot_sizes} plot sizes")
     
-    basement_info = city_data.get("special_provisions", {}).get("Basement", {}).get(authority, {})
+    print("🎯 Focus: Residential Housing Only\n")
 
-    # Default logic based on authority and plot size
-    if servant_allowed is None:
-        # DHA: not allowed for small plots, allowed for 10 Marla+
-        if authority == "DHA":
-            servant_allowed = plot_size in ["10 Marla", "1 Kanal", "2 Kanal"]
-        else:
-            servant_allowed = plot_size not in ["3 Marla", "5 Marla"]
+analyze_data()
 
-    if pool_allowed is None:
-        # Generally not allowed for small plots
-        if authority == "DHA":
-            pool_allowed = plot_size in ["1 Kanal", "2 Kanal"]
-        else:
-            pool_allowed = plot_size in ["10 Marla", "1 Kanal", "2 Kanal"]
+# -------------------------
+# Basic Routes
+# -------------------------
+@app.route("/", methods=["GET"])
+def home():
+    return jsonify({"message": "🏠 City Housing Regulations API is running!"}), 200
 
-    # Basement allowance
-    basement_allowed = False
-    if basement_info:
-        if basement_info.get("allowed") is True:
-            basement_allowed = True
-        elif basement_info.get("allowed") == "conditional":
-            basement_allowed = plot_size in ["1 Kanal", "2 Kanal"]
-
-    # Mumty from additional rules
-    mumty_info = additional_rules.get("mumty", {})
-    mumty_allowed = mumty_info.get("allowed", authority != "DHA")
-
-    return {
-        "servant_quarter": servant_allowed,
-        "swimming_pool": pool_allowed,
-        "basement": basement_allowed,
-        "mumty": mumty_allowed
-    }
-
-def get_public_zones(plot_size, authority, city):
-    """Get available public zones based on plot size and city"""
-    base_zones = ["Drawing Room", "TV Lounge"]
-
-    if plot_size in ["5 Marla", "7 Marla", "10 Marla", "1 Kanal", "2 Kanal"]:
-        base_zones.append("Dining Room")
-
-    if plot_size in ["10 Marla", "1 Kanal", "2 Kanal"]:
-        base_zones.extend(["Family Lounge", "Study Room"])
-
-    if plot_size in ["1 Kanal", "2 Kanal"]:
-        base_zones.append("Guest Room")
-
-    return base_zones
-
-def get_service_zones(plot_size, authority, city, allowed_features):
-    """Get available service zones based on plot size, city, and features"""
-    base_zones = ["Kitchen", "Store"]
-
-    if plot_size in ["5 Marla", "7 Marla", "10 Marla", "1 Kanal", "2 Kanal"]:
-        base_zones.append("Laundry")
-
-    if plot_size in ["10 Marla", "1 Kanal", "2 Kanal"]:
-        base_zones.append("Utility Room")
-
-    if allowed_features.get("servant_quarter"):
-        base_zones.append("Servant Quarter")
-
-    if plot_size in ["1 Kanal", "2 Kanal"]:
-        base_zones.append("Pantry")
-
-    return base_zones
-
-def get_kitchen_types(plot_size, authority, city):
-    """Get available kitchen types based on plot size and city"""
-    base_types = ["Open Kitchen", "Closed Kitchen"]
-
-    if plot_size in ["5 Marla", "7 Marla", "10 Marla", "1 Kanal", "2 Kanal"]:
-        base_types.append("Island Kitchen")
-
-    if plot_size in ["10 Marla", "1 Kanal", "2 Kanal"]:
-        base_types.append("Modular Kitchen")
-
-    if plot_size in ["1 Kanal", "2 Kanal"]:
-        base_types.append("Chef Kitchen")
-
-    return base_types
-
-def parse_parking_info(parking_str, plot_size):
-    """Parse parking information from bylaws"""
-    if not parking_str or parking_str.lower() == "optional":
-        return {"type": "optional", "spaces": 0}
-
-    # Extract number of spaces
-    numbers = re.findall(r'\d+', parking_str)
-    if len(numbers) == 1:
-        return {"type": "required", "spaces": int(numbers[0])}
-    elif len(numbers) == 2:
-        return {"type": "range", "min": int(numbers[0]), "max": int(numbers[1])}
-
-    # Default based on plot size
-    defaults = {
-        "3 Marla": 1, "5 Marla": 1, "7 Marla": 2,
-        "10 Marla": 2, "1 Kanal": 3, "2 Kanal": 4
-    }
-    return {"type": "recommended", "spaces": defaults.get(plot_size, 1)}
-
-# ---------------------------
-# Main API Functions for City-based Structure
-# ---------------------------
-def create_city_frontend_structure():
-    """Create the complete frontend structure with city-based dynamic options"""
-    cities_structure = {}
-
-    for city in available_cities():
-        city_data = CITIES_DATA.get(city, {})
-        residential_data = city_data.get("residential", {})
-        
-        cities_structure[city] = {"authorities": {}}
-        
-        authorities = available_authorities_for_city(city)
-        
-        for authority in authorities:
-            cities_structure[city]["authorities"][authority] = {"plot_sizes": {}}
-
-            for original_key, bylaws_data in residential_data.items():
-                frontend_key = transform_plot_size_key(original_key)
-                auth_data = get_city_authority_data(city, original_key, authority)
-                if not auth_data:
-                    continue
-
-                # Get allowed features
-                allowed_features = get_allowed_features(city, original_key, authority, auth_data)
-
-                # Build available options dynamically from city bylaws
-                available_options = {
-                    # Basic restrictions from bylaws
-                    "max_floors": auth_data.get("max_floors", 2),
-                    "max_height_ft": auth_data.get("max_height_ft"),
-                    "ground_coverage_percent": auth_data.get("ground_coverage_percent"),
-                    "FAR": auth_data.get("FAR", "Not specified"),
-                    "mandatory_open_spaces": auth_data.get("mandatory_open_spaces", {}),
-
-                    # Dynamic ranges
-                    "bedrooms_range": get_bedrooms_range(original_key, authority, city),
-                    "washrooms_range": get_washrooms_range(original_key, authority, city),
-
-                    # Available zones based on plot size and city
-                    "public_zones": get_public_zones(original_key, authority, city),
-                    "service_zones": get_service_zones(original_key, authority, city, allowed_features),
-                    "kitchen_types": get_kitchen_types(original_key, authority, city),
-
-                    # Features based on city bylaws
-                    "allowed_features": allowed_features,
-
-                    # Parking info
-                    "parking": parse_parking_info(auth_data.get("parking", ""), original_key),
-
-                    # Special rules
-                    "special_rules": auth_data.get("special_rules", []),
-
-                    # Additional rules
-                    "additional_rules": residential_data.get(original_key, {}).get("additional_rules", {})
-                }
-
-                # The complete plot data
-                plot_data = {
-                    "meta": {
-                        "city": city,
-                        "plot_size_label": original_key,
-                        "authority": authority,
-                        "frontend_key": frontend_key
-                    },
-                    "available_options": available_options,
-                    "raw_bylaws": auth_data  # Include raw data for reference
-                }
-
-                cities_structure[city]["authorities"][authority]["plot_sizes"][frontend_key] = plot_data
-
-    return {
-        "cities": cities_structure,
-        "global_options": {
-            "orientation": ["North", "South", "East", "West"],
-            "facing": ["Standard", "Park", "Corner", "Double Road"],
-            "shape": ["Regular", "Irregular"]
+@app.route("/api/form-options", methods=["GET"])
+def get_form_options():
+    try:
+        transformed_data = {
+            "cities": {},
+            "global_options": {
+                "orientation": ["North", "South", "East", "West", "North-East", "North-West", "South-East", "South-West"],
+                "facing": ["Main Road", "Side Road", "Corner", "Back Lane"],
+                "shape": ["Regular", "Irregular", "Corner", "L-Shape"]
+            }
         }
-    }
+        
+        for city, city_data in CITIES_DATA.items():
+            transformed_data["cities"][city] = {"authorities": {}}
+            authorities = city_data.get("authorities", {})
+            for authority, authority_data in authorities.items():
+                transformed_data["cities"][city]["authorities"][authority] = {"plot_sizes": {}}
+                plot_sizes = authority_data.get("plot_sizes", {})
+                for plot_key, plot_data in plot_sizes.items():
+                    frontend_key = plot_key.lower().replace(" ", "-").replace("(", "").replace(")", "")
+                    transformed_data["cities"][city]["authorities"][authority]["plot_sizes"][frontend_key] = {
+                        "meta": {
+                            "plot_size_label": plot_key,
+                            "authority": authority,
+                            "city": city,
+                            "frontend_key": frontend_key
+                        },
+                        "available_options": {
+                            "max_floors": plot_data.get("max_floors", 2),
+                            "max_height_ft": plot_data.get("max_height_ft"),
+                            "ground_coverage_percent": plot_data.get("ground_coverage_percent", 60),
+                            "FAR": plot_data.get("FAR", "Not specified"),
+                            "mandatory_open_spaces": {
+                                "front": f"{plot_data.get('setbacks', {}).get('front', 0)} ft",
+                                "rear": f"{plot_data.get('setbacks', {}).get('rear', 0)} ft",
+                                "side": f"{plot_data.get('setbacks', {}).get('side', 0)} ft"
+                            },
+                            "bedrooms_range": plot_data.get("bedrooms_range", {"min": 1, "max": 5}),
+                            "washrooms_range": plot_data.get("washrooms_range", {"min": 2, "max": 5}),
+                            "public_zones": ["Lounge", "Drawing Room", "TV Lounge", "Family Room", "Study Room"],
+                            "service_zones": ["Kitchen", "Store", "Laundry", "Servant Quarter", "Garage"],
+                            "kitchen_types": ["Open Kitchen", "Closed Kitchen", "Island Kitchen"],
+                            "allowed_features": {
+                                "servant_quarter": plot_data.get("max_floors", 2) >= 2,
+                                "swimming_pool": plot_data.get("ground_coverage_percent", 60) <= 60,
+                                "basement": False,
+                                "mumty": True
+                            },
+                            "parking": {
+                                "type": "Single Car Garage" if plot_data.get("max_floors", 2) >= 2 else "Not Required",
+                                "spaces": 1 if plot_data.get("max_floors", 2) >= 2 else 0
+                            },
+                            "special_rules": [
+                                f"Maximum {plot_data.get('max_floors', 2)} floors allowed",
+                                f"Ground coverage: {plot_data.get('ground_coverage_percent', 60)}%",
+                                f"FAR: {plot_data.get('FAR', 'Not specified')}"
+                            ],
+                            "additional_rules": {}
+                        },
+                        "raw_bylaws": plot_data
+                    }
+        print("✅ Successfully transformed form options data")
+        return jsonify(transformed_data), 200
+    except Exception as e:
+        print(f"❌ Error in get_form_options: {str(e)}")
+        traceback.print_exc()
+        return jsonify({"error": str(e)}), 500
 
-# ---------------------------
-# API Endpoints for City-based Structure
-# ---------------------------
 @app.route("/api/cities", methods=["GET"])
 def get_cities():
-    """Get all available cities"""
     try:
-        return jsonify({
-            "cities": available_cities(),
-            "total_cities": len(available_cities())
-        })
+        return jsonify({"cities": list(CITIES_DATA.keys())}), 200
     except Exception as e:
-        print(f"Error in get_cities: {e}")
+        print(f"❌ Error in get_cities: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
 @app.route("/api/cities/<city>/authorities", methods=["GET"])
-def get_city_authorities(city):
-    """Get all authorities for a specific city"""
+def get_authorities(city):
     try:
         if city not in CITIES_DATA:
-            return jsonify({"error": "City not found"}), 404
-        
-        authorities = available_authorities_for_city(city)
-        return jsonify({
-            "city": city,
-            "authorities": authorities,
-            "total_authorities": len(authorities)
-        })
+            return jsonify({"error": f"City '{city}' not found"}), 404
+        return jsonify({"authorities": list(CITIES_DATA[city].get("authorities", {}).keys())}), 200
     except Exception as e:
-        print(f"Error in get_city_authorities: {e}")
-        return jsonify({"error": str(e)}), 500
-
-@app.route("/api/form-options", methods=["GET"])
-def form_options():
-    """Return dynamic options based on city-specific bylaws data"""
-    try:
-        if not CITIES_DATA:
-            return jsonify({"error": "No city data loaded"}), 404
-
-        frontend_data = create_city_frontend_structure()
-        return jsonify(frontend_data)
-    except Exception as e:
-        print(f"Error in form_options: {e}")
+        print(f"❌ Error in get_authorities: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
 @app.route("/api/bylaws/<city>/<authority>/<plot_size>", methods=["GET"])
-def get_city_bylaws_info(city, authority, plot_size):
-    """Get detailed bylaws information for specific city, authority and plot size"""
+def get_bylaws(city, authority, plot_size):
     try:
         if city not in CITIES_DATA:
-            return jsonify({"error": "City not found"}), 404
-
-        # Convert frontend format back to JSON format
-        original_plot_size = get_reverse_plot_size_key(plot_size)
-        
-        residential_data = get_city_residential_data(city)
-        if original_plot_size not in residential_data:
-            return jsonify({"error": "Plot size not found"}), 404
-
-        auth_data = get_city_authority_data(city, original_plot_size, authority)
-        if not auth_data:
-            return jsonify({"error": f"No data for {authority} {original_plot_size} in {city}"}), 404
-
-        # Get dynamic options for this combination
-        allowed_features = get_allowed_features(city, original_plot_size, authority, auth_data)
-
-        city_data = CITIES_DATA.get(city, {})
-        return jsonify({
-            "city": city,
-            "authority": authority,
-            "plot_size": original_plot_size,
-            "frontend_key": plot_size,
-            "regulations": auth_data,
-            "dynamic_options": {
-                "bedrooms_range": get_bedrooms_range(original_plot_size, authority, city),
-                "washrooms_range": get_washrooms_range(original_plot_size, authority, city),
-                "public_zones": get_public_zones(original_plot_size, authority, city),
-                "service_zones": get_service_zones(original_plot_size, authority, city, allowed_features),
-                "kitchen_types": get_kitchen_types(original_plot_size, authority, city),
-                "allowed_features": allowed_features,
-                "parking": parse_parking_info(auth_data.get("parking", ""), original_plot_size)
-            },
-            "additional_rules": residential_data.get(original_plot_size, {}).get("additional_rules", {}),
-            "common_requirements": city_data.get("common_requirements", {}),
-            "setback_rules": city_data.get("setback_rules", {}).get(authority, {})
-        })
+            return jsonify({"error": f"City '{city}' not found"}), 404
+        city_data = CITIES_DATA[city]
+        authorities = city_data.get("authorities", {})
+        if authority not in authorities:
+            return jsonify({"error": f"Authority '{authority}' not found"}), 404
+        plot_sizes = authorities[authority].get("plot_sizes", {})
+        plot_data = None
+        for key, value in plot_sizes.items():
+            frontend_key = key.lower().replace(" ", "-").replace("(", "").replace(")", "")
+            if frontend_key == plot_size or key == plot_size:
+                plot_data = value
+                break
+        if not plot_data:
+            return jsonify({"error": f"Plot size '{plot_size}' not found"}), 404
+        return jsonify({"city": city, "authority": authority, "plot_size": plot_size, "bylaws": plot_data}), 200
     except Exception as e:
-        print(f"Error in get_city_bylaws_info: {e}")
+        print(f"❌ Error in get_bylaws: {str(e)}")
+        traceback.print_exc()
         return jsonify({"error": str(e)}), 500
 
 @app.route("/api/validate-selection", methods=["POST"])
 def validate_selection():
-    """Validate user selection against city-specific bylaws"""
     try:
-        data = request.json or {}
+        data = request.json
         city = data.get("city")
+        plot_size = data.get("plotSize")
         authority = data.get("authority")
-        plot_size_key = data.get("plot_size")
-
-        if not city or city not in CITIES_DATA:
-            return jsonify({"error": "Invalid or missing city"}), 400
-
-        # Convert to original format
-        original_plot_size = get_reverse_plot_size_key(plot_size_key)
-        auth_data = get_city_authority_data(city, original_plot_size, authority)
-
-        if not auth_data:
-            return jsonify({"error": "Invalid city/authority/plot size combination"}), 400
-
-        # Validate floors
-        max_floors = auth_data.get("max_floors", 2)
-        requested_floors = len(data.get("floors", []))
-        if requested_floors > max_floors:
-            return jsonify({
-                "error": f"Maximum {max_floors} floors allowed for {original_plot_size} in {authority}, {city}",
-                "max_allowed": max_floors
-            }), 400
-
-        # Validate bedrooms
-        bedroom_range = get_bedrooms_range(original_plot_size, authority, city)
-        requested_bedrooms = int(data.get("bedrooms", 0))
-        if requested_bedrooms < bedroom_range["min"] or requested_bedrooms > bedroom_range["max"]:
-            return jsonify({
-                "error": f"Bedrooms must be between {bedroom_range['min']} and {bedroom_range['max']} for {original_plot_size} in {city}",
-                "range": bedroom_range
-            }), 400
-
-        # Validate features
-        allowed_features = get_allowed_features(city, original_plot_size, authority, auth_data)
-        requested_features = data.get("special_features", [])
-
-        for feature in requested_features:
-            feature_key = feature.lower().replace(" ", "_").replace("-", "_")
-            if feature_key in allowed_features and not allowed_features[feature_key]:
-                return jsonify({
-                    "error": f"{feature} is not allowed for {original_plot_size} in {authority}, {city}",
-                    "allowed_features": allowed_features
-                }), 400
-
-        return jsonify({"valid": True, "message": "Selection is valid"})
-
+        if not city or not plot_size or not authority:
+            return jsonify({"error": "City, authority, and plot size are required"}), 400
+        if city not in CITIES_DATA:
+            return jsonify({"error": f"City '{city}' not found"}), 404
+        if authority not in CITIES_DATA[city].get("authorities", {}):
+            return jsonify({"error": f"Authority '{authority}' not found"}), 404
+        return jsonify({"message": "Validation successful", "valid": True}), 200
     except Exception as e:
-        print(f"Error in validate_selection: {e}")
+        print(f"❌ Error in validate_selection: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
 @app.route("/api/generate-plan", methods=["POST"])
 def generate_plan():
-    """Enhanced plan generation with city-specific bylaws validation"""
     try:
-        data = request.json or {}
+        data = request.json
         city = data.get("city")
+        plot_size = data.get("plotSize")
         authority = data.get("authority")
-        plot_size_key = data.get("plot_size")
-
-        # Validate first
-        validation_response = validate_selection()
-        if validation_response.status_code != 200:  # If validation failed
-            return validation_response
-
-        # Convert to original format
-        original_plot_size = get_reverse_plot_size_key(plot_size_key)
-        auth_data = get_city_authority_data(city, original_plot_size, authority)
-
-        # Generate plan (your existing logic here)
-        # This is where you'd integrate with your plan generation logic
-
-        return jsonify({
-            "message": "Residential plan generated successfully",
+        if not all([city, plot_size, authority]):
+            return jsonify({"error": "City, authority, and plot size are required"}), 400
+        response = {
+            "status": "success",
+            "message": "Floorplan generated successfully!",
             "city": city,
+            "plot_size": plot_size,
             "authority": authority,
-            "plot_size": original_plot_size,
-            "compliance": f"Verified against {city} {authority} bylaws",
-            "regulations_applied": auth_data,
-            "plan_type": "residential"
-        })
-
+            "configuration": {
+                "floors": data.get("floors", []),
+                "bedrooms": data.get("bedrooms"),
+                "washrooms": data.get("washrooms"),
+                "public_zones": data.get("publicZones", []),
+                "service_zones": data.get("serviceZones", []),
+                "kitchen_type": data.get("kitchenType"),
+                "special_features": data.get("specialFeatures", []),
+                "orientation": data.get("orientation"),
+                "facing": data.get("facing")
+            },
+            "generated_at": "2024-12-06",
+            "plan_id": f"PLAN_{city}_{authority}_{plot_size}_{len(data.get('floors', []))}_floors"
+        }
+        print(f"✅ Generated plan for {city} - {authority} - {plot_size}")
+        return jsonify(response), 200
     except Exception as e:
-        print(f"Error in generate_plan: {e}")
+        print(f"❌ Error in generate_plan: {str(e)}")
+        traceback.print_exc()
         return jsonify({"error": str(e)}), 500
 
-@app.route("/api/health", methods=["GET"])
-def health():
-    """Health check with city-specific information"""
-    total_combinations = 0
-    city_summary = {}
-    
-    for city, city_data in CITIES_DATA.items():
-        residential_data = city_data.get("residential", {})
-        authorities = available_authorities_for_city(city)
-        combinations = sum(len(residential_data.get(plot, {})) for plot in residential_data)
-        total_combinations += combinations
-        
-        city_summary[city] = {
-            "authorities": authorities,
-            "plot_sizes": list(residential_data.keys()),
-            "combinations": combinations
-        }
-    
-    return jsonify({
-        "status": "healthy",
-        "cities_loaded": available_cities(),
-        "city_summary": city_summary,
-        "total_combinations": total_combinations,
-        "focus": "residential_housing"
-    })
-
-@app.route("/api/debug", methods=["GET"])
-def debug():
-    """Debug endpoint with city-specific structure information"""
-    debug_info = {}
-    
-    for city in available_cities():
-        city_data = CITIES_DATA.get(city, {})
-        residential_data = city_data.get("residential", {})
-        
-        sample_plot = next(iter(residential_data), None) if residential_data else None
-        sample_data = None
-        if sample_plot:
-            sample_authority = next(iter(residential_data[sample_plot]), None)
-            if sample_authority:
-                sample_data = get_city_authority_data(city, sample_plot, sample_authority)
-        
-        debug_info[city] = {
-            "residential_plots_count": len(residential_data),
-            "sample_plot": sample_plot,
-            "sample_authority_data": sample_data,
-            "available_authorities": available_authorities_for_city(city),
-            "structure": {
-                "residential": list(residential_data.keys()),
-                "has_special_provisions": "special_provisions" in city_data,
-                "has_setback_rules": "setback_rules" in city_data,
-                "has_common_requirements": "common_requirements" in city_data
+# -------------------------
+# COST ESTIMATION & CONSTRUCTION ENDPOINTS
+# -------------------------
+@app.route("/api/cost-estimate", methods=["POST"])
+def save_cost_estimate():
+    try:
+        data = request.json
+        required_fields = ["city", "authority", "plotSize", "length", "width", "floors", "totalCost"]
+        missing = [f for f in required_fields if f not in data]
+        if missing:
+            return jsonify({"error": f"Missing required fields: {', '.join(missing)}"}), 400
+        estimate_id = f"EST_{int(time.time())}_{data['city']}_{data['plotSize']}"
+        estimate = {
+            "estimate_id": estimate_id,
+            "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
+            "project_details": {
+                "city": data["city"],
+                "authority": data["authority"],
+                "plot_size": data["plotSize"],
+                "dimensions": {
+                    "length": data["length"],
+                    "width": data["width"],
+                    "floors": data["floors"],
+                    "total_area": data.get("totalArea", 0)
+                }
+            },
+            "cost_breakdown": data.get("costBreakdown", {}),
+            "total_cost": data["totalCost"],
+            "parameters": {
+                "material_rate": data.get("materialRate"),
+                "labor_rate": data.get("laborRate"),
+                "electrical_cost": data.get("electricalCost"),
+                "plumbing_cost": data.get("plumbingCost"),
+                "finishing_cost": data.get("finishingCost"),
+                "contingency_percent": data.get("contingencyPercent")
             }
         }
-    
-    return jsonify({
-        "cities_debug": debug_info,
-        "total_cities": len(available_cities()),
-        "focus": "residential_housing_only"
-    })
+        print(f"✅ Cost estimate saved: {estimate_id}")
+        return jsonify({"status": "success", "message": "Cost estimate saved successfully", "estimate": estimate}), 200
+    except Exception as e:
+        print(f"❌ Error saving cost estimate: {str(e)}")
+        traceback.print_exc()
+        return jsonify({"error": str(e)}), 500
 
+@app.route("/api/cost-rates", methods=["GET"])
+def get_cost_rates():
+    try:
+        rates = {
+            "Lahore": {"material_rates":{"basic":2200,"standard":2600,"premium":3000,"luxury":3500},"labor_rate":500,"electrical_rate":150,"plumbing_rate":100,"finishing_rate":800,"recommended_contingency":5},
+            "Karachi": {"material_rates":{"basic":2300,"standard":2700,"premium":3100,"luxury":3600},"labor_rate":550,"electrical_rate":160,"plumbing_rate":110,"finishing_rate":850,"recommended_contingency":7},
+            "Islamabad": {"material_rates":{"basic":2400,"standard":2800,"premium":3200,"luxury":3700},"labor_rate":600,"electrical_rate":170,"plumbing_rate":120,"finishing_rate":900,"recommended_contingency":6}
+        }
+        print("✅ Cost rates retrieved")
+        return jsonify({"status":"success","rates":rates,"currency":"PKR","unit":"per_sqft","last_updated":"2024-12-06"}), 200
+    except Exception as e:
+        print(f"❌ Error getting cost rates: {str(e)}")
+        return jsonify({"error": str(e)}), 500
+
+@app.route("/api/plot-dimensions/<city>/<plot_size>", methods=["GET"])
+def get_plot_dimensions(city, plot_size):
+    try:
+        standard_dimensions = {
+            "3-marla": {"length":22.5,"width":30},
+            "5-marla": {"length":25,"width":50},
+            "7-marla": {"length":32.5,"width":56},
+            "10-marla": {"length":35,"width":65},
+            "1-kanal": {"length":45,"width":90},
+            "2-kanal": {"length":90,"width":90},
+            "500-sq-ft": {"length":20,"width":25},
+            "1000-sq-ft": {"length":25,"width":40},
+            "2000-sq-ft": {"length":40,"width":50},
+            "5000-sq-ft": {"length":50,"width":100},
+            "60-119-sq-yd": {"length":20,"width":27},
+            "120-199-sq-yd": {"length":25,"width":36},
+            "200-399-sq-yd": {"length":35,"width":45},
+            "400-999-sq-yd": {"length":50,"width":60}
+        }
+        dimensions = standard_dimensions.get(plot_size)
+        if not dimensions:
+            return jsonify({"error": f"Dimensions not found for plot size: {plot_size}", "available_sizes": list(standard_dimensions.keys())}), 404
+        print(f"✅ Dimensions retrieved for {city}/{plot_size}")
+        return jsonify({"status":"success","city":city,"plot_size":plot_size,"dimensions":dimensions,"area_sqft":dimensions["length"]*dimensions["width"]}),200
+    except Exception as e:
+        print(f"❌ Error getting plot dimensions: {str(e)}")
+        return jsonify({"error": str(e)}),500
+
+@app.route("/api/construction-calculator", methods=["POST"])
+def construction_calculator():
+    try:
+        data = request.json
+        length = float(data.get("length",0))
+        width = float(data.get("width",0))
+        floors = int(data.get("floors",0))
+        material_rate = float(data.get("materialRate",2600))
+        labor_rate = float(data.get("laborRate",500))
+        electrical_rate = float(data.get("electricalRate",150))
+        plumbing_rate = float(data.get("plumbingRate",100))
+        finishing_rate = float(data.get("finishingRate",800))
+        contingency_percent = float(data.get("contingencyPercent",5))
+        if length<=0 or width<=0 or floors<=0:
+            return jsonify({"error":"Length, width, and floors must be positive numbers"}),400
+        plot_area = length*width
+        total_area = plot_area*floors
+        structural_cost = total_area*(material_rate+labor_rate)
+        electrical_cost = total_area*electrical_rate
+        plumbing_cost = total_area*plumbing_rate
+        finishing_cost = total_area*finishing_rate
+        subtotal = structural_cost+electrical_cost+plumbing_cost+finishing_cost
+        contingency_cost = subtotal*(contingency_percent/100)
+        total_cost = subtotal + contingency_cost
+        cost_per_sqft = total_cost/total_area
+        breakdown = {
+            "areas":{"plot_area_sqft":plot_area,"construction_area_sqft":total_area,"floors":floors},
+            "costs":{
+                "structural":{"amount":structural_cost,"rate":material_rate+labor_rate,"description":"Material + Labor"},
+                "electrical":{"amount":electrical_cost,"rate":electrical_rate,"description":"Electrical work"},
+                "plumbing":{"amount":plumbing_cost,"rate":plumbing_rate,"description":"Plumbing & Sanitary"},
+                "finishing":{"amount":finishing_cost,"rate":finishing_rate,"description":"Finishing work"},
+                "contingency":{"amount":contingency_cost,"percent":contingency_percent,"description":f"Contingency ({contingency_percent}%)"}
+            },
+            "totals":{"subtotal":subtotal,"contingency":contingency_cost,"total_cost":total_cost,"cost_per_sqft":cost_per_sqft,"total_in_millions":total_cost/1000000}
+        }
+        print(f"✅ Construction cost calculated: PKR {total_cost:,.0f}")
+        return jsonify({"status":"success","breakdown":breakdown,"currency":"PKR"}),200
+    except Exception as e:
+        print(f"❌ Error in construction calculator: {str(e)}")
+        traceback.print_exc()
+        return jsonify({"error": str(e)}),500
+
+# -------------------------
+# Run Flask
+# -------------------------
 if __name__ == "__main__":
-    print("🏠 City-based Residential Housing Regulations Backend Starting...")
-    print(f"📍 Loaded cities: {', '.join(available_cities())}")
-    
-    for city in available_cities():
-        authorities = available_authorities_for_city(city)
-        residential_data = get_city_residential_data(city)
-        print(f"   {city}: {len(authorities)} authorities, {len(residential_data)} plot sizes")
-    
-    print("🎯 Focus: Residential Housing Only")
-    app.run(debug=True, port=5000)
+    print("🚀 Starting Flask Backend on http://127.0.0.1:5000")
+    app.run(debug=True, host="127.0.0.1", port=5000)
