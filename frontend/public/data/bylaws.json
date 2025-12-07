@@ -1,0 +1,257 @@
+{
+  "lahore": {
+    "3-marla": {
+      "floors": {
+        "ground": { "bedrooms_max": 1, "bathrooms_max": 2, "kitchen": true, "lounge": true, "garage": false },
+        "first": { "bedrooms_max": 2, "bathrooms_max": 2, "kitchen": true, "lounge": true, "balcony": true },
+        "second": {
+          "bedrooms_max": 2,
+          "bathrooms_max": 2,
+          "kitchen": { "allowed": true, "optional": true },
+          "lounge": true,
+          "balcony": true
+        }
+      }
+    },
+    "5-marla": {
+      "floors": {
+        "ground": { "bedrooms_max": 1, "bathrooms_max": 2, "kitchen": true, "lounge": true, "garage": true },
+        "first": { "bedrooms_max": 2, "bathrooms_max": 2, "kitchen": true, "lounge": true, "balcony": true },
+        "second": {
+          "bedrooms_max": 2,
+          "bathrooms_max": 1,
+          "kitchen": { "allowed": true, "optional": true },
+          "lounge": true,
+          "balcony": true
+        }
+      }
+    },
+    "7-marla": {
+      "floors": {
+        "ground": { "bedrooms_max": 1, "bathrooms_max": 2, "kitchen": true, "lounge": true, "garage": true },
+        "first": { "bedrooms_max": 2, "bathrooms_max": 2, "kitchen": true, "lounge": true, "balcony": true },
+        "second": {
+          "bedrooms_max": 2,
+          "bathrooms_max": 2,
+          "lounge": true,
+          "kitchen": { "allowed": true, "optional": true },
+          "balcony": true
+        }
+      }
+    },
+    "10-marla": {
+      "floors": {
+        "ground": { "bedrooms_max": 2, "bathrooms_max": 3, "kitchen": true, "lounge": true, "garage": true },
+        "first": { "bedrooms_max": 2, "bathrooms_max": 2, "kitchen": true, "lounge": true, "balcony": true },
+        "second": {
+          "bedrooms_max": 2,
+          "bathrooms_max": 2,
+          "kitchen": { "allowed": true, "optional": true },
+          "lounge": true,
+          "balcony": true
+        }
+      }
+    },
+    "1-kanal": {
+      "floors": {
+        "ground": { "bedrooms_max": 3, "bathrooms_max": 3, "kitchen": true, "lounge": true, "garage": true },
+        "first": { "bedrooms_max": 4, "bathrooms_max": 4, "kitchen": true, "lounge": true, "balcony": true },
+        "second": {
+          "bedrooms_max": 3,
+          "bathrooms_max": 3,
+          "kitchen": { "allowed": true, "optional": true },
+          "lounge": true,
+          "balcony": true
+        }
+      }
+    },
+    "2-kanal": {
+      "floors": {
+        "ground": { "bedrooms_max": 4, "bathrooms_max": 5, "kitchen": true, "lounge": true, "garage": true },
+        "first": { "bedrooms_max": 4, "bathrooms_max": 4, "kitchen": true, "lounge": true, "balcony": true },
+        "second": {
+          "bedrooms_max": 4,
+          "bathrooms_max": 4,
+          "kitchen": { "allowed": true, "optional": true },
+          "lounge": true,
+          "balcony": true
+        }
+      }
+    }
+  },
+  "islamabad": {
+    "3-marla": {
+      "floors": {
+        "ground": { "bedrooms_max": 1, "bathrooms_max": 2, "kitchen": true, "lounge": true, "garage": false },
+        "first": { "bedrooms_max": 2, "bathrooms_max": 2, "kitchen": true, "lounge": true, "balcony": true },
+        "second": {
+          "bedrooms_max": 2,
+          "bathrooms_max": 2,
+          "kitchen": { "allowed": true, "optional": true },
+          "lounge": true,
+          "balcony": true
+        }
+      }
+    },
+    "5-marla": {
+      "floors": {
+        "ground": { "bedrooms_max": 2, "bathrooms_max": 2, "kitchen": true, "lounge": true, "garage": true },
+        "first": { "bedrooms_max": 2, "bathrooms_max": 2, "kitchen": true, "lounge": true, "balcony": true },
+        "second": {
+          "bedrooms_max": 1,
+          "bathrooms_max": 1,
+          "kitchen": { "allowed": true, "optional": true },
+          "lounge": true,
+          "balcony": true
+        }
+      }
+    },
+    "7-marla": {
+      "floors": {
+        "ground": { "bedrooms_max": 2, "bathrooms_max": 3, "kitchen": true, "lounge": true, "garage": true },
+        "first": { "bedrooms_max": 3, "bathrooms_max": 2, "kitchen": true, "lounge": true, "balcony": true },
+        "second": {
+          "bedrooms_max": 2,
+          "bathrooms_max": 1,
+          "lounge": true,
+          "kitchen": { "allowed": true, "optional": true },
+          "balcony": true
+        }
+      }
+    },
+    "10-marla": {
+      "floors": {
+        "ground": { "bedrooms_max": 3, "bathrooms_max": 3, "kitchen": true, "lounge": true, "garage": true },
+        "first": { "bedrooms_max": 3, "bathrooms_max": 3, "kitchen": true, "lounge": true, "balcony": true },
+        "second": {
+          "bedrooms_max": 2,
+          "bathrooms_max": 2,
+          "kitchen": { "allowed": true, "optional": true },
+          "lounge": true,
+          "balcony": true
+        }
+      }
+    },
+    "1-kanal": {
+      "floors": {
+        "ground": { "bedrooms_max": 3, "bathrooms_max": 3, "kitchen": true, "lounge": true, "garage": true },
+        "first": { "bedrooms_max": 4, "bathrooms_max": 4, "kitchen": true, "lounge": true, "balcony": true },
+        "second": {
+          "bedrooms_max": 3,
+          "bathrooms_max": 3,
+          "kitchen": { "allowed": true, "optional": true },
+          "lounge": true,
+          "balcony": true
+        }
+      }
+    },
+    "2-kanal": {
+      "floors": {
+        "ground": { "bedrooms_max": 4, "bathrooms_max": 4, "kitchen": true, "lounge": true, "garage": true },
+        "first": { "bedrooms_max": 4, "bathrooms_max": 4, "kitchen": true, "lounge": true, "balcony": true },
+        "second": {
+          "bedrooms_max": 4,
+          "bathrooms_max": 4,
+          "kitchen": { "allowed": true, "optional": true },
+          "lounge": true,
+          "balcony": true
+        }
+      }
+    }
+  },
+  "karachi": {
+    "60-119-sqyd": {
+      "floors": {
+        "ground": { "bedrooms_max": 1, "bathrooms_max": 2, "kitchen": true, "lounge": true, "garage": false },
+        "first": { "bedrooms_max": 2, "bathrooms_max": 2, "kitchen": true, "lounge": true, "balcony": true },
+        "second": {
+          "bedrooms_max": 1,
+          "bathrooms_max": 1,
+          "kitchen": { "allowed": true, "optional": true },
+          "lounge": true,
+          "balcony": true
+        }
+      }
+    },
+    "120-199-sqyd": {
+      "floors": {
+        "ground": { "bedrooms_max": 2, "bathrooms_max": 3, "kitchen": true, "lounge": true, "garage": true },
+        "first": { "bedrooms_max": 2, "bathrooms_max": 2, "kitchen": true, "lounge": true, "balcony": true },
+        "second": {
+          "bedrooms_max": 2,
+          "bathrooms_max": 2,
+          "kitchen": { "allowed": true, "optional": true },
+          "lounge": true,
+          "balcony": true
+        }
+      }
+    },
+    "200-399-sqyd": {
+      "floors": {
+        "ground": { "bedrooms_max": 2, "bathrooms_max": 3, "kitchen": true, "lounge": true, "garage": true },
+        "first": { "bedrooms_max": 3, "bathrooms_max": 2, "kitchen": true, "lounge": true, "balcony": true },
+        "second": {
+          "bedrooms_max": 2,
+          "bathrooms_max": 2,
+          "kitchen": { "allowed": true, "optional": true },
+          "lounge": true,
+          "balcony": true
+        }
+      }
+    },
+    "400-999-sqyd": {
+      "floors": {
+        "ground": { "bedrooms_max": 4, "bathrooms_max": 4, "kitchen": true, "lounge": true, "garage": true },
+        "first": { "bedrooms_max": 4, "bathrooms_max": 4, "kitchen": true, "lounge": true, "balcony": true },
+        "second": {
+          "bedrooms_max": 4,
+          "bathrooms_max": 4,
+          "kitchen": { "allowed": true, "optional": true },
+          "lounge": true,
+          "balcony": true
+        }
+      }
+    }
+  },
+  "dimensions": {
+    "doors": {
+      "main_door": { "width_ft": 4, "height_ft": 7.5 },
+      "room_door": { "width_ft": 3, "height_ft": 7 },
+      "bathroom_door": { "width_ft": 2.5, "height_ft": 7 },
+      "main_gate": { "width_ft": 10, "height_ft": 7 },
+      "wicket_gate": { "width_ft": 3.5, "height_ft": 7 }
+    },
+    "windows": {
+      "bedroom": { "width_ft": 4, "height_ft": 5 },
+      "lounge": { "width_ft": 6, "height_ft": 5 },
+      "kitchen": { "width_ft": 4, "height_ft": 4 },
+      "bathroom": { "width_ft": 2, "height_ft": 2 }
+    },
+    "fixtures": {
+      "stair_width_ft": 3.5,
+      "balcony_railing_height_ft": 3,
+      "counter_height_ft": 3,
+      "wardrobe_depth_ft": 2
+    }
+  },
+  "room_sizes": {
+    "bedroom_small": { "min": [10, 10], "comfortable": [10, 12] },
+    "bedroom_master": { "min": [12, 14], "comfortable": [14, 16] },
+    "bath_attached": { "min": [5, 7], "comfortable": [6, 8] },
+    "bath_common": { "min": [5, 6], "comfortable": [6, 7] },
+    "kitchen_closed": { "min": [7, 10], "comfortable": [8, 12] },
+    "kitchen_open": { "min": [8, 8], "comfortable": [8, 10] },
+    "lounge_tv": { "min": [12, 14], "comfortable": [14, 16] },
+    "drawing_room": { "min": [12, 14], "comfortable": [14, 18] },
+    "garage_single": { "min": [10, 15], "comfortable": [12, 18] },
+    "garage_double": { "min": [16, 18], "comfortable": [18, 20] },
+    "store": { "min": [5, 5], "comfortable": [6, 8] },
+    "balcony": { "min_width": 3, "max_width": 5 }
+  },
+  "rooftop": {
+    "allowed": true,
+    "allowedStructures": ["stair mumty", "water tank", "solar panels"],
+    "usage": ["access", "laundry", "storage", "solar power installation"],
+    "maxBuiltUpArea_pct": 15
+  }
+}

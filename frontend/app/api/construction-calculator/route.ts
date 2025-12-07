@@ -1,0 +1,40 @@
+// ============================================
+// FILE: app/api/construction-calculator/route.ts
+// ============================================
+import { NextResponse } from "next/server"
+
+const BACKEND_URL = process.env.BACKEND_URL || "http://127.0.0.1:5000"
+
+export async function POST(request: Request) {
+  try {
+    const data = await request.json()
+
+    console.log("🔄 Calculating construction cost via Flask backend")
+
+    const response = await fetch(`${BACKEND_URL}/api/construction-calculator`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+      cache: 'no-store',
+    })
+
+    if (!response.ok) {
+      const errorData = await response.json()
+      throw new Error(errorData.error || `Backend responded with status: ${response.status}`)
+    }
+
+    const result = await response.json()
+    console.log("✅ Successfully calculated construction cost")
+    
+    return NextResponse.json(result)
+  } catch (error: any) {
+    console.error("❌ Error calculating construction cost:", error)
+    
+    return NextResponse.json(
+      { error: "Failed to calculate construction cost", details: error.message }, 
+      { status: 500 }
+    )
+  }
+}

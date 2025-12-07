@@ -17,7 +17,6 @@ import { AnimatedAuthBackground } from "@/components/animated-auth-background"
 import { EmailVerificationDialog } from "@/components/email-verification-dialog"
 import Image from "next/image"
 
-// Enhanced password validation function
 const validatePassword = (password: string) => {
   const minLength = password.length >= 8
   const hasUppercase = /[A-Z]/.test(password)
@@ -68,7 +67,6 @@ export default function SignUpPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
-    // Validation checks
     if (formData.password !== formData.confirmPassword) {
       setMessage("Passwords don't match!")
       setMessageType("error")
@@ -82,7 +80,6 @@ export default function SignUpPage() {
       return
     }
 
-    // Trim and validate inputs
     const email = formData.email.trim().toLowerCase()
     const firstName = formData.firstName.trim()
     const lastName = formData.lastName.trim()
@@ -104,7 +101,6 @@ export default function SignUpPage() {
       if (error) {
         console.error("🔥 Signup failed:", error)
 
-        // Handle specific error cases with user-friendly messages
         if (error.message.includes("already registered") || error.message.includes("already been registered")) {
           setMessage("This email is already registered. Please use a different email or sign in instead.")
         } else if (error.message.includes("Database error")) {
@@ -117,9 +113,7 @@ export default function SignUpPage() {
         setMessageType("error")
       } else {
         console.log("🎉 Signup successful!")
-        // Show verification dialog
         setShowVerificationDialog(true)
-        // Clear form
         setFormData({
           firstName: "",
           lastName: "",
@@ -170,52 +164,46 @@ export default function SignUpPage() {
 
   return (
     <>
-      <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black text-white p-4 lg:p-8">
+      <div className="relative min-h-screen flex items-center justify-center bg-black text-white p-4 lg:p-8">
         <AnimatedAuthBackground />
+
         <motion.div
-          initial={{ opacity: 0, y: 50, scale: 0.9 }}
+          initial={{ opacity: 0, y: 30, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           className="relative z-10 flex flex-col lg:flex-row w-full max-w-6xl mx-auto rounded-2xl overflow-hidden shadow-2xl backdrop-blur-sm bg-gray-950/80"
         >
           {/* Left Section: Marketing */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
             className="lg:w-1/2 bg-gradient-to-br from-purple-900/50 to-blue-900/50 p-8 flex flex-col justify-center items-center text-center lg:text-left lg:items-start min-h-[300px] lg:min-h-[700px] relative"
           >
             <div className="relative z-10">
               <motion.div
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.5, type: "spring" }}
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.3, type: "spring", stiffness: 100 }}
                 className="mb-8"
               >
                 <div className="flex flex-col items-center lg:items-start">
-                  <Image
-                    src="/images/intelliplan-logo.jpg"
-                    alt="IntelliPlan AI Logo"
-                    width={200}
-                    height={80}
-                    className="mb-4"
-                  />
-                  <div className="text-2xl font-semibold text-white">IntelliPlan AI</div>
+                  <Image src="/images/logo.png" alt="IntelliPlan AI" width={350} height={250} className="mb-4" />
                 </div>
               </motion.div>
               <motion.h1
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.7 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
                 className="text-4xl md:text-5xl font-bold leading-tight text-white max-w-md mb-6"
               >
                 Create Your Future <br />
                 <span className="text-yellow-400">Living Spaces</span>
               </motion.h1>
               <motion.p
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.9 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
                 className="text-lg text-gray-300 max-w-md"
               >
                 Join thousands of architects and designers using AI to revolutionize floor plan creation.
@@ -225,17 +213,17 @@ export default function SignUpPage() {
 
           {/* Right Section: Sign Up Form */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             className="lg:w-1/2"
           >
             <Card className="bg-gray-900/90 text-white border-none rounded-none p-8 shadow-lg backdrop-blur-sm h-full">
               <CardHeader className="text-center lg:text-left">
                 <motion.div
-                  initial={{ opacity: 0, y: -20 }}
+                  initial={{ opacity: 0, y: -15 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.6 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
                 >
                   <CardTitle className="text-3xl font-bold text-white mb-2">Create Account</CardTitle>
                   <CardDescription className="text-gray-400 text-lg">
@@ -268,15 +256,15 @@ export default function SignUpPage() {
                 <motion.form
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ duration: 0.6, delay: 0.8 }}
+                  transition={{ duration: 0.5, delay: 0.5 }}
                   onSubmit={handleSubmit}
                   className="space-y-4"
                 >
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <motion.div
-                      initial={{ opacity: 0, x: -20 }}
+                      initial={{ opacity: 0, x: -15 }}
                       animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.5, delay: 1 }}
+                      transition={{ duration: 0.4, delay: 0.6 }}
                       className="space-y-2"
                     >
                       <Label htmlFor="firstName" className="text-gray-300">
@@ -299,9 +287,9 @@ export default function SignUpPage() {
                     </motion.div>
 
                     <motion.div
-                      initial={{ opacity: 0, x: 20 }}
+                      initial={{ opacity: 0, x: 15 }}
                       animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.5, delay: 1.1 }}
+                      transition={{ duration: 0.4, delay: 0.65 }}
                       className="space-y-2"
                     >
                       <Label htmlFor="lastName" className="text-gray-300">
@@ -325,9 +313,9 @@ export default function SignUpPage() {
                   </div>
 
                   <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 1.2 }}
+                    transition={{ duration: 0.4, delay: 0.7 }}
                     className="space-y-2"
                   >
                     <Label htmlFor="email" className="text-gray-300">
@@ -350,9 +338,9 @@ export default function SignUpPage() {
                   </motion.div>
 
                   <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 1.25 }}
+                    transition={{ duration: 0.4, delay: 0.75 }}
                     className="space-y-2"
                   >
                     <Label htmlFor="gender" className="text-gray-300">
@@ -397,9 +385,9 @@ export default function SignUpPage() {
                   </motion.div>
 
                   <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 1.3 }}
+                    transition={{ duration: 0.4, delay: 0.8 }}
                     className="space-y-2"
                   >
                     <Label htmlFor="password" className="text-gray-300">
@@ -428,7 +416,6 @@ export default function SignUpPage() {
                         {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                       </Button>
                     </div>
-                    {/* Password Requirements */}
                     {formData.password && (
                       <div className="text-xs space-y-1 mt-2">
                         <div className="text-gray-400">Password must contain:</div>
@@ -467,9 +454,9 @@ export default function SignUpPage() {
                   </motion.div>
 
                   <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 1.4 }}
+                    transition={{ duration: 0.4, delay: 0.85 }}
                     className="space-y-2"
                   >
                     <Label htmlFor="confirmPassword" className="text-gray-300">
@@ -501,9 +488,9 @@ export default function SignUpPage() {
                   </motion.div>
 
                   <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 1.5 }}
+                    transition={{ duration: 0.4, delay: 0.9 }}
                     className="flex items-center space-x-2"
                   >
                     <input
@@ -526,9 +513,9 @@ export default function SignUpPage() {
                   </motion.div>
 
                   <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 1.6 }}
+                    transition={{ duration: 0.4, delay: 0.95 }}
                   >
                     <Button
                       type="submit"
@@ -550,7 +537,7 @@ export default function SignUpPage() {
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 1.7 }}
+                  transition={{ duration: 0.4, delay: 1 }}
                   className="relative"
                 >
                   <div className="absolute inset-0 flex items-center">
@@ -562,9 +549,9 @@ export default function SignUpPage() {
                 </motion.div>
 
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 1.8 }}
+                  transition={{ duration: 0.4, delay: 1.05 }}
                 >
                   <Button
                     type="button"
@@ -602,7 +589,7 @@ export default function SignUpPage() {
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 1.9 }}
+                  transition={{ duration: 0.4, delay: 1.1 }}
                   className="text-center text-sm text-gray-400"
                 >
                   Already have an account?{" "}
@@ -616,7 +603,6 @@ export default function SignUpPage() {
         </motion.div>
       </div>
 
-      {/* Email Verification Dialog */}
       <EmailVerificationDialog
         isOpen={showVerificationDialog}
         onClose={handleVerificationDialogClose}

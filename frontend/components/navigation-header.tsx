@@ -1,6 +1,4 @@
 "use client"
-
-import { useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
@@ -14,22 +12,15 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { useAuth } from "@/context/auth-context"
-import { User, Settings, LogOut, LayoutGrid, Heart, Bell, Moon, Sun } from "lucide-react"
+import { User, Settings, LogOut, LayoutGrid, Heart, Bell } from "lucide-react"
 
 export function NavigationHeader() {
   const { user, isSignedIn, signOut } = useAuth()
   const router = useRouter()
-  const [theme, setTheme] = useState<"light" | "dark">("dark")
 
   const handleSignOut = async () => {
     await signOut()
-    router.push("/") 
-  }
-
-  const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light"
-    setTheme(newTheme)
-    document.documentElement.classList.toggle("dark", newTheme === "dark")
+    router.push("/")
   }
 
   if (!isSignedIn || !user) {
@@ -39,16 +30,6 @@ export function NavigationHeader() {
   return (
     <header className="fixed top-0 right-0 z-50 p-4">
       <div className="flex items-center gap-4">
-        Theme Toggle
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={toggleTheme}
-          className="bg-background/80 backdrop-blur-sm hover:bg-background/90"
-        >
-          {theme === "light" ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
-        </Button>
-
         {/* User Dropdown */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -58,11 +39,7 @@ export function NavigationHeader() {
             >
               <Avatar className="h-10 w-10">
                 <AvatarImage
-                  src={
-                    user.gender?.toLowerCase() === "female"
-                      ? "/images/female.png" // ✅ local image
-                      : "/images/male.png"   // ✅ local image
-                  }
+                  src={user.gender?.toLowerCase() === "female" ? "/images/female.png" : "/images/male.png"}
                   alt={`${user.firstName} ${user.lastName}`}
                 />
                 <AvatarFallback>

@@ -17,26 +17,15 @@ import { Features3DBackground } from "@/components/features-3d-background"
 import { FeatureCard } from "@/components/feature-card"
 
 export default function FeaturesPage() {
-  // Framer Motion Variants for sections (fade in from bottom)
+  // Framer Motion Variants
   const sectionVariants: Variants = {
     hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] },
-    },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] } },
   }
 
-  // Variants for staggered feature cards
   const cardContainerVariants: Variants = {
     hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3,
-      },
-    },
+    visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.3 } },
   }
 
   const cardItemVariants: Variants = {
@@ -55,33 +44,34 @@ export default function FeaturesPage() {
   const topFeatures = [
     {
       icon: CheckCircle2,
-      title: "Unlimited Optionality",
+      title: "AI-Driven Floor Plan Generation",
       description:
-        "Put generative architecture at the center of a collaborative workspace where architects and designers can generate designs through early design concepts faster.",
+        "Instantly convert user requirements into optimized 2D residential layouts with intelligent AI algorithms designed for spatial efficiency.",
     },
     {
       icon: CheckCircle2,
-      title: "Real-Time Collaboration",
-      description: "Collaborate with all your key stakeholders under one platform.",
+      title: "Smart Requirement Assistant",
+      description: "Interact with the AI chatbot to specify preferences, constraints, and customizations for your project.",
     },
     {
       icon: CheckCircle2,
-      title: "Streamline Planning",
+      title: "Interactive Layout Preview",
       description:
-        "Make it allows you to go directly from conversational prompts and customer requirements to a fully interactive 3D model quickly.",
+        "Preview generated layouts immediately, make modifications, and iterate designs before finalizing plans.",
     },
     {
       icon: CheckCircle2,
-      title: "Visualize Concepts",
-      description: "Quickly visualize all your early-stage concepts in a fully interactive environment.",
+      title: "Efficient Cost Estimation",
+      description:
+        "Automatically generate material and labor cost estimates based on the generated floor plan, tailored to your city rates.",
     },
   ]
 
   const coreFeatures = [
-    { number: "01", title: "Plan Generator (BETA)" },
-    { number: "02", title: "Virtual Assistant" },
-    { number: "03", title: "Virtual Designer" },
-    { number: "04", title: "Regulatory Assistant" },
+    { number: "01", title: "2D Plan Generator" },
+    { number: "02", title: "Virtual Assistant for Preferences" },
+    { number: "03", title: "Style Customization & Editing" },
+    { number: "04", title: "Share & Export Options" },
   ]
 
   return (
@@ -99,18 +89,14 @@ export default function FeaturesPage() {
           >
             <div className="space-y-8 text-center lg:text-left">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-                Better residential planning for better business
+                Transform Ideas into Optimized 2D Floor Plans
               </h1>
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                 <Link href="/generate">
                   <Button
                     size="lg"
                     className="w-full sm:w-auto py-3 text-lg font-semibold rounded-md"
-                    style={{
-                      background: "linear-gradient(to right, #eab308, #d97706)",
-                      color: "black",
-                      border: "none",
-                    }}
+                    style={{ background: "linear-gradient(to right, #eab308, #d97706)", color: "black", border: "none" }}
                   >
                     GET STARTED
                     <ArrowRight className="ml-2 h-5 w-5" />
@@ -124,8 +110,8 @@ export default function FeaturesPage() {
               </div>
               <div className="w-full flex justify-center lg:justify-start">
                 <Image
-                  src="/placeholder.svg?height=200&width=200"
-                  alt="Smiling person"
+                  src="/images/Muhira_malik__A_clean,_professional_2D_floor_plan_showing_Bedroom,_Living_Room_c7b74ab8-e6de-49e2-88a7-6848ab9ef39e.jpg"
+                  alt="User-friendly interface"
                   width={200}
                   height={200}
                   className="rounded-full object-cover"
@@ -151,64 +137,78 @@ export default function FeaturesPage() {
             </motion.div>
           </motion.section>
 
-          {/* End-to-end planning, simplified section */}
-          <motion.section
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={sectionVariants}
-            className="mb-20"
+{/* End-to-End Planning Section */}
+<motion.section
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.3 }}
+  variants={sectionVariants}
+  className="mb-20"
+>
+  <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-center mb-12">
+    Seamless Planning & Design Workflow
+  </h2>
+  <div className="grid lg:grid-cols-2 gap-12 items-center">
+    <div className="relative w-full h-[500px] lg:h-[600px] bg-gray-900 rounded-lg shadow-xl overflow-hidden group">
+      {/* Video Player */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="w-full h-full object-cover"
+        poster="/images/Muhira_malik__A_clean,_professional_2D_floor_plan_showing_Bedroom,_Living_Room_1c2bf38b-d95e-4134-8676-c9a98b7935ce.jpg"
+      >
+        <source 
+          src="/images/Untitled video - Made with Clipchamp (1).mp4" 
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+      
+      {/* Video Overlay with Play/Pause Button */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="absolute inset-0 flex items-center justify-center">
+          <button
+            className="bg-black/60 hover:bg-black/80 rounded-full p-4 transition-all duration-300 transform hover:scale-110"
           >
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-center mb-12">
-              End-to-end planning, simplified
-            </h2>
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="relative w-full aspect-video bg-gray-900 rounded-lg shadow-xl flex items-center justify-center p-4">
-                <Image
-                  src="/placeholder.svg?height=400&width=600"
-                  alt="Laptop with floor plans"
-                  width={600}
-                  height={400}
-                  className="object-contain"
-                />
-              </div>
-              <div className="space-y-8 text-center lg:text-left">
-                <p className="text-xl text-gray-300 leading-relaxed">
-                  Seamlessly design, explore, and comply—empowering your creative vision with intelligent automation
-                </p>
-                <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                  <Link href="/generate">
-                    <Button
-                      size="lg"
-                      className="w-full sm:w-auto py-3 text-lg font-semibold rounded-md"
-                      style={{
-                        background: "linear-gradient(to right, #eab308, #d97706)",
-                        color: "black",
-                        border: "none",
-                      }}
-                    >
-                      GET STARTED
-                      <ArrowRight className="ml-2 h-5 w-5" />
-                    </Button>
-                  </Link>
-                  <div className="flex space-x-4 text-gray-400">
-                    {platformIcons.map((platform, index) => (
-                      <platform.icon key={index} className="h-6 w-6" />
-                    ))}
-                  </div>
-                </div>
-                <ul className="space-y-3 text-lg text-gray-300">
-                  {coreFeatures.map((feature, index) => (
-                    <li key={index} className="flex items-center justify-center lg:justify-start space-x-3">
-                      <span className="font-bold text-yellow-400">{feature.number}</span>
-                      <span>{feature.title}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </motion.section>
-
+            <div className="w-4 h-4 bg-white rounded-sm" />
+          </button>
+        </div>
+      </div>
+    </div>
+    <div className="space-y-8 text-center lg:text-left">
+      <p className="text-xl text-gray-300 leading-relaxed">
+        From user input to AI-generated 2D layouts, seamlessly iterate on designs and finalize plans with intelligent guidance.
+      </p>
+      <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+        <Link href="/generate">
+          <Button
+            size="lg"
+            className="w-full sm:w-auto py-3 text-lg font-semibold rounded-md"
+            style={{ background: "linear-gradient(to right, #eab308, #d97706)", color: "black", border: "none" }}
+          >
+            START DESIGNING
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </Button>
+        </Link>
+        <div className="flex space-x-4 text-gray-400">
+          {platformIcons.map((platform, index) => (
+            <platform.icon key={index} className="h-6 w-6" />
+          ))}
+        </div>
+      </div>
+      <ul className="space-y-3 text-lg text-gray-300">
+        {coreFeatures.map((feature, index) => (
+          <li key={index} className="flex items-center justify-center lg:justify-start space-x-3">
+            <span className="font-bold text-yellow-400">{feature.number}</span>
+            <span>{feature.title}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</motion.section>
           {/* Residential Plan Generator Section */}
           <motion.section
             initial="hidden"
@@ -219,30 +219,30 @@ export default function FeaturesPage() {
           >
             <div className="relative w-full aspect-video bg-gray-900 rounded-lg shadow-xl flex items-center justify-center p-4">
               <Image
-                src="/placeholder.svg?height=400&width=600"
-                alt="Available Designs"
-                width={600}
-                height={400}
+                src="/images/Muhira_malik__A_clean,_professional_2D_floor_plan_showing_Bedroom,_Living_Room_1c2bf38b-d95e-4134-8676-c9a98b7935ce.jpg"
+                alt="Floor Plan Generator Interface"
+                width={650}
+                height={550}
                 className="object-contain"
               />
             </div>
             <div className="space-y-6 text-center lg:text-left">
-              <h2 className="text-4xl md:text-5xl font-bold leading-tight">Residential Plan Generator (BETA)</h2>
+              <h2 className="text-4xl md:text-5xl font-bold leading-tight">2D Floor Plan Generator (BETA)</h2>
               <p className="text-lg text-gray-300">
-                Create customized residential architectural plans instantly based on programming needs.
+                Generate fully customized 2D residential layouts by specifying room dimensions, adjacencies, and constraints.
               </p>
               <ul className="space-y-3 text-lg text-gray-300">
                 <li className="flex items-center justify-center lg:justify-start space-x-2">
                   <CheckCircle2 className="h-5 w-5 text-yellow-400 flex-shrink-0" />
-                  <span>Specify room dimension & adjacency constraints</span>
+                  <span>Define room sizes and adjacency rules</span>
                 </li>
                 <li className="flex items-center justify-center lg:justify-start space-x-2">
                   <CheckCircle2 className="h-5 w-5 text-yellow-400 flex-shrink-0" />
-                  <span>Generate design options instantly</span>
+                  <span>Generate multiple layout options instantly</span>
                 </li>
                 <li className="flex items-center justify-center lg:justify-start space-x-2">
                   <CheckCircle2 className="h-5 w-5 text-yellow-400 flex-shrink-0" />
-                  <span>Export designs to .DXF</span>
+                  <span>Export finalized layouts in DXF or PDF</span>
                 </li>
               </ul>
             </div>
@@ -259,14 +259,13 @@ export default function FeaturesPage() {
             <div className="space-y-6 text-center lg:text-left order-2 lg:order-1">
               <h2 className="text-4xl md:text-5xl font-bold leading-tight">Virtual Assistant</h2>
               <p className="text-lg text-gray-300">
-                Get expert guidance at your fingertips, ask questions about materials, costs, and regulations, and
-                informed responses to make confident design decisions
+                Chat with an AI assistant to specify your preferences, request modifications, and guide the 2D layout generation process.
               </p>
             </div>
             <div className="relative w-full aspect-video bg-gray-900 rounded-lg shadow-xl flex items-center justify-center p-4 order-1 lg:order-2">
               <Image
-                src="/placeholder.svg?height=400&width=600"
-                alt="Virtual Assistant UI"
+                src="/images/Hailuo_Image_interact these two images in t_454062471047716872.jpg"
+                alt="AI Chatbot Interface"
                 width={600}
                 height={400}
                 className="object-contain"
@@ -274,7 +273,7 @@ export default function FeaturesPage() {
             </div>
           </motion.section>
 
-          {/* Virtual Designer Section */}
+          {/* Cost Estimation Section */}
           <motion.section
             initial="hidden"
             whileInView="visible"
@@ -282,35 +281,49 @@ export default function FeaturesPage() {
             variants={sectionVariants}
             className="grid lg:grid-cols-2 gap-12 items-center mb-20"
           >
+            {/* Image */}
             <div className="relative w-full aspect-video bg-gray-900 rounded-lg shadow-xl flex items-center justify-center p-4">
               <Image
-                src="/placeholder.svg?height=400&width=600"
-                alt="Virtual Designer UI"
+                src="images/Maheen_Shabirr____A_clean,_professional_SaaS-style_infographic_visualizing_an_AI_6d29ff2d-375e-495f-9fb7-bd9d2aa281b3.jpg"
+                alt="Cost Estimation Interface"
                 width={600}
                 height={400}
                 className="object-contain"
               />
             </div>
+
+            {/* Content */}
             <div className="space-y-6 text-center lg:text-left">
-              <h2 className="text-4xl md:text-5xl font-bold leading-tight">Virtual Designer</h2>
+              <h2 className="text-4xl md:text-5xl font-bold leading-tight">Efficient Cost Estimation</h2>
               <p className="text-lg text-gray-300">
-                Transform styles with a click. Experiment with diverse interior and exterior aesthetics, visualize style
-                transformations, and personalize designs to delight your clients
+                Automatically calculate material, labor, electrical, plumbing, and finishing costs based on your generated floor plan, tailored to your city rates.
               </p>
               <ul className="space-y-3 text-lg text-gray-300">
                 <li className="flex items-center justify-center lg:justify-start space-x-2">
                   <CheckCircle2 className="h-5 w-5 text-yellow-400 flex-shrink-0" />
-                  <span>Transition between design styles effortlessly</span>
+                  <span>Enter plot dimensions and number of floors</span>
                 </li>
                 <li className="flex items-center justify-center lg:justify-start space-x-2">
                   <CheckCircle2 className="h-5 w-5 text-yellow-400 flex-shrink-0" />
-                  <span>Customize elements to create your ideal aesthetic</span>
+                  <span>Get detailed material & labor breakdown instantly</span>
                 </li>
                 <li className="flex items-center justify-center lg:justify-start space-x-2">
                   <CheckCircle2 className="h-5 w-5 text-yellow-400 flex-shrink-0" />
-                  <span>Preview design changes instantly for informed decisions</span>
+                  <span>View total cost per sqft and contingency estimates</span>
                 </li>
               </ul>
+              <div className="mt-4">
+                <Link href="/cost-estimation">
+                  <Button
+                    size="lg"
+                    className="w-full sm:w-auto py-3 text-lg font-semibold rounded-md"
+                    style={{ background: "linear-gradient(to right, #eab308, #d97706)", color: "black", border: "none" }}
+                  >
+                    CALCULATE COST
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+              </div>
             </div>
           </motion.section>
         </div>

@@ -1,0 +1,181 @@
+{
+  "lahore": {
+    "3-marla": {
+      "max_floors": 3,
+      "max_height_ft": 38,
+      "FAR": "1:2",
+      "ground_coverage_percent": 85,
+      "upper_coverage_percent": 75,
+      "mandatory_open_spaces": {
+        "front": "5 ft",
+        "rear": "N/A",
+        "side": "N/A"
+      }
+    },
+    "5-marla": {
+      "max_floors": 3,
+      "max_height_ft": 38,
+      "FAR": "1:1.6",
+      "ground_coverage_percent": 80,
+      "upper_coverage_percent": 70,
+      "mandatory_open_spaces": {
+        "front": "5 ft",
+        "rear": "5 ft",
+        "side": "N/A"
+      }
+    },
+    "7-marla": {
+      "max_floors": 3,
+      "max_height_ft": 38,
+      "FAR": "1:1.6",
+      "ground_coverage_percent": 80,
+      "upper_coverage_percent": 70,
+      "mandatory_open_spaces": {
+        "front": "5 ft",
+        "rear": "5 ft",
+        "side": "3 ft (one side)"
+      }
+    },
+    "10-marla": {
+      "max_floors": 4,
+      "max_height_ft": 45,
+      "FAR": "1:2.8",
+      "ground_coverage_percent": 70,
+      "upper_coverage_percent": 60,
+      "mandatory_open_spaces": {
+        "front": "10 ft",
+        "rear": "7 ft",
+        "side": "5 ft (one side)"
+      }
+    },
+    "1-kanal": {
+      "max_floors": 4,
+      "max_height_ft": 45,
+      "FAR": "1:2.6",
+      "ground_coverage_percent": 65,
+      "upper_coverage_percent": 55,
+      "mandatory_open_spaces": {
+        "front": "10 ft",
+        "rear": "7 ft",
+        "side": "5 ft (both sides)"
+      }
+    },
+    "2-kanal": {
+      "max_floors": 4,
+      "max_height_ft": 45,
+      "FAR": "1:2.2",
+      "ground_coverage_percent": 55,
+      "upper_coverage_percent": 45,
+      "mandatory_open_spaces": {
+        "front": "20 ft",
+        "rear": "10 ft",
+        "side": "10 ft (both sides)"
+      }
+    }
+  },
+  "islamabad": {
+    "3-marla": {
+      "max_floors": 2,
+      "max_height_ft": 30,
+      "FAR": "1:1.2",
+      "ground_coverage_percent": 60,
+      "mandatory_open_spaces": {
+        "front": "30 ft frontage minimum",
+        "side": "5 ft",
+        "rear": "N/A"
+      }
+    },
+    "5-marla": {
+      "max_floors": 2,
+      "max_height_ft": 30,
+      "FAR": "1:1.2",
+      "ground_coverage_percent": 60,
+      "mandatory_open_spaces": {
+        "front": "30 ft frontage minimum",
+        "side": "5 ft",
+        "rear": "5 ft"
+      }
+    },
+    "7-marla": {
+      "max_floors": 2,
+      "max_height_ft": 30,
+      "FAR": "1:1.05",
+      "ground_coverage_percent": 60,
+      "mandatory_open_spaces": {
+        "front": "30 ft frontage minimum",
+        "side": "5 ft (one side)",
+        "rear": "5 ft"
+      }
+    },
+    "1-kanal": {
+      "max_floors": 3,
+      "max_height_ft": 30,
+      "FAR": "1:0.9",
+      "ground_coverage_percent": 50,
+      "upper_coverage_percent": 50,
+      "mandatory_open_spaces": {
+        "front": "30 ft frontage minimum",
+        "side": "5 ft both sides",
+        "rear": "7 ft"
+      }
+    },
+    "2-kanal": {
+      "max_floors": 3,
+      "max_height_ft": 30,
+      "FAR": "1:0.9",
+      "ground_coverage_percent": 50,
+      "upper_coverage_percent": 45,
+      "mandatory_open_spaces": {
+        "front": "30 ft frontage minimum",
+        "side": "10 ft both sides",
+        "rear": "10 ft"
+      }
+    }
+  },
+  "karachi": {
+    "60-119-sqyd": {
+      "plot_size_sqyds": "60-119",
+      "marla_equivalent": "5 marla approx",
+      "ground_coverage_percent": 70,
+      "FAR": "1:2",
+      "max_height_ft": 35,
+      "storeys_allowed": 3,
+      "rear_COS": "Exempted for ≤119 sq yd",
+      "basement_allowed": false,
+      "FAR_override_allowed": true
+    },
+    "120-199-sqyd": {
+      "plot_size_sqyds": "120-199",
+      "marla_equivalent": "6-10 marla approx",
+      "ground_coverage_percent": 65,
+      "FAR": "1:2",
+      "max_height_ft": 35,
+      "storeys_allowed": 3,
+      "rear_COS": "50% of COS",
+      "basement_allowed": false,
+      "FAR_override_allowed": true
+    },
+    "200-399-sqyd": {
+      "plot_size_sqyds": "200-399",
+      "marla_equivalent": "10 marla to under 1 kanal",
+      "ground_coverage_percent": 60,
+      "FAR": "1:2",
+      "max_height_ft": 35,
+      "storeys_allowed": 3,
+      "rear_COS": "50% of COS",
+      "basement_allowed": false,
+      "FAR_override_allowed": true
+    },
+    "400-999-sqyd": {
+      "plot_size_sqyds": "400-999",
+      "marla_equivalent": "1 kanal to 2 kanal approx",
+      "ground_coverage_percent": 50,
+      "FAR": "1:1.5",
+      "max_height_ft": 25,
+      "storeys_allowed": 2,
+      "rear_COS": "50% of COS",
+      "basement_allowed": true,
+      "FAR_override_allowed": true
+    }
+  }
+}

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
@@ -15,12 +15,10 @@ import {
   ChevronRight,
   CheckCircle2,
   Sparkles,
-  Heart,
-  Crown,
-  Dumbbell,
   LayoutGrid,
   MessageSquare,
   Users,
+  X,
 } from "lucide-react"
 import { motion, type Variants } from "framer-motion"
 import { ThreeDHeroBackground } from "@/components/three-d-hero-background"
@@ -31,17 +29,154 @@ import { useAuth } from "@/context/auth-context"
 
 export default function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [isVideoPlaying, setIsVideoPlaying] = useState(true)
+  const [is3DReady, setIs3DReady] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
+  const videoRef = useRef<HTMLVideoElement>(null)
   const router = useRouter()
-  const { isSignedIn, isLoading } = useAuth() // Destructure isLoading
+  const { isSignedIn } = useAuth()
 
+  // Updated gallery images with actual image paths
   const galleryImages = [
-    { id: 1, title: "Modern Villa", type: "3D", image: "/placeholder.svg?height=200&width=300" },
-    { id: 2, title: "Apartment Layout", type: "2D", image: "/placeholder.svg?height=200&width=300" },
-    { id: 3, title: "Office Space", type: "3D", image: "/placeholder.svg?height=200&width=300" },
-    { id: 4, title: "Studio Design", type: "2D", image: "/placeholder.svg?height=200&width=300" },
-    { id: 5, title: "Family Home", type: "3D", image: "/placeholder.svg?height=200&width=300" },
-    { id: 6, title: "Loft Space", type: "2D", image: "/placeholder.svg?height=200&width=300" },
-  ]
+  {
+    id: 1,
+    title: "Modern Villa",
+    type: "3D",
+    category: "Residential",
+    image: "/images/modern villa Layout.jpg",
+    date: "2025-07-18T05:21:09",
+  },
+  {
+    id: 2,
+    title: "Apartment Layout",
+    type: "2D",
+    category: "Residential",
+    image: "/images/apartment-layout.jpg",
+    date: "2025-07-17T10:30:00",
+  },
+  {
+    id: 3,
+    title: "Office Space",
+    type: "3D",
+    category: "Commercial",
+    image: "/images/officespace.jpg",
+    date: "2025-07-16T14:00:00",
+  },
+  {
+    id: 4,
+    title: "Studio Design",
+    type: "2D",
+    category: "Residential",
+    image: "/images/studio.jfif",
+    date: "2025-07-15T09:15:00",
+  },
+  {
+    id: 5,
+    title: "Family Home",
+    type: "3D",
+    category: "Residential",
+    image: "/images/family home.jfif",
+    date: "2025-07-14T18:45:00",
+  },
+  {
+    id: 6,
+    title: "Loft Space",
+    type: "2D",
+    category: "Residential",
+    image: "/images/loft layout.webp",
+    date: "2025-07-13T11:20:00",
+  },
+  {
+    id: 7,
+    title: "Restaurant Layout",
+    type: "3D",
+    category: "Commercial",
+    image: "/images/Restaurant-layout.jpg",
+    date: "2025-07-12T07:00:00",
+  },
+  {
+    id: 8,
+    title: "Tiny House",
+    type: "2D",
+    category: "Residential",
+    image: "/images/tiny images.jfif",
+    date: "2025-07-11T20:00:00",
+  },
+  {
+    id: 9,
+    title: "Warehouse Design",
+    type: "3D",
+    category: "Industrial",
+    image: "/images/social-warehouse-layout.avif",
+    date: "2025-07-10T16:30:00",
+  },
+  {
+    id: 10,
+    title: "Penthouse Suite",
+    type: "2D",
+    category: "Residential",
+    image: "/images/penthouse.webp",
+    date: "2025-07-09T13:00:00",
+  },
+  {
+    id: 11,
+    title: "Retail Store",
+    type: "3D",
+    category: "Commercial",
+    image: "/images/retail store.webp",
+    date: "2025-07-08T10:00:00",
+  },
+  {
+    id: 12,
+    title: "Cottage Plan",
+    type: "2D",
+    category: "Residential",
+    image: "/images/cottage.jfif",
+    date: "2025-07-07T08:00:00",
+  },
+  {
+    id: 13,
+    title: "Beach House",
+    type: "3D",
+    category: "Residential",
+    image: "/images/beach.jfif",
+    date: "2025-07-06T15:00:00",
+  },
+  {
+    id: 14,
+    title: "Urban Apartment",
+    type: "2D",
+    category: "Residential",
+    image: "/images/urban apartment.jfif",
+    date: "2025-07-05T11:00:00",
+  },
+  {
+    id: 15,
+    title: "Cafe Design",
+    type: "3D",
+    category: "Commercial",
+    image: "/images/cafe.jfif",
+    date: "2025-07-04T09:00:00",
+  },
+  {
+    id: 16,
+    title: "Small Office",
+    type: "2D",
+    category: "Commercial",
+    image: "/images/small office.jpg",
+    date: "2025-07-03T17:00:00",
+  },
+]
+  // Initialize 3D background after component mounts
+  useEffect(() => {
+    setIsMounted(true)
+    // Small delay to ensure DOM is fully ready
+    const timer = setTimeout(() => {
+      setIs3DReady(true)
+    }, 100)
+
+    return () => clearTimeout(timer)
+  }, [])
 
   // Autoplay logic for the carousel
   useEffect(() => {
@@ -49,11 +184,22 @@ export default function HomePage() {
       setCurrentSlide((prev) => (prev + 1) % galleryImages.length)
     }, 3000) // Change slide every 3 seconds
 
-    // Cleanup on unmount
     return () => clearInterval(intervalId)
   }, [galleryImages.length])
 
-  // Manual navigation functions
+  // Video control functions
+  const toggleVideoPlay = () => {
+    if (videoRef.current) {
+      if (isVideoPlaying) {
+        videoRef.current.pause()
+      } else {
+        videoRef.current.play()
+      }
+      setIsVideoPlaying(!isVideoPlaying)
+    }
+  }
+
+  // Manual navigation functions for carousel
   const goToPrevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + galleryImages.length) % galleryImages.length)
   }
@@ -100,30 +246,30 @@ export default function HomePage() {
       transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] },
     },
     hover: {
-      y: -10, // Slight lift on hover
+      y: -10,
       transition: { duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] },
     },
   }
 
   // Framer Motion Variants for the new carousel items
   const carouselItemVariants: Variants = {
-    hidden: { opacity: 0, scale: 0.7, x: 0, zIndex: 0 }, // For items not in the immediate view
+    hidden: { opacity: 0, scale: 0.7, x: 0, zIndex: 0 },
     left: {
-      x: -300, // Adjusted to shift left more
+      x: -300,
       opacity: 0.6,
       scale: 0.85,
       zIndex: 1,
       transition: { duration: 0.8, ease: "easeInOut" },
     },
     center: {
-      x: -50, // Shift center by 50px to the left
+      x: -50,
       opacity: 1,
       scale: 1,
       zIndex: 2,
       transition: { duration: 0.8, ease: "easeInOut" },
     },
     right: {
-      x: 200, // Adjusted to shift left more
+      x: 200,
       opacity: 0.6,
       scale: 0.85,
       zIndex: 1,
@@ -131,7 +277,7 @@ export default function HomePage() {
     },
   }
 
-  // Features data (moved from app/features/page.tsx)
+  // Features data
   const features = [
     {
       icon: <Sparkles className="h-6 w-6 text-primary" />,
@@ -160,76 +306,75 @@ export default function HomePage() {
     },
   ]
 
-  // Pricing plans data (moved from app/features/page.tsx)
+  // Pricing plans data
   const pricingPlans = [
     {
-      name: "Free Tier",
-      price: "$0",
+      name: "Basic",
+      price: "$19",
+      period: "/month",
       description: "Perfect for trying out IntelliPlan AI.",
-      features: ["5 Floor Plan Generations/month", "Basic AI Model", "Standard Resolution", "Community Support"],
-      buttonText: "Start Free",
+      features: [
+        { text: "5 Floor Plan Generations/month", included: true },
+        { text: "Basic AI Model", included: true },
+        { text: "Standard Resolution", included: true },
+        { text: "Community Support", included: true },
+      ],
+      buttonText: "Buy Now",
       link: "/auth/signup",
-      icon: Heart, // Icon for Free Tier
+      badgeColor: "bg-blue-500",
       isHighlighted: false,
     },
     {
-      name: "Pro Plan",
-      price: "$19/month",
+      name: "Standard",
+      price: "$29",
+      period: "/month",
       description: "For individuals and small projects.",
       features: [
-        "50 Floor Plan Generations/month",
-        "Advanced AI Model",
-        "High Resolution",
-        "Priority Email Support",
-        "Access to Premium Templates",
+        { text: "50 Floor Plan Generations/month", included: true },
+        { text: "Advanced AI Model", included: true },
+        { text: "High Resolution", included: true },
+        { text: "Priority Email Support", included: true },
+        { text: "Access to Premium Templates", included: true },
       ],
-      buttonText: "Choose Pro",
+      buttonText: "Buy Now",
       link: "/auth/signup",
-      icon: Crown, // Icon for Pro Plan
-      isHighlighted: true, // Highlight this plan
+      badgeColor: "bg-cyan-400",
+      isHighlighted: true,
     },
     {
-      name: "Enterprise",
-      price: "Custom",
+      name: "Premium",
+      price: "$39",
+      period: "/month",
       description: "Tailored solutions for businesses and large-scale needs.",
       features: [
-        "Unlimited Generations",
-        "Dedicated AI Model",
-        "Ultra High Resolution",
-        "24/7 Phone & Chat Support",
-        "API Access & Integrations",
-        "Custom Training",
+        { text: "Unlimited Generations", included: true },
+        { text: "Dedicated AI Model", included: true },
+        { text: "Ultra High Resolution", included: true },
+        { text: "24/7 Phone & Chat Support", included: true },
+        { text: "API Access & Integrations", included: true },
+        { text: "Custom Training", included: true },
       ],
-      buttonText: "Contact Sales",
+      buttonText: "Buy Now",
       link: "/services",
-      icon: Dumbbell, // Icon for Enterprise
+      badgeColor: "bg-blue-500",
       isHighlighted: false,
     },
   ]
 
-  const handleTryDemoClick = () => {
-    if (isLoading) return // Do nothing if still loading auth state
-    if (isSignedIn) {
-      router.push("/generate")
-    } else {
-      router.push("/auth/signup?message=Please sign up to try the demo.")
-    }
-  }
-
-  const handleStartGeneratingClick = () => {
-    if (isLoading) return // Do nothing if still loading auth state
-    if (isSignedIn) {
-      router.push("/generate")
-    } else {
-      router.push("/auth/signup?message=Please sign up to start generating.")
-    }
+  // Prevent SSR hydration mismatch
+  if (!isMounted) {
+    return (
+      <div className="relative min-h-screen overflow-hidden bg-black text-white">
+        <div className="fixed inset-0 z-0 w-full h-full bg-gradient-to-br from-black via-gray-900 to-black" />
+      </div>
+    )
   }
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-black text-white">
       {/* Dedicated container for the ThreeDHeroBackground */}
-      <div className="fixed inset-0 z-0">
-        <ThreeDHeroBackground />
+      <div className="fixed inset-0 z-0 w-full h-full">
+        {is3DReady && <ThreeDHeroBackground />}
       </div>
 
       {/* Main content, now with a higher z-index and semi-transparent background */}
@@ -240,10 +385,11 @@ export default function HomePage() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
           variants={sectionVariants}
-          className="relative container mx-auto px-4 py-20" // Removed bg-background/80 backdrop-blur-sm rounded-lg shadow-lg from hero
+          className="relative container mx-auto px-4 py-20"
         >
-          <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
+          <div className="relative z-10 grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+            {/* Text content - takes 7 columns */}
+            <div className="lg:col-span-7 space-y-6 lg:pr-12">
               <Badge variant="secondary" className="w-fit">
                 AI-Powered Floor Planning
               </Badge>
@@ -252,7 +398,7 @@ export default function HomePage() {
                 <span className="text-primary"> Intelligent Floor Plans</span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                IntelliPlan AI revolutionizes architectural design by generating stunning 2D and 3D floor plans through
+                IntelliPlan AI revolutionizes architectural design by generating stunning 2D floor plans through
                 advanced artificial intelligence. Simply describe your requirements, and watch your dream space come to
                 life.
               </p>
@@ -260,8 +406,13 @@ export default function HomePage() {
                 <Button
                   size="lg"
                   className="w-full sm:w-auto"
-                  onClick={handleTryDemoClick}
-                  disabled={isLoading} // Disable button while loading auth state
+                  onClick={() => {
+                    if (isSignedIn) {
+                      router.push("/generate")
+                    } else {
+                      router.push("/auth/signup?message=Please sign up to try the demo.")
+                    }
+                  }}
                 >
                   Try Demo
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -274,19 +425,46 @@ export default function HomePage() {
                 </Link>
               </div>
             </div>
+
+            {/* Video card - takes 5 columns and is pushed to the right */}
             <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.7 }}
               variants={floatingElementVariants}
               whileHover="hover"
-              className="relative"
+              className="lg:col-span-5 lg:ml-auto"
             >
-              <div className="aspect-video bg-muted rounded-lg flex items-center justify-center shadow-xl">
-                <div className="text-center">
-                  <Play className="h-16 w-16 mx-auto mb-4 text-primary" />
-                  <p className="text-lg font-medium text-foreground">IntelliPlan AI Demo Video</p>
-                  <p className="text-muted-foreground">See how AI creates your perfect floor plan</p>
+              {/* Changed from aspect-video to custom height */}
+              <div className="rounded-lg overflow-hidden shadow-xl relative group h-[400px] lg:h-[500px]">
+                {/* Video Player */}
+                <video
+                  ref={videoRef}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover"
+                  poster="/placeholder.svg?height=500&width=600"
+                >
+                  <source src="/images/video11 - Made with Clipchamp.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+
+                {/* Video Overlay with Play/Pause Button */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <button
+                      onClick={toggleVideoPlay}
+                      className="bg-black/60 hover:bg-black/80 rounded-full p-4 transition-all duration-300 transform hover:scale-110"
+                    >
+                      {isVideoPlaying ? (
+                        <div className="w-4 h-4 bg-white rounded-sm" />
+                      ) : (
+                        <Play className="h-6 w-6 text-white" />
+                      )}
+                    </button>
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -355,11 +533,13 @@ export default function HomePage() {
                 <Card className="p-6 shadow-xl bg-background/80 backdrop-blur-sm">
                   <CardContent className="p-0">
                     <div className="aspect-square bg-gradient-to-br from-primary/10 to-primary/5 rounded-lg flex items-center justify-center">
-                      <div className="text-center">
-                        <Zap className="h-16 w-16 mx-auto mb-4 text-primary" />
-                        <p className="text-lg font-medium text-foreground">AI Generation Process</p>
-                        <p className="text-muted-foreground">Intelligent floor plan creation</p>
-                      </div>
+                      <Image
+                        src="/images/Muhira_arshad__A_clean,_modern,_SaaS-style_portrait_infographic_(tall_vertical_8c18aac8-03bc-4f3f-a22b-ac8772a3dcc2.png"
+                        alt="AI-Driven Floor Plan Generation"
+                        width={100}
+                        height={100}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                   </CardContent>
                 </Card>
@@ -389,11 +569,13 @@ export default function HomePage() {
                 <Card className="p-6 shadow-xl bg-background/80 backdrop-blur-sm">
                   <CardContent className="p-0">
                     <div className="aspect-video bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950 dark:to-blue-900 rounded-lg flex items-center justify-center">
-                      <div className="text-center">
-                        <Eye className="h-16 w-16 mx-auto mb-4 text-blue-600" />
-                        <p className="text-lg font-medium text-foreground">2D Floor Plans</p>
-                        <p className="text-muted-foreground">Precise architectural layouts</p>
-                      </div>
+                      <Image
+                        src="/images/Gemini_Generated_Image_8phgun8phgun8phg.png"
+                        alt="2D Floor Plan Example"
+                        width={600}
+                        height={400}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                   </CardContent>
                 </Card>
@@ -442,25 +624,25 @@ export default function HomePage() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
                 <Badge variant="secondary" className="w-fit">
-                  3D Visualization
+                  Conceptual Visualization
                 </Badge>
                 <h2 className="text-3xl lg:text-4xl font-bold text-foreground">Immersive 3D Floor Plans</h2>
                 <p className="text-lg text-muted-foreground">
-                  Experience your space in stunning 3D with realistic textures, lighting, and furniture placement.
-                  Perfect for presentations, client visualization, and design validation.
+                  IntelliPlan AI generates clean 2D architectural layouts that are optimized for future 3D modeling.
+Our system prepares your plan with correct dimensions, room proportions, and layout logic — allowing effortless conversion into 3D in any modeling software
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 rounded-full bg-primary"></div>
-                    <span>Photorealistic 3D rendering</span>
+                    <span>Room-level geometry ready for 3D modeling</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 rounded-full bg-primary"></div>
-                    <span>Interactive walkthrough capability</span>
+                    <span>Supports CAD and drafting exports</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 rounded-full bg-primary"></div>
-                    <span>Furniture and fixture placement</span>
+                    <span>Ideal for architects, planners, and visualization artists</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 rounded-full bg-primary"></div>
@@ -479,8 +661,14 @@ export default function HomePage() {
                 <Card className="p-6 shadow-xl bg-background/80 backdrop-blur-sm">
                   <CardContent className="p-0">
                     <div className="aspect-video bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-950 dark:to-purple-900 rounded-lg flex items-center justify-center">
-                      {/* Ensure About3DScene is used here */}
-                      <About3DScene />
+                      <Image
+                        src="/images/Gemini_Generated_Image_6b5wp56b5wp56b5w.png"
+                        alt="2D Floor Plan Example"
+                        width={600}
+                        height={400}
+                        className="w-full h-full object-cover"
+                      />
+                      
                     </div>
                   </CardContent>
                 </Card>
@@ -511,11 +699,10 @@ export default function HomePage() {
               </Link>
             </div>
 
-            {/* New Carousel Structure */}
+            {/* Carousel Structure */}
             <div className="relative h-[350px] flex items-center justify-center overflow-hidden">
               {galleryImages.map((item, idx) => {
                 let positionState = "hidden"
-                // Determine if this item is the current, previous, or next
                 const isCurrent = idx === currentSlide
                 const isPrev = idx === (currentSlide - 1 + galleryImages.length) % galleryImages.length
                 const isNext = idx === (currentSlide + 1) % galleryImages.length
@@ -545,7 +732,7 @@ export default function HomePage() {
                       <CardContent className="p-0 h-full">
                         <div className="relative h-full">
                           <Image
-                            src={item.image || "/placeholder.svg"}
+                            src={item.image}
                             alt={item.title}
                             fill={true}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
@@ -602,7 +789,7 @@ export default function HomePage() {
           </div>
         </motion.section>
 
-        {/* NEW: Features and Pricing Sections (moved from app/features/page.tsx) */}
+        {/* Features and Pricing Sections */}
         <div className="relative min-h-screen overflow-hidden">
           <MapPatternBackground />
           {/* Background Text Overlay */}
@@ -636,73 +823,60 @@ export default function HomePage() {
             </section>
 
             <section className="relative z-10 text-center mb-16 bg-background/80 backdrop-blur-sm p-8 rounded-lg shadow-lg">
-              <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl mb-4 text-foreground">
-                Flexible Pricing Plans
+              <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl mb-4 text-foreground">
+                Choose Your Plan
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Choose the plan that best fits your needs, from individual projects to large-scale enterprise solutions.
+                Select the plan that best fits your needs. All plans include core features with varying levels of usage.
               </p>
             </section>
 
-             <section className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {pricingPlans.map((plan, index) => (
-            <Card
-              key={index}
-              className={`flex flex-col justify-between p-6 shadow-lg ${
-                plan.isHighlighted
-                  ? "bg-gradient-to-br from-purple-600 to-pink-500 text-primary-foreground"
-                  : "bg-card text-card-foreground" // Use card colors for non-highlighted
-              }`}
-            >
-                  <CardHeader className="pb-4 text-center">
-                    {plan.icon && (
-                      <plan.icon
-                        className={`h-10 w-10 mx-auto mb-4 bg-clip-text text-transparent ${
-  plan.isHighlighted
-    ? "bg-gradient-to-r from-[#FFD95A] to-[#FFB347]" // lighter gold-orange
-    : "bg-gradient-to-r from-[#FFD700] to-[#FF8C00]" // deeper gold-orange
-}`}
+            <section className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+              {pricingPlans.map((plan, index) => (
+                <Card
+                  key={index}
+                  className={`flex flex-col justify-between rounded-lg overflow-hidden transition-all duration-300 ${
+                    plan.isHighlighted
+                      ? "ring-2 ring-cyan-400 scale-105 bg-slate-900/95 border-0"
+                      : "bg-slate-900/80 border border-slate-800 hover:border-slate-700"
+                  }`}
+                >
+                  <div>
+                    <div className={`${plan.badgeColor} rounded-full inline-block px-4 py-1 mx-6 mt-6 mb-4`}>
+                      <p className="text-xs font-semibold text-white uppercase tracking-wide">{plan.name}</p>
+                    </div>
 
-                      />
-                    )}
-                    <CardTitle className="text-xl uppercase font-bold">{plan.name}</CardTitle>
-                    <CardDescription
-                      className={`mt-2 ${plan.isHighlighted ? "text-primary-foreground/80" : "text-gray-300"}`}
-                    >
-                      {plan.description}
-                    </CardDescription>
-                    <p className="text-5xl font-bold mt-4">{plan.price}</p>
-                  </CardHeader>
-                  <CardContent className="flex-1">
-                    <ul className="space-y-3">
-                      {plan.features.map((feature, i) => (
-                        <li key={i} className="flex items-center text-lg">
-                          <CheckCircle2
-                            className={`h-5 w-5 mr-3 ${
-                              plan.isHighlighted ? "text-yellow-300" : "text-green-400"
-                            } flex-shrink-0`}
-                          />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                    <Link
-                      href={plan.link}
-                      className={`flex items-center justify-center gap-2 mt-6 text-sm font-medium ${
-                        plan.isHighlighted
-                          ? "text-yellow-300 hover:text-yellow-200"
-                          : "text-primary-foreground hover:text-gray-300"
-                      }`}
-                    >
-                      See more benefits <ArrowRight className="h-4 w-4" />
-                    </Link>
-                  </CardContent>
-                  <CardFooter className="pt-6">
+                    <CardHeader className="pb-2">
+                      <div className="flex items-baseline gap-1">
+                        <span className="text-4xl font-bold text-cyan-400">{plan.price}</span>
+                        <span className="text-sm text-gray-400">{plan.period}</span>
+                      </div>
+                    </CardHeader>
+
+                    <CardContent className="pb-6">
+                      <ul className="space-y-3">
+                        {plan.features.map((feature, i) => (
+                          <li key={i} className="flex items-center gap-3">
+                            {feature.included ? (
+                              <CheckCircle2 className="h-5 w-5 text-green-400 flex-shrink-0" />
+                            ) : (
+                              <X className="h-5 w-5 text-red-400 flex-shrink-0" />
+                            )}
+                            <span className={`text-sm ${feature.included ? "text-gray-200" : "text-gray-500"}`}>
+                              {feature.text}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </div>
+
+                  <CardFooter className="pt-4 px-6 pb-6">
                     <Button
-                      className={`w-full text-lg py-6 ${
+                      className={`w-full font-semibold py-2 ${
                         plan.isHighlighted
-                          ? "bg-yellow-400 hover:bg-yellow-500 text-black font-semibold"
-                          : "bg-gray-600 hover:bg-gray-700 text-white"
+                          ? "bg-cyan-400 hover:bg-cyan-500 text-slate-900"
+                          : "bg-slate-700 hover:bg-slate-600 text-gray-200"
                       }`}
                       asChild
                     >
@@ -721,13 +895,13 @@ export default function HomePage() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
           variants={sectionVariants}
-          className="bg-primary py-20 rounded-lg shadow-lg"
+          className="bg-gradient-to-br from-[#FFD300] via-[#6050DC] to-[#1B03A3] py-20 rounded-lg shadow-lg"
         >
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl lg:text-4xl font-bold text-primary-foreground mb-4">
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
               Ready to Create Your Perfect Floor Plan?
             </h2>
-            <p className="text-xl text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
               Join thousands of architects, designers, and homeowners who trust IntelliPlan AI for their floor planning
               needs.
             </p>
@@ -735,17 +909,23 @@ export default function HomePage() {
               <Button
                 size="lg"
                 variant="secondary"
-                onClick={handleStartGeneratingClick}
-                disabled={isLoading} // Disable button while loading auth state
+                onClick={() => {
+                  if (isSignedIn) {
+                    router.push("/generate")
+                  } else {
+                    router.push("/auth/signup?message=Please sign up to start generating.")
+                  }
+                }}
               >
                 Start Generating
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
+
               <Link href="/auth/signup">
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 bg-transparent"
+                  className="border-white/30 text-white hover:bg-white/10 bg-transparent"
                 >
                   Start Free Trial
                 </Button>

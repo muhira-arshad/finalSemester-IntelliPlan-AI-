@@ -3,7 +3,6 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ThemeToggle } from "@/components/theme-toggle"
 import {
   Menu,
   X,
@@ -16,6 +15,7 @@ import {
   Bell,
   LogOut,
   LayoutDashboard,
+  Calculator,
 } from "lucide-react"
 import { useAuth } from "@/context/auth-context"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
@@ -36,7 +36,7 @@ export function Navigation() {
 
   const navItems = [
     {
-      href: "/category",
+      href: "/generate",
       label: "Generate",
       icon: Wrench,
       onClick: () => {
@@ -49,6 +49,7 @@ export function Navigation() {
         setIsOpen(false)
       },
     },
+    { href: "/cost-estimator", label: "Cost Estimator", icon: Calculator },
     { href: "/features", label: "Features", icon: Wrench },
     { href: "/gallery", label: "Gallery", icon: ImageIcon },
     { href: "/services", label: "Services", icon: Info },
@@ -70,13 +71,7 @@ export function Navigation() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center space-x-2">
-              <Image
-                src="/images/image (4).png"
-                alt="IntelliPlan AI Logo"
-                width={280}
-                height={280}
-                className="h-auto"
-              />
+              <Image src="/images/logo.png" alt="IntelliPlan AI Logo" width={280} height={280} className="h-auto" />
             </Link>
           </div>
 
@@ -89,11 +84,7 @@ export function Navigation() {
                   href={item.href}
                   className="text-sm font-medium transition-colors hover:text-primary"
                   onClick={item.onClick}
-                  style={
-                    isLoading && item.label === "Generate"
-                      ? { pointerEvents: "none", opacity: 0.6 }
-                      : {}
-                  }
+                  style={isLoading && item.label === "Generate" ? { pointerEvents: "none", opacity: 0.6 } : {}}
                 >
                   {item.label}
                 </Link>
@@ -101,9 +92,8 @@ export function Navigation() {
             </div>
           </div>
 
-          {/* Right side actions */}
+          {/* Right Side Actions - Removed ThemeToggle component */}
           <div className="hidden md:flex items-center space-x-4 flex-shrink-0">
-            <ThemeToggle />
             {isLoading ? (
               <div className="h-8 w-8 rounded-full bg-muted animate-pulse" />
             ) : isSignedIn ? (
@@ -112,12 +102,10 @@ export function Navigation() {
                   <Button variant="ghost" className="relative h-8 w-8 rounded-full">
                     <Avatar className="h-8 w-8">
                       <AvatarImage
-                        src={
-                          user?.gender?.toLowerCase() === "female"
-                            ? "/images/female.png"
-                            : "/images/male.png"
-                        }
+                        src={user?.gender?.toLowerCase() === "female" ? "/images/female.png" : "/images/male.png"}
                         alt={`${user?.firstName || "User"} ${user?.lastName || ""}`}
+                        width={1500}
+                        height={1500}
                       />
                       <AvatarFallback className="bg-primary text-primary-foreground">
                         {user?.firstName?.[0]?.toUpperCase() || "U"}
@@ -126,37 +114,27 @@ export function Navigation() {
                   </Button>
                 </DropdownMenuTrigger>
 
-                <DropdownMenuContent
-                  className="w-56 bg-card text-card-foreground border-border"
-                  align="end"
-                  forceMount
-                >
+                <DropdownMenuContent className="w-56 bg-card text-card-foreground border-border" align="end" forceMount>
                   {/* User Info */}
                   <DropdownMenuItem className="flex flex-col items-start !cursor-default">
                     <div className="flex items-center gap-2">
                       <Avatar className="h-8 w-8">
-  <AvatarImage
-    src={
-      user?.gender?.toLowerCase() === "female"
-        ? "/images/female.png"
-        : "/images/male.png"
-    }
-    alt={`${user?.firstName || "User"} ${user?.lastName || ""}`}
-    width={1500}   // ✅ fixed width
-    height={1500}  // ✅ fixed height
-  />
-  <AvatarFallback className="bg-primary text-primary-foreground">
-    {user?.firstName?.[0]?.toUpperCase() || "U"}
-  </AvatarFallback>
-</Avatar>
+                        <AvatarImage
+                          src={user?.gender?.toLowerCase() === "female" ? "/images/female.png" : "/images/male.png"}
+                          alt={`${user?.firstName || "User"} ${user?.lastName || ""}`}
+                          width={1500}
+                          height={1500}
+                        />
+                        <AvatarFallback className="bg-primary text-primary-foreground">
+                          {user?.firstName?.[0]?.toUpperCase() || "U"}
+                        </AvatarFallback>
+                      </Avatar>
 
                       <div className="flex flex-col space-y-1">
                         <p className="text-sm font-medium leading-none text-foreground">
                           {user?.firstName} {user?.lastName}
                         </p>
-                        <p className="text-xs leading-none text-muted-foreground">
-                          {user?.email}
-                        </p>
+                        <p className="text-xs leading-none text-muted-foreground">{user?.email}</p>
                       </div>
                     </div>
                   </DropdownMenuItem>
@@ -205,9 +183,8 @@ export function Navigation() {
             )}
           </div>
 
-          {/* Mobile Toggle */}
+          {/* Mobile Toggle - Removed ThemeToggle from mobile view */}
           <div className="md:hidden flex items-center space-x-2">
-            <ThemeToggle />
             <Button variant="ghost" size="sm" onClick={() => setIsOpen(!isOpen)}>
               {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
@@ -224,11 +201,7 @@ export function Navigation() {
                   href={item.href}
                   className="flex items-center space-x-2 px-2 py-2 text-sm font-medium transition-colors text-foreground hover:text-primary"
                   onClick={item.onClick}
-                  style={
-                    isLoading && item.label === "Generate"
-                      ? { pointerEvents: "none", opacity: 0.6 }
-                      : {}
-                  }
+                  style={isLoading && item.label === "Generate" ? { pointerEvents: "none", opacity: 0.6 } : {}}
                 >
                   <item.icon className="h-4 w-4" />
                   <span>{item.label}</span>
@@ -285,3 +258,5 @@ export function Navigation() {
     </nav>
   )
 }
+
+export default Navigation

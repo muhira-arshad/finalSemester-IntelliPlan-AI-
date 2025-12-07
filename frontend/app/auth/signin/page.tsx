@@ -47,7 +47,6 @@ export default function SignInPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
-    // Prevent multiple submissions
     if (isLoading) return
 
     setIsLoading(true)
@@ -97,7 +96,6 @@ export default function SignInPage() {
         setMessage(error.message)
         setMessageType("error")
       }
-      // If successful, the auth context will handle the redirect
     } catch (error) {
       setMessage("Failed to sign in with Google")
       setMessageType("error")
@@ -108,12 +106,10 @@ export default function SignInPage() {
 
   const handleInputChange = (field: string, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }))
-    // Clear message when user starts typing
     if (message) setMessage("")
   }
 
   const handleResendVerification = () => {
-    // Simulate email confirmation for demo purposes
     localStorage.setItem(`email_confirmed_${formData.email}`, "true")
     setMessage("Email verified successfully! You can now sign in.")
     setMessageType("success")
@@ -121,52 +117,47 @@ export default function SignInPage() {
   }
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black text-white p-4 lg:p-8">
+    <div className="relative min-h-screen flex items-center justify-center bg-black text-white p-4 lg:p-8">
       <AnimatedAuthBackground />
+
       <motion.div
-        initial={{ opacity: 0, y: 50, scale: 0.9 }}
+        initial={{ opacity: 0, y: 30, scale: 0.95 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
         className="relative z-10 flex flex-col lg:flex-row w-full max-w-6xl mx-auto rounded-2xl overflow-hidden shadow-2xl backdrop-blur-sm bg-gray-950/80"
       >
         {/* Left Section: Marketing */}
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
+          initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
           className="lg:w-1/2 bg-gradient-to-br from-purple-900/50 to-blue-900/50 p-8 flex flex-col justify-center items-center text-center lg:text-left lg:items-start min-h-[300px] lg:min-h-[700px] relative"
         >
           <div className="relative z-10">
             <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.5, type: "spring" }}
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.3, type: "spring", stiffness: 100 }}
               className="mb-8"
             >
               <div className="flex flex-col items-center lg:items-start">
-                <Image
-                  src="/images/intelliplan-logo.jpg"
-                  alt="IntelliPlan AI Logo"
-                  width={200}
-                  height={80}
-                  className="mb-4"
-                />
-                <div className="text-2xl font-semibold text-white">IntelliPlan AI</div>
+                <Image src="/images/logo.png" alt="IntelliPlan AI Logo" width={350} height={250} className="mb-4" />
+                
               </div>
             </motion.div>
             <motion.h1
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.7 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
               className="text-4xl md:text-5xl font-bold leading-tight text-white max-w-md mb-6"
             >
               Welcome Back to <br />
               <span className="text-yellow-400">IntelliPlan AI</span>
             </motion.h1>
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.9 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
               className="text-lg text-gray-300 max-w-md"
             >
               Continue creating amazing floor plans with the power of artificial intelligence.
@@ -176,17 +167,17 @@ export default function SignInPage() {
 
         {/* Right Section: Sign In Form */}
         <motion.div
-          initial={{ opacity: 0, x: 50 }}
+          initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, delay: 0.4 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
           className="lg:w-1/2"
         >
           <Card className="bg-gray-900/90 text-white border-none rounded-none p-8 shadow-lg backdrop-blur-sm h-full">
             <CardHeader className="text-center lg:text-left">
               <motion.div
-                initial={{ opacity: 0, y: -20 }}
+                initial={{ opacity: 0, y: -15 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
               >
                 <CardTitle className="text-3xl font-bold text-white mb-2">Sign In</CardTitle>
                 <CardDescription className="text-gray-400 text-lg">
@@ -234,14 +225,14 @@ export default function SignInPage() {
               <motion.form
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.8 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
                 onSubmit={handleSubmit}
                 className="space-y-4"
               >
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 1 }}
+                  transition={{ duration: 0.4, delay: 0.6 }}
                   className="space-y-2"
                 >
                   <Label htmlFor="email" className="text-gray-300">
@@ -263,9 +254,9 @@ export default function SignInPage() {
                 </motion.div>
 
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 1.1 }}
+                  transition={{ duration: 0.4, delay: 0.7 }}
                   className="space-y-2"
                 >
                   <Label htmlFor="password" className="text-gray-300">
@@ -297,9 +288,9 @@ export default function SignInPage() {
                 </motion.div>
 
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 1.2 }}
+                  transition={{ duration: 0.4, delay: 0.8 }}
                   className="flex items-center justify-between"
                 >
                   <div className="flex items-center space-x-2">
@@ -318,9 +309,9 @@ export default function SignInPage() {
                 </motion.div>
 
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 1.3 }}
+                  transition={{ duration: 0.4, delay: 0.9 }}
                 >
                   <Button
                     type="submit"
@@ -342,7 +333,7 @@ export default function SignInPage() {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 1.4 }}
+                transition={{ duration: 0.4, delay: 1 }}
                 className="relative"
               >
                 <div className="absolute inset-0 flex items-center">
@@ -354,9 +345,9 @@ export default function SignInPage() {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 1.5 }}
+                transition={{ duration: 0.4, delay: 1.1 }}
               >
                 <Button
                   type="button"
@@ -394,7 +385,7 @@ export default function SignInPage() {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 1.6 }}
+                transition={{ duration: 0.4, delay: 1.2 }}
                 className="text-center text-sm text-gray-400"
               >
                 Don't have an account?{" "}

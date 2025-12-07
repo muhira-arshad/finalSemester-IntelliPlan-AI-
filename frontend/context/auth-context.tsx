@@ -4,12 +4,7 @@ import type React from "react"
 import { createContext, useState, useContext, useEffect, useCallback } from "react"
 import { useRouter } from "next/navigation"
 import { supabase } from "@/lib/supabase"
-import type {
-  User as SupabaseUser,
-  Session,
-  AuthError,
-  AuthChangeEvent,
-} from "@supabase/supabase-js"
+import type { User as SupabaseUser, Session, AuthError, AuthChangeEvent } from "@supabase/supabase-js"
 
 interface AuthUser {
   id: string
@@ -30,7 +25,7 @@ interface AuthContextType {
     password: string,
     firstName: string,
     lastName: string,
-    gender: string
+    gender: string,
   ) => Promise<{ error: AuthError | null }>
   signIn: (email: string, password: string) => Promise<{ error: AuthError | null }>
   signInWithGoogle: () => Promise<{ error: AuthError | null }>
@@ -55,7 +50,7 @@ export function AuthProvider({
 
   const router = useRouter()
 
-  // 🔹 Convert Supabase user → AuthUser
+  // Convert Supabase user → AuthUser
   const convertToAuthUser = useCallback((supabaseUser: SupabaseUser): AuthUser => {
     return {
       id: supabaseUser.id,
@@ -67,7 +62,7 @@ export function AuthProvider({
     }
   }, [])
 
-  // 🔹 Load from localStorage if exists
+  // Load from localStorage if exists
   useEffect(() => {
     const storedUser = localStorage.getItem("user")
     if (storedUser) {
@@ -82,44 +77,42 @@ export function AuthProvider({
     }
   }, [])
 
-  // 🔹 Setup Supabase Auth listener
+  // Setup Supabase Auth listener
   useEffect(() => {
     let mounted = true
 
     const {
       data: { subscription },
-    } = supabase.auth.onAuthStateChange(
-      (_event: AuthChangeEvent, session: Session | null) => {
-        if (!mounted) return
+    } = supabase.auth.onAuthStateChange((_event: AuthChangeEvent, session: Session | null) => {
+      if (!mounted) return
 
-        setSession(session)
+      setSession(session)
 
-        if (session?.user) {
-          const convertedUser = convertToAuthUser(session.user)
-          setUser(convertedUser)
-          setIsSignedIn(true)
+      if (session?.user) {
+        const convertedUser = convertToAuthUser(session.user)
+        setUser(convertedUser)
+        setIsSignedIn(true)
 
-          localStorage.setItem("user", JSON.stringify(convertedUser))
-          document.cookie = `intellplan_user=true; path=/; max-age=3600`
+        localStorage.setItem("user", JSON.stringify(convertedUser))
+        document.cookie = `intellplan_user=true; path=/; max-age=3600`
 
-          if (_event === "SIGNED_IN") {
-            router.push("/")
-          }
-        } else {
-          setUser(null)
-          setIsSignedIn(false)
-
-          localStorage.removeItem("user")
-          document.cookie = `intellplan_user=; path=/; max-age=0`
-
-          if (_event === "SIGNED_OUT") {
-            router.push("/login")
-          }
+        if (_event === "SIGNED_IN") {
+          router.push("/")
         }
+      } else {
+        setUser(null)
+        setIsSignedIn(false)
 
-        setIsLoading(false)
+        localStorage.removeItem("user")
+        document.cookie = `intellplan_user=; path=/; max-age=0`
+
+        if (_event === "SIGNED_OUT") {
+          router.push("/login")
+        }
       }
-    )
+
+      setIsLoading(false)
+    })
 
     return () => {
       mounted = false
@@ -127,15 +120,9 @@ export function AuthProvider({
     }
   }, [convertToAuthUser, router])
 
-  // 🔹 Sign Up
+  // Sign Up
   const signUp = useCallback(
-    async (
-      email: string,
-      password: string,
-      firstName: string,
-      lastName: string,
-      gender: string
-    ) => {
+    async (email: string, password: string, firstName: string, lastName: string, gender: string) => {
       try {
         const { error } = await supabase.auth.signUp({
           email: email.trim().toLowerCase(),
@@ -145,10 +132,7 @@ export function AuthProvider({
               first_name: firstName.trim(),
               last_name: lastName.trim(),
               gender: gender.trim(),
-              avatar_url:
-                gender.trim().toLowerCase() === "female"
-                  ? "C:\Users\X1 Carbon\Desktop\intellplan-ai-website (2)\frontend\public\images\female.png"
-                  : "/C:\Users\X1 Carbon\Desktop\intellplan-ai-website (2)\frontend\public\images\male.png", // ✅ default avatar based on gender
+              avatar_url: gender.trim().toLowerCase() === "female" ? "/images/female.png" : "/images/male.png",
             },
             emailRedirectTo: `${window.location.origin}/auth/callback`,
           },
@@ -165,10 +149,10 @@ export function AuthProvider({
         }
       }
     },
-    []
+    [],
   )
 
-  // 🔹 Sign In
+  // Sign In
   const signIn = useCallback(async (email: string, password: string) => {
     try {
       const { error } = await supabase.auth.signInWithPassword({
@@ -182,7 +166,7 @@ export function AuthProvider({
     }
   }, [])
 
-  // 🔹 Google Sign In
+  // Google Sign In
   const signInWithGoogle = useCallback(async () => {
     try {
       const { error } = await supabase.auth.signInWithOAuth({
@@ -198,7 +182,7 @@ export function AuthProvider({
     }
   }, [])
 
-  // 🔹 Sign Out
+  // Sign Out
   const signOut = useCallback(async () => {
     try {
       await supabase.auth.signOut()
@@ -213,7 +197,7 @@ export function AuthProvider({
     }
   }, [router])
 
-  // 🔹 Reset Password
+  // Reset Password
   const resetPassword = useCallback(async (email: string) => {
     try {
       const { error } = await supabase.auth.resetPasswordForEmail(email, {
@@ -225,7 +209,7 @@ export function AuthProvider({
     }
   }, [])
 
-  // 🔹 Update Password
+  // Update Password
   const updatePassword = useCallback(async (password: string) => {
     try {
       const { error } = await supabase.auth.updateUser({ password })

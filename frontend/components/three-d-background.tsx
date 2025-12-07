@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react"
 import { useTheme } from "next-themes"
 import type * as THREE from "three"
+import { gsap } from "gsap"
 
 export function ThreeDBackground() {
   const mountRef = useRef<HTMLDivElement>(null)
@@ -16,7 +17,6 @@ export function ThreeDBackground() {
 
     const initThree = async () => {
       const THREE = await import("three")
-      const { gsap } = await import("gsap")
 
       // Scene setup
       const scene = new THREE.Scene()
@@ -243,22 +243,21 @@ export function ThreeDBackground() {
         cancelAnimationFrame(animationIdRef.current)
       }
 
-     if (sceneRef.current) {
-  sceneRef.current.traverse((object) => {
-    const mesh = object as THREE.Mesh; // Narrow type
-    if (mesh.geometry) {
-      mesh.geometry.dispose();
-    }
-    if (mesh.material) {
-      if (Array.isArray(mesh.material)) {
-        mesh.material.forEach((material) => material.dispose());
-      } else {
-        mesh.material.dispose();
+      if (sceneRef.current) {
+        sceneRef.current.traverse((object) => {
+          const mesh = object as THREE.Mesh // Narrow type
+          if (mesh.geometry) {
+            mesh.geometry.dispose()
+          }
+          if (mesh.material) {
+            if (Array.isArray(mesh.material)) {
+              mesh.material.forEach((material) => material.dispose())
+            } else {
+              mesh.material.dispose()
+            }
+          }
+        })
       }
-    }
-  })
-}
-
 
       if (rendererRef.current) {
         rendererRef.current.dispose()
