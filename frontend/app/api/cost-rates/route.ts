@@ -3,11 +3,11 @@
 // ============================================
 import { NextResponse } from "next/server"
 
-const BACKEND_URL = process.env.BACKEND_URL || "http://127.0.0.1:5000"
+const BACKEND_URL = process.env.BACKEND_URL || "http://127.0.0.1:3001"
 
 export async function GET() {
   try {
-    console.log("🔄 Fetching cost rates from Flask backend")
+    console.log("🔄 Fetching cost rates from Node.js backend")
 
     const response = await fetch(`${BACKEND_URL}/api/cost-rates`, {
       method: 'GET',
@@ -31,8 +31,8 @@ export async function GET() {
     if (error.cause?.code === 'ECONNREFUSED') {
       return NextResponse.json(
         { 
-          error: "Cannot connect to Flask backend",
-          details: "Flask backend is not running on http://127.0.0.1:5000"
+          error: "Cannot connect to Node.js backend",
+          details: "Node.js backend is not running on http://127.0.0.1:3001"
         }, 
         { status: 503 }
       )

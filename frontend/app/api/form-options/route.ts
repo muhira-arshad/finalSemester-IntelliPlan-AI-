@@ -1,10 +1,10 @@
 import { NextResponse } from "next/server"
 
-const BACKEND_URL = process.env.BACKEND_URL || "http://127.0.0.1:5000"
+const BACKEND_URL = process.env.BACKEND_URL || "http://127.0.0.1:3001"
 
 export async function GET() {
   try {
-    console.log("🔄 Fetching form options from Flask backend:", `${BACKEND_URL}/api/form-options`)
+    console.log("🔄 Fetching form options from Node.js backend:", `${BACKEND_URL}/api/form-options`)
 
     const response = await fetch(`${BACKEND_URL}/api/form-options`, {
       method: 'GET',
@@ -20,19 +20,19 @@ export async function GET() {
 
     const data = await response.json()
     
-    console.log("✅ Successfully fetched form options from Flask")
+    console.log("✅ Successfully fetched form options from Node.js backend")
     console.log("📊 Cities loaded:", Object.keys(data.cities || {}).length)
     
     return NextResponse.json(data)
   } catch (error: any) {
-    console.error("❌ Error fetching form options from Flask:", error)
+    console.error("❌ Error fetching form options from Node.js backend:", error)
     
     // Check if it's a connection error
     if (error.cause?.code === 'ECONNREFUSED') {
       return NextResponse.json(
         { 
-          error: "Cannot connect to Flask backend. Please ensure Flask is running on http://127.0.0.1:5000",
-          details: "Run 'python backend.py' in your backend directory"
+          error: "Cannot connect to Node.js backend. Please ensure Node.js backend is running on http://127.0.0.1:3001",
+          details: "Run 'node index.js' in the Node.js-Backend directory"
         }, 
         { status: 503 }
       )

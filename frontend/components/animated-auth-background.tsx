@@ -1,8 +1,8 @@
 "use client"
 
-import { useRef, useEffect, useState } from "react"
+import { useRef, useLayoutEffect, useState, memo } from "react"
 import { Canvas, useFrame } from "@react-three/fiber"
-import { Environment, Float, MeshDistortMaterial } from "@react-three/drei"
+import { Float, MeshDistortMaterial, Stars } from "@react-three/drei"
 import { motion } from "framer-motion"
 import gsap from "gsap"
 import type * as THREE from "three"
@@ -17,7 +17,7 @@ function FloatingGeometry() {
   const textRef = useRef<THREE.Mesh>(null)
   const [fontGeometry, setFontGeometry] = useState<THREE.BufferGeometry | null>(null)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const loadFont = async () => {
       const loader = new FontLoader()
       const font = await loader.loadAsync("/fonts/helvetiker_bold.typeface.json") // ✅ Local path
@@ -36,10 +36,10 @@ function FloatingGeometry() {
     loadFont()
   }, [])
 
-  useEffect(() => {
-    if (!groupRef.current) return
+  useLayoutEffect(() => {
+    if (typeof window === "undefined" || !groupRef.current) return
 
-    gsap.fromTo(
+    const scaleTween = gsap.fromTo(
       groupRef.current.scale,
       { x: 0, y: 0, z: 0 },
       {
@@ -52,7 +52,7 @@ function FloatingGeometry() {
       },
     )
 
-    gsap.fromTo(
+    const rotationTween = gsap.fromTo(
       groupRef.current.rotation,
       { y: -Math.PI },
       {
@@ -61,6 +61,11 @@ function FloatingGeometry() {
         ease: "power2.out",
       },
     )
+
+    return () => {
+      scaleTween.kill()
+      rotationTween.kill()
+    }
   }, [])
 
   useFrame((state) => {
@@ -116,30 +121,40 @@ function FloatingGeometry() {
 export function AnimatedAuthBackground() {
   const [isMounted, setIsMounted] = useState(false)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setIsMounted(true)
   }, [])
 
   if (!isMounted) {
-    return <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-black to-blue-900" />
+    return <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-950 to-black" />
   }
+
+  if (typeof window === "undefined") return null
 
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      className="absolute inset-0"
+      className="absolute inset-0 bg-gradient-to-br from-black via-gray-950 to-black"
     >
-      <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
+      <Canvas
+        camera={{ position: [0, 0, 5], fov: 75 }}
+        gl={{ antialias: true, alpha: false, powerPreference: "high-performance", preserveDrawingBuffer: true }}
+        onCreated={({ gl }) => {
+          gl.setClearColor("#05070f")
+        }}
+      >
         <ambientLight intensity={0.3} />
         <pointLight position={[10, 10, 10]} intensity={1} />
         <pointLight position={[-10, -10, -10]} intensity={0.5} color="#8A2BE2" />
+        <Stars radius={80} depth={40} count={2500} factor={3} saturation={0} fade />
         <FloatingGeometry />
-        <Environment preset="night" />
       </Canvas>
 
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-blue-900/20 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 via-black/10 to-blue-900/30 pointer-events-none" />
     </motion.div>
   )
 }
+
+export const MemoizedAnimatedAuthBackground = memo(AnimatedAuthBackground)

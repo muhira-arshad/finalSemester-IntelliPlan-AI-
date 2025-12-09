@@ -107,7 +107,7 @@ export function AuthProvider({
         document.cookie = `intellplan_user=; path=/; max-age=0`
 
         if (_event === "SIGNED_OUT") {
-          router.push("/login")
+          router.push("/auth/signin")
         }
       }
 
@@ -191,7 +191,7 @@ export function AuthProvider({
       setIsSignedIn(false)
       localStorage.removeItem("user")
       document.cookie = `intellplan_user=; path=/; max-age=0`
-      router.push("/login")
+      router.push("/auth/signin")
     } catch (error: any) {
       console.error("SignOut Error:", error.message)
     }

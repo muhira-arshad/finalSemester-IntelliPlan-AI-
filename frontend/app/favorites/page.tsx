@@ -14,7 +14,7 @@ export default function FavoritesPage() {
       title: "Modern Villa",
       type: "3D",
       category: "Residential",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/images/modern villa layout.jpg",
       likes: 124,
     },
     {
@@ -22,7 +22,7 @@ export default function FavoritesPage() {
       title: "Office Space",
       type: "3D",
       category: "Commercial",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/images/officespace.jpg",
       likes: 156,
     },
     {
@@ -30,7 +30,7 @@ export default function FavoritesPage() {
       title: "Tiny House",
       type: "2D",
       category: "Residential",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/images/tiny images.jfif",
       likes: 234,
     },
   ]

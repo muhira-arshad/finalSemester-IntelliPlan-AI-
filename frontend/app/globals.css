@@ -99,6 +99,55 @@
   color: hsl(var(--primary-foreground)); /* Ensure dark text on yellow in dark mode */
 }
 
+/* Starry background animation */
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes float-slow {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate3d(10px, -20px, 0) scale(1.05);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.4;
+  }
+}
+
+.starry-bg {
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+.star:nth-child(odd) {
+  animation-duration: 2s;
+}
+
+.star:nth-child(even) {
+  animation-duration: 4s;
+}
+
 .light .btn-primary-text {
   color: hsl(var(--primary-foreground)); /* Ensure dark text on yellow in light mode */
 }

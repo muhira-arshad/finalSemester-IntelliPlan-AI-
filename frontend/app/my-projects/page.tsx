@@ -49,7 +49,7 @@ export default function MyProjectsPage() {
       type: "3D",
       createdAt: "2024-01-15",
       status: "completed",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/images/modern villa layout.jpg",
     },
     {
       id: 2,
@@ -57,7 +57,7 @@ export default function MyProjectsPage() {
       type: "2D",
       createdAt: "2024-01-14",
       status: "completed",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/images/apartment-layout.jpg",
     },
     {
       id: 3,
@@ -65,7 +65,7 @@ export default function MyProjectsPage() {
       type: "3D",
       createdAt: "2024-01-13",
       status: "processing",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/images/officespace.jpg",
     },
     {
       id: 4,
@@ -73,7 +73,7 @@ export default function MyProjectsPage() {
       type: "2D",
       createdAt: "2024-01-12",
       status: "completed",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/images/studio.jfif",
     },
   ]
 
@@ -130,14 +130,27 @@ export default function MyProjectsPage() {
           {/* Header */}
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 bg-background/80 backdrop-blur-sm p-6 rounded-lg shadow-lg">
             <div className="flex items-center space-x-4 mb-4 md:mb-0">
+              <div className="flex items-center mb-6">
               <Avatar className="h-16 w-16">
-                <AvatarImage src="/placeholder.svg" alt={user?.firstName || "User"} />
-                <AvatarFallback>{user?.firstName?.[0] || "U"}</AvatarFallback>
-              </Avatar>
-              <div>
+    <AvatarImage
+      src={user?.avatarUrl || "/images/male.png"}
+      alt={user?.firstName || "User"}
+    />
+    <AvatarFallback>
+      {user?.firstName?.[0] || "U"}
+    </AvatarFallback>
+  </Avatar>
+   <div className="ml-4">
+    <h1 className="text-2xl font-semibold">My Projects</h1>
+    <p className="text-muted-foreground">
+     Manage your AI-generated floor plans
+    </p>
+  </div>
+</div>
+              {/* <div>
                 <h1 className="text-2xl font-bold text-foreground">My Projects</h1>
                 <p className="text-muted-foreground">Manage your AI-generated floor plans</p>
-              </div>
+              </div> */}
             </div>
             <div className="flex space-x-2">
               <Link href="/generate">
@@ -220,7 +233,7 @@ export default function MyProjectsPage() {
                     <CardContent className="p-0">
                       <div className="relative overflow-hidden rounded-t-lg">
                         <img
-                          src={plan.image || "/placeholder.svg"}
+                          src={plan.image || "/images/logo.png"}
                           alt={plan.title}
                           className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                         />

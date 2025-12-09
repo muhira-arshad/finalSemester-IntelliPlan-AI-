@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef, useEffect } from "react"
+import { useRef, useLayoutEffect, memo } from "react"
 import { Canvas, useFrame } from "@react-three/fiber"
 import { Stars, Environment } from "@react-three/drei"
 import type { Mesh } from "three"
@@ -8,6 +8,7 @@ import gsap from "gsap"
 
 function AnimatedSphere() {
   const meshRef = useRef<Mesh>(null)
+  const initialized = useRef(false)
 
   useFrame(() => {
     if (meshRef.current) {
@@ -16,24 +17,31 @@ function AnimatedSphere() {
     }
   })
 
-  useEffect(() => {
-    if (meshRef.current) {
-      gsap.to(meshRef.current.position, {
-        duration: 5,
-        y: 0.5,
-        repeat: -1,
-        yoyo: true,
-        ease: "power1.inOut",
-      })
-      gsap.to(meshRef.current.scale, {
-        duration: 3,
-        x: 1.2,
-        y: 1.2,
-        z: 1.2,
-        repeat: -1,
-        yoyo: true,
-        ease: "power1.inOut",
-      })
+  useLayoutEffect(() => {
+    if (typeof window === "undefined" || !meshRef.current || initialized.current) return
+    initialized.current = true
+
+    const positionTween = gsap.to(meshRef.current.position, {
+      duration: 5,
+      y: 0.5,
+      repeat: -1,
+      yoyo: true,
+      ease: "power1.inOut",
+    })
+
+    const scaleTween = gsap.to(meshRef.current.scale, {
+      duration: 3,
+      x: 1.2,
+      y: 1.2,
+      z: 1.2,
+      repeat: -1,
+      yoyo: true,
+      ease: "power1.inOut",
+    })
+
+    return () => {
+      positionTween.kill()
+      scaleTween.kill()
     }
   }, [])
 
@@ -53,6 +61,7 @@ function AnimatedSphere() {
 
 function AnimatedDodecahedron() {
   const meshRef = useRef<Mesh>(null)
+  const initialized = useRef(false)
 
   useFrame(() => {
     if (meshRef.current) {
@@ -61,21 +70,27 @@ function AnimatedDodecahedron() {
     }
   })
 
-  useEffect(() => {
-    if (meshRef.current) {
-      gsap.to(meshRef.current.position, {
-        duration: 4,
-        x: 0.8,
-        repeat: -1,
-        yoyo: true,
-        ease: "power2.inOut",
-      })
-      gsap.to(meshRef.current.rotation, {
-        duration: 6,
-        z: Math.PI * 2,
-        repeat: -1,
-        ease: "none",
-      })
+  useLayoutEffect(() => {
+    if (typeof window === "undefined" || !meshRef.current || initialized.current) return
+    initialized.current = true
+
+    const positionTween = gsap.to(meshRef.current.position, {
+      duration: 4,
+      x: 0.8,
+      repeat: -1,
+      yoyo: true,
+      ease: "power2.inOut",
+    })
+    const rotationTween = gsap.to(meshRef.current.rotation, {
+      duration: 6,
+      z: Math.PI * 2,
+      repeat: -1,
+      ease: "none",
+    })
+
+    return () => {
+      positionTween.kill()
+      rotationTween.kill()
     }
   }, [])
 
@@ -93,10 +108,19 @@ function AnimatedDodecahedron() {
   )
 }
 
-export function ThreeDHeroBackground() {
+function ThreeDHeroBackgroundComponent() {
+  if (typeof window === "undefined") return null
+
   return (
-    <div className="absolute inset-0 z-0">
-      <Canvas camera={{ position: [0, 0, 3], fov: 75 }}>
+    <div className="absolute inset-0 z-0 bg-gradient-to-br from-black via-gray-950 to-black">
+      <Canvas
+        camera={{ position: [0, 0, 3], fov: 75 }}
+        style={{ width: "100%", height: "100%" }}
+        gl={{ antialias: true, alpha: false, powerPreference: "high-performance", preserveDrawingBuffer: true }}
+        onCreated={({ gl }) => {
+          gl.setClearColor("#05070f")
+        }}
+      >
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} intensity={1} />
         <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade />
@@ -108,3 +132,5 @@ export function ThreeDHeroBackground() {
     </div>
   )
 }
+
+export const ThreeDHeroBackground = memo(ThreeDHeroBackgroundComponent)

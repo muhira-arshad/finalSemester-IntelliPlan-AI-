@@ -3,13 +3,13 @@
 // ============================================
 import { NextResponse } from "next/server"
 
-const BACKEND_URL = process.env.BACKEND_URL || "http://127.0.0.1:5000"
+const BACKEND_URL = process.env.BACKEND_URL || "http://127.0.0.1:3001"
 
 export async function POST(request: Request) {
   try {
     const data = await request.json()
 
-    console.log("🔄 Calculating construction cost via Flask backend")
+    console.log("🔄 Calculating construction cost via Node.js backend")
 
     const response = await fetch(`${BACKEND_URL}/api/construction-calculator`, {
       method: 'POST',
