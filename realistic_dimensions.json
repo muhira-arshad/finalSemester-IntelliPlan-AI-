@@ -1,0 +1,63 @@
+{
+  "dimensions": {
+    "doors": {
+      "main_door": { "width_ft": 4, "height_ft": 7.5 },
+      "room_door": { "width_ft": 3, "height_ft": 7 },
+      "bathroom_door": { "width_ft": 2.5, "height_ft": 7 },
+      "main_gate": { "width_ft": 10, "height_ft": 7 },
+      "wicket_gate": { "width_ft": 3.5, "height_ft": 7 },
+      "balcony_door": { "width_ft": 3, "height_ft": 7 },
+      "sliding_door": { "width_ft": 6, "height_ft": 7 },
+      "patio_door": { "width_ft": 6, "height_ft": 7.5 }
+    },
+    "windows": {
+      "bedroom": { "width_ft": 4, "height_ft": 5 },
+      "lounge": { "width_ft": 6, "height_ft": 5 },
+      "kitchen": { "width_ft": 4, "height_ft": 4 },
+      "bathroom": { "width_ft": 2, "height_ft": 2 },
+      "dining": { "width_ft": 5, "height_ft": 4 },
+      "study": { "width_ft": 4, "height_ft": 4 },
+      "garage": { "width_ft": 3, "height_ft": 3 },
+      "balcony": { "width_ft": 3.5, "height_ft": 5 }
+    },
+    "fixtures": {
+      "stair_width_ft": 3.5,
+      "balcony_railing_height_ft": 3,
+      "counter_height_ft": 3,
+      "wardrobe_depth_ft": 2,
+      "kitchen_counter_depth_ft": 2.5,
+      "bathroom_sink_height_ft": 3,
+      "toilet_depth_ft": 2,
+      "shower_area_ft": 3
+    }
+  },
+  "room_sizes": {
+    "bedroom_small": { "min": [10, 10], "comfortable": [10, 12] },
+    "bedroom_master": { "min": [12, 14], "comfortable": [14, 16] },
+    "bedroom_guest": { "min": [10, 12], "comfortable": [11, 14] },
+    "bath_attached": { "min": [5, 7], "comfortable": [6, 8] },
+    "bath_common": { "min": [5, 6], "comfortable": [6, 7] },
+    "kitchen_closed": { "min": [7, 10], "comfortable": [8, 12] },
+    "kitchen_open": { "min": [8, 8], "comfortable": [8, 10] },
+    "lounge_tv": { "min": [12, 14], "comfortable": [14, 16] },
+    "drawing_room": { "min": [12, 14], "comfortable": [14, 18] },
+    "garage_single": { "min": [10, 15], "comfortable": [12, 18] },
+    "garage_double": { "min": [16, 18], "comfortable": [18, 20] },
+    "store": { "min": [5, 5], "comfortable": [6, 8] },
+    "balcony": { "min_width": 3, "max_width": 5 },
+    "corridor": { "min_width": 3, "comfortable_width": 4 },
+    "foyer": { "min": [6, 6], "comfortable": [8, 10] },
+    "terrace": { "min": [10, 10], "comfortable": [12, 15] },
+    "utility_room": { "min": [5, 6], "comfortable": [6, 8] },
+    "study_room": { "min": [8, 8], "comfortable": [10, 12] },
+    "pantry": { "min": [4, 4], "comfortable": [5, 6] },
+    "powder_room": { "min": [4, 5], "comfortable": [5, 6] }
+  },
+  "rooftop": {
+    "allowed": true,
+    "allowedStructures": ["stair mumty", "water tank", "solar panels", "satellite dish"],
+    "usage": ["access", "laundry", "storage", "solar power installation", "terrace garden"],
+    "maxBuiltUpArea_pct": 15
+  }
+  
+}

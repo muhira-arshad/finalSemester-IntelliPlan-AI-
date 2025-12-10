@@ -1,0 +1,2558 @@
+[
+    {
+        "label": "wall",
+        "category": "wall",
+        "width_ft": 0.5,
+        "height_ft": 10
+    },
+    {
+        "label": "partition",
+        "category": "wall",
+        "width_ft": 0.5,
+        "height_ft": 10
+    },
+    {
+        "label": "column",
+        "category": "wall",
+        "width_ft": 0.5,
+        "height_ft": 10
+    },
+    {
+        "label": "beam",
+        "category": "wall",
+        "width_ft": 0.5,
+        "height_ft": 10
+    },
+    {
+        "label": "structural",
+        "category": "wall",
+        "width_ft": 0.5,
+        "height_ft": 10
+    },
+    {
+        "label": "door",
+        "category": "door",
+        "width_ft": 3,
+        "height_ft": 7
+    },
+    {
+        "label": "double door",
+        "category": "door",
+        "width_ft": 3,
+        "height_ft": 7
+    },
+    {
+        "label": "sliding door",
+        "category": "door",
+        "width_ft": 3,
+        "height_ft": 7
+    },
+    {
+        "label": "doorway",
+        "category": "door",
+        "width_ft": 3,
+        "height_ft": 7
+    },
+    {
+        "label": "window",
+        "category": "window",
+        "width_ft": 4,
+        "height_ft": 5
+    },
+    {
+        "label": "frame",
+        "category": "window",
+        "width_ft": 4,
+        "height_ft": 5
+    },
+    {
+        "label": "glass",
+        "category": "window",
+        "width_ft": 4,
+        "height_ft": 5
+    },
+    {
+        "label": "balcony door",
+        "category": "window",
+        "width_ft": 4,
+        "height_ft": 5
+    },
+    {
+        "label": "roof",
+        "category": "roof",
+        "width_ft": 0.25,
+        "height_ft": 5.0
+    },
+    {
+        "label": "sis\u00e4katto",
+        "category": "roof",
+        "width_ft": 0.25,
+        "height_ft": 5.0
+    },
+    {
+        "label": "katt.h",
+        "category": "roof",
+        "width_ft": 0.25,
+        "height_ft": 5.0
+    },
+    {
+        "label": "bedroom",
+        "category": "bedroom",
+        "width_ft": 10.0,
+        "height_ft": 11.408
+    },
+    {
+        "label": "bed",
+        "category": "bedroom",
+        "width_ft": 10.0,
+        "height_ft": 11.408
+    },
+    {
+        "label": "master bed",
+        "category": "bedroom",
+        "width_ft": 10.0,
+        "height_ft": 11.408
+    },
+    {
+        "label": "guest bed",
+        "category": "bedroom",
+        "width_ft": 10.0,
+        "height_ft": 11.408
+    },
+    {
+        "label": "mh",
+        "category": "bedroom",
+        "width_ft": 10.0,
+        "height_ft": 11.408
+    },
+    {
+        "label": "(mh)",
+        "category": "bedroom",
+        "width_ft": 10.0,
+        "height_ft": 11.408
+    },
+    {
+        "label": "ask/mh",
+        "category": "bedroom",
+        "width_ft": 10.0,
+        "height_ft": 11.408
+    },
+    {
+        "label": "(ask/mh)",
+        "category": "bedroom",
+        "width_ft": 10.0,
+        "height_ft": 11.408
+    },
+    {
+        "label": "makuuhuone",
+        "category": "bedroom",
+        "width_ft": 10.0,
+        "height_ft": 11.408
+    },
+    {
+        "label": "alkovi",
+        "category": "bedroom",
+        "width_ft": 10.0,
+        "height_ft": 11.408
+    },
+    {
+        "label": "makuuparvi",
+        "category": "bedroom",
+        "width_ft": 10.0,
+        "height_ft": 11.408
+    },
+    {
+        "label": "makuusyv.",
+        "category": "bedroom",
+        "width_ft": 10.0,
+        "height_ft": 11.408
+    },
+    {
+        "label": "sleeping loft",
+        "category": "bedroom",
+        "width_ft": 10.0,
+        "height_ft": 11.408
+    },
+    {
+        "label": "loft",
+        "category": "bedroom",
+        "width_ft": 10.0,
+        "height_ft": 11.408
+    },
+    {
+        "label": "open loft",
+        "category": "bedroom",
+        "width_ft": 10.0,
+        "height_ft": 11.408
+    },
+    {
+        "label": "loft_work_room",
+        "category": "bedroom",
+        "width_ft": 10.0,
+        "height_ft": 11.408
+    },
+    {
+        "label": "living",
+        "category": "livingroom",
+        "width_ft": 12.15,
+        "height_ft": 14.854
+    },
+    {
+        "label": "lounge",
+        "category": "livingroom",
+        "width_ft": 12.15,
+        "height_ft": 14.854
+    },
+    {
+        "label": "hall",
+        "category": "livingroom",
+        "width_ft": 12.15,
+        "height_ft": 14.854
+    },
+    {
+        "label": "dining",
+        "category": "livingroom",
+        "width_ft": 12.15,
+        "height_ft": 14.854
+    },
+    {
+        "label": "family room",
+        "category": "livingroom",
+        "width_ft": 12.15,
+        "height_ft": 14.854
+    },
+    {
+        "label": "oh",
+        "category": "livingroom",
+        "width_ft": 12.15,
+        "height_ft": 14.854
+    },
+    {
+        "label": "aula/oh",
+        "category": "livingroom",
+        "width_ft": 12.15,
+        "height_ft": 14.854
+    },
+    {
+        "label": "aula/th",
+        "category": "livingroom",
+        "width_ft": 12.15,
+        "height_ft": 14.854
+    },
+    {
+        "label": "aula/tvh",
+        "category": "livingroom",
+        "width_ft": 12.15,
+        "height_ft": 14.854
+    },
+    {
+        "label": "aula",
+        "category": "livingroom",
+        "width_ft": 12.15,
+        "height_ft": 14.854
+    },
+    {
+        "label": "ala-aula",
+        "category": "livingroom",
+        "width_ft": 12.15,
+        "height_ft": 14.854
+    },
+    {
+        "label": "yhteistila",
+        "category": "livingroom",
+        "width_ft": 12.15,
+        "height_ft": 14.854
+    },
+    {
+        "label": "yl\u00e4-aula",
+        "category": "corridor",
+        "width_ft": 11.534,
+        "height_ft": 12.261
+    },
+    {
+        "label": "yl\u00e4aula",
+        "category": "corridor",
+        "width_ft": 11.534,
+        "height_ft": 12.261
+    },
+    {
+        "label": "tupa",
+        "category": "livingroom",
+        "width_ft": 12.15,
+        "height_ft": 14.854
+    },
+    {
+        "label": "tuvan",
+        "category": "livingroom",
+        "width_ft": 12.15,
+        "height_ft": 14.854
+    },
+    {
+        "label": "th/oleskelu",
+        "category": "livingroom",
+        "width_ft": 12.15,
+        "height_ft": 14.854
+    },
+    {
+        "label": "pirtti",
+        "category": "livingroom",
+        "width_ft": 12.15,
+        "height_ft": 14.854
+    },
+    {
+        "label": "home theater",
+        "category": "livingroom",
+        "width_ft": 12.15,
+        "height_ft": 14.854
+    },
+    {
+        "label": "music room",
+        "category": "livingroom",
+        "width_ft": 12.15,
+        "height_ft": 14.854
+    },
+    {
+        "label": "rest space",
+        "category": "livingroom",
+        "width_ft": 12.15,
+        "height_ft": 14.854
+    },
+    {
+        "label": "smoking_room",
+        "category": "livingroom",
+        "width_ft": 12.15,
+        "height_ft": 14.854
+    },
+    {
+        "label": "social_space",
+        "category": "retail",
+        "width_ft": 12.15,
+        "height_ft": 14.854
+    },
+    {
+        "label": "social_spaces",
+        "category": "livingroom",
+        "width_ft": 12.15,
+        "height_ft": 14.854
+    },
+    {
+        "label": "common space",
+        "category": "livingroom",
+        "width_ft": 12.15,
+        "height_ft": 14.854
+    },
+    {
+        "label": "chamber",
+        "category": "livingroom",
+        "width_ft": 12.15,
+        "height_ft": 14.854
+    },
+    {
+        "label": "kitchen",
+        "category": "kitchen",
+        "width_ft": 7.719,
+        "height_ft": 11.443
+    },
+    {
+        "label": "pantry",
+        "category": "kitchen",
+        "width_ft": 7.719,
+        "height_ft": 11.443
+    },
+    {
+        "label": "cook",
+        "category": "kitchen",
+        "width_ft": 7.719,
+        "height_ft": 11.443
+    },
+    {
+        "label": "kitchenette",
+        "category": "kitchen",
+        "width_ft": 7.719,
+        "height_ft": 11.443
+    },
+    {
+        "label": "kk",
+        "category": "kitchen",
+        "width_ft": 7.719,
+        "height_ft": 11.443
+    },
+    {
+        "label": "(kk)",
+        "category": "kitchen",
+        "width_ft": 7.719,
+        "height_ft": 11.443
+    },
+    {
+        "label": "keittokomero",
+        "category": "kitchen",
+        "width_ft": 7.719,
+        "height_ft": 11.443
+    },
+    {
+        "label": "avokeitti\u00f6",
+        "category": "kitchen",
+        "width_ft": 7.719,
+        "height_ft": 11.443
+    },
+    {
+        "label": "avok",
+        "category": "kitchen",
+        "width_ft": 7.719,
+        "height_ft": 11.443
+    },
+    {
+        "label": "avoin",
+        "category": "kitchen",
+        "width_ft": 7.719,
+        "height_ft": 11.443
+    },
+    {
+        "label": "ruok",
+        "category": "kitchen",
+        "width_ft": 7.719,
+        "height_ft": 11.443
+    },
+    {
+        "label": "ruok/h",
+        "category": "kitchen",
+        "width_ft": 7.719,
+        "height_ft": 11.443
+    },
+    {
+        "label": "ruok/k",
+        "category": "kitchen",
+        "width_ft": 7.719,
+        "height_ft": 11.443
+    },
+    {
+        "label": "ruokailu",
+        "category": "kitchen",
+        "width_ft": 7.719,
+        "height_ft": 11.443
+    },
+    {
+        "label": "ruokakellari",
+        "category": "kitchen",
+        "width_ft": 7.719,
+        "height_ft": 11.443
+    },
+    {
+        "label": "ruo-kom",
+        "category": "kitchen",
+        "width_ft": 7.719,
+        "height_ft": 11.443
+    },
+    {
+        "label": "scullery",
+        "category": "kitchen",
+        "width_ft": 7.719,
+        "height_ft": 11.443
+    },
+    {
+        "label": "base_cabinet",
+        "category": "furniture",
+        "width_ft": 7.719,
+        "height_ft": 11.443
+    },
+    {
+        "label": "round_base_cabinet",
+        "category": "furniture",
+        "width_ft": 7.719,
+        "height_ft": 11.443
+    },
+    {
+        "label": "triangular_base_cabinet",
+        "category": "furniture",
+        "width_ft": 7.719,
+        "height_ft": 11.443
+    },
+    {
+        "label": "counter_top",
+        "category": "furniture",
+        "width_ft": 7.719,
+        "height_ft": 11.443
+    },
+    {
+        "label": "dishwasher",
+        "category": "kitchen",
+        "width_ft": 7.719,
+        "height_ft": 11.443
+    },
+    {
+        "label": "refrigerator",
+        "category": "kitchen",
+        "width_ft": 7.719,
+        "height_ft": 11.443
+    },
+    {
+        "label": "double_refrigerator",
+        "category": "kitchen",
+        "width_ft": 7.719,
+        "height_ft": 11.443
+    },
+    {
+        "label": "appliance_space",
+        "category": "kitchen",
+        "width_ft": 7.719,
+        "height_ft": 11.443
+    },
+    {
+        "label": "appliance_space_2",
+        "category": "kitchen",
+        "width_ft": 7.719,
+        "height_ft": 11.443
+    },
+    {
+        "label": "general_appliance",
+        "category": "kitchen",
+        "width_ft": 7.719,
+        "height_ft": 11.443
+    },
+    {
+        "label": "round_appliance",
+        "category": "kitchen",
+        "width_ft": 7.719,
+        "height_ft": 11.443
+    },
+    {
+        "label": "bath",
+        "category": "bathroom",
+        "width_ft": 5.251,
+        "height_ft": 7.102
+    },
+    {
+        "label": "bathroom",
+        "category": "bathroom",
+        "width_ft": 5.251,
+        "height_ft": 7.102
+    },
+    {
+        "label": "toilet",
+        "category": "bathroom",
+        "width_ft": 5.251,
+        "height_ft": 7.102
+    },
+    {
+        "label": "washroom",
+        "category": "bathroom",
+        "width_ft": 5.251,
+        "height_ft": 7.102
+    },
+    {
+        "label": "restroom",
+        "category": "bathroom",
+        "width_ft": 5.251,
+        "height_ft": 7.102
+    },
+    {
+        "label": "wc",
+        "category": "bathroom",
+        "width_ft": 5.251,
+        "height_ft": 7.102
+    },
+    {
+        "label": "shower room",
+        "category": "bathroom",
+        "width_ft": 5.251,
+        "height_ft": 7.102
+    },
+    {
+        "label": "pukuh",
+        "category": "bathroom",
+        "width_ft": 5.251,
+        "height_ft": 7.102
+    },
+    {
+        "label": "aula/pukuh",
+        "category": "bathroom",
+        "width_ft": 5.251,
+        "height_ft": 7.102
+    },
+    {
+        "label": "suihkutila",
+        "category": "bathroom",
+        "width_ft": 5.251,
+        "height_ft": 7.102
+    },
+    {
+        "label": "sauna",
+        "category": "bathroom",
+        "width_ft": 5.251,
+        "height_ft": 7.102
+    },
+    {
+        "label": "sauna/pesuh",
+        "category": "bathroom",
+        "width_ft": 5.251,
+        "height_ft": 7.102
+    },
+    {
+        "label": "ph",
+        "category": "bathroom",
+        "width_ft": 5.251,
+        "height_ft": 7.102
+    },
+    {
+        "label": "ph+khh",
+        "category": "bathroom",
+        "width_ft": 5.251,
+        "height_ft": 7.102
+    },
+    {
+        "label": "pesu+khh",
+        "category": "bathroom",
+        "width_ft": 5.251,
+        "height_ft": 7.102
+    },
+    {
+        "label": "pesu/psh",
+        "category": "bathroom",
+        "width_ft": 5.251,
+        "height_ft": 7.102
+    },
+    {
+        "label": "kylpyh",
+        "category": "bathroom",
+        "width_ft": 5.251,
+        "height_ft": 7.102
+    },
+    {
+        "label": "shower_cabin",
+        "category": "bathroom",
+        "width_ft": 5.251,
+        "height_ft": 7.102
+    },
+    {
+        "label": "round_shower_screen_left",
+        "category": "bathroom",
+        "width_ft": 5.251,
+        "height_ft": 7.102
+    },
+    {
+        "label": "round_shower_screen_right",
+        "category": "bathroom",
+        "width_ft": 5.251,
+        "height_ft": 7.102
+    },
+    {
+        "label": "shower_platform",
+        "category": "bathroom",
+        "width_ft": 5.251,
+        "height_ft": 7.102
+    },
+    {
+        "label": "sink",
+        "category": "bathroom",
+        "width_ft": 5.251,
+        "height_ft": 7.102
+    },
+    {
+        "label": "side_sink",
+        "category": "bathroom",
+        "width_ft": 5.251,
+        "height_ft": 7.102
+    },
+    {
+        "label": "double_sink",
+        "category": "bathroom",
+        "width_ft": 5.251,
+        "height_ft": 7.102
+    },
+    {
+        "label": "double_sink_right",
+        "category": "bathroom",
+        "width_ft": 5.251,
+        "height_ft": 7.102
+    },
+    {
+        "label": "round_sink",
+        "category": "bathroom",
+        "width_ft": 5.251,
+        "height_ft": 7.102
+    },
+    {
+        "label": "corridor",
+        "category": "corridor",
+        "width_ft": 10.917,
+        "height_ft": 9.667
+    },
+    {
+        "label": "hallway",
+        "category": "corridor",
+        "width_ft": 10.917,
+        "height_ft": 9.667
+    },
+    {
+        "label": "passage",
+        "category": "corridor",
+        "width_ft": 10.917,
+        "height_ft": 9.667
+    },
+    {
+        "label": "vestibule",
+        "category": "corridor",
+        "width_ft": 10.917,
+        "height_ft": 9.667
+    },
+    {
+        "label": "aula/et",
+        "category": "corridor",
+        "width_ft": 10.917,
+        "height_ft": 9.667
+    },
+    {
+        "label": "sis.tulo",
+        "category": "corridor",
+        "width_ft": 10.917,
+        "height_ft": 9.667
+    },
+    {
+        "label": "tk/et",
+        "category": "corridor",
+        "width_ft": 10.917,
+        "height_ft": 9.667
+    },
+    {
+        "label": "luhtik\u00e4yt\u00e4v\u00e4",
+        "category": "corridor",
+        "width_ft": 10.917,
+        "height_ft": 9.667
+    },
+    {
+        "label": "parvi-k\u00e4yt\u00e4v\u00e4",
+        "category": "corridor",
+        "width_ft": 10.917,
+        "height_ft": 9.667
+    },
+    {
+        "label": "ajoluiska",
+        "category": "driveway",
+        "width_ft": 12,
+        "height_ft": 20
+    },
+    {
+        "label": "ramp",
+        "category": "driveway",
+        "width_ft": 12,
+        "height_ft": 20
+    },
+    {
+        "label": "driveway",
+        "category": "driveway",
+        "width_ft": 12,
+        "height_ft": 20
+    },
+    {
+        "label": "car_ramp",
+        "category": "driveway",
+        "width_ft": 12,
+        "height_ft": 20
+    },
+    {
+        "label": "garage_ramp",
+        "category": "driveway",
+        "width_ft": 12,
+        "height_ft": 20
+    },
+    {
+        "label": "storage",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "closet",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "wardrobe",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "store",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "cupboard",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "l\u00e4mmin",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "(l\u00e4mmin)",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "varasto",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "l\u00e4mmintila",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "archive",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "arkisto",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "autotalli/var",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "\u00f6ljys",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "\u00f6ljys.tila",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "ulkovar",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "vaateh/var",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "var(kylm\u00e4)",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "var.tekn",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "var/tek",
+        "category": "utilityroom",
+        "width_ft": 5.557,
+        "height_ft": 7.664
+    },
+    {
+        "label": "var/tekn.tila",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "var/tekntila",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "var/kell",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "var/py\u00f6r\u00e4t",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "var/vh",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "vh-huolto",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "vh/lvk",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "vh/omp",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "vh/pkh",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "vh/sh",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "vh/th",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "puukatos",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "puuliiteri",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "puuvaja",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "puuvar",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "sis.var",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "technicalroom",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "tekninen",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "teknvar",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "tekn/khh",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "tekn+var",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "tekn/maal.p",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "ulk.v\u00e4l.var",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "tank",
+        "category": "technicalroom",
+        "width_ft": 6.0,
+        "height_ft": 8.0
+    },
+    {
+        "label": "l\u00e4mp\u00f6keskus",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "l\u00e4mp\u00f6",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "l\u00e4mp\u00f6k",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "maa-l\u00e4mp\u00f6",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "maal\u00e4mp\u00f6",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "s\u00e4il",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "s\u00e4ili\u00f6",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "tal-kell",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "tal.",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "tal.kel",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "tal.kell",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "talkel",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "talouskellari",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "talousrakennus",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "talviasuttava",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "pellettivar",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "py\u00f6r\u00e4katos",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "kylmi\u00f6",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "kylm\u00e4/var",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "kylm\u00e4kellari",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "katospuut",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "kh+pe",
+        "category": "utilityroom",
+        "width_ft": 5.557,
+        "height_ft": 7.664
+    },
+    {
+        "label": "kh-tila",
+        "category": "utilityroom",
+        "width_ft": 5.557,
+        "height_ft": 7.664
+    },
+    {
+        "label": "kh/harr",
+        "category": "utilityroom",
+        "width_ft": 5.557,
+        "height_ft": 7.664
+    },
+    {
+        "label": "khh/pesu",
+        "category": "utilityroom",
+        "width_ft": 5.557,
+        "height_ft": 7.664
+    },
+    {
+        "label": "khh/tekn",
+        "category": "utilityroom",
+        "width_ft": 5.557,
+        "height_ft": 7.664
+    },
+    {
+        "label": "khh/tk",
+        "category": "utilityroom",
+        "width_ft": 5.557,
+        "height_ft": 7.664
+    },
+    {
+        "label": "khh/vh",
+        "category": "utilityroom",
+        "width_ft": 5.557,
+        "height_ft": 7.664
+    },
+    {
+        "label": "khh\\pkh",
+        "category": "utilityroom",
+        "width_ft": 5.557,
+        "height_ft": 7.664
+    },
+    {
+        "label": "kuiv",
+        "category": "utilityroom",
+        "width_ft": 5.557,
+        "height_ft": 7.664
+    },
+    {
+        "label": "kuiv.",
+        "category": "utilityroom",
+        "width_ft": 5.557,
+        "height_ft": 7.664
+    },
+    {
+        "label": "kuivaus",
+        "category": "utilityroom",
+        "width_ft": 5.557,
+        "height_ft": 7.664
+    },
+    {
+        "label": "kuivaush",
+        "category": "utilityroom",
+        "width_ft": 5.557,
+        "height_ft": 7.664
+    },
+    {
+        "label": "kura-et",
+        "category": "utilityroom",
+        "width_ft": 5.557,
+        "height_ft": 7.664
+    },
+    {
+        "label": "kuraet",
+        "category": "utilityroom",
+        "width_ft": 5.557,
+        "height_ft": 7.664
+    },
+    {
+        "label": "kone.",
+        "category": "utilityroom",
+        "width_ft": 5.557,
+        "height_ft": 7.664
+    },
+    {
+        "label": "koneh",
+        "category": "utilityroom",
+        "width_ft": 5.557,
+        "height_ft": 7.664
+    },
+    {
+        "label": "firewood",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "vault",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "safe/vault",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "shelter wood",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "shelter/canopy",
+        "category": "storage",
+        "width_ft": 6,
+        "height_ft": 8
+    },
+    {
+        "label": "balcony",
+        "category": "balcony",
+        "width_ft": 3.33,
+        "height_ft": 3.362
+    },
+    {
+        "label": "terrace",
+        "category": "balcony",
+        "width_ft": 3.33,
+        "height_ft": 3.362
+    },
+    {
+        "label": "porch",
+        "category": "balcony",
+        "width_ft": 3.33,
+        "height_ft": 3.362
+    },
+    {
+        "label": "deck",
+        "category": "balcony",
+        "width_ft": 3.33,
+        "height_ft": 3.362
+    },
+    {
+        "label": "veranda",
+        "category": "balcony",
+        "width_ft": 3.33,
+        "height_ft": 3.362
+    },
+    {
+        "label": "parveke",
+        "category": "balcony",
+        "width_ft": 3.33,
+        "height_ft": 3.362
+    },
+    {
+        "label": "terassi",
+        "category": "balcony",
+        "width_ft": 3.33,
+        "height_ft": 3.362
+    },
+    {
+        "label": "tk/kuisti",
+        "category": "balcony",
+        "width_ft": 3.33,
+        "height_ft": 3.362
+    },
+    {
+        "label": "garage",
+        "category": "garage",
+        "width_ft": 10.472,
+        "height_ft": 16.908
+    },
+    {
+        "label": "carport",
+        "category": "garage",
+        "width_ft": 10.472,
+        "height_ft": 16.908
+    },
+    {
+        "label": "autotalli",
+        "category": "garage",
+        "width_ft": 10.472,
+        "height_ft": 16.908
+    },
+    {
+        "label": "autokatos",
+        "category": "garage",
+        "width_ft": 10.472,
+        "height_ft": 16.908
+    },
+    {
+        "label": "autosuoja",
+        "category": "garage",
+        "width_ft": 10.472,
+        "height_ft": 16.908
+    },
+    {
+        "label": "autovaja",
+        "category": "garage",
+        "width_ft": 10.472,
+        "height_ft": 16.908
+    },
+    {
+        "label": "auto",
+        "category": "garage",
+        "width_ft": 10.472,
+        "height_ft": 16.908
+    },
+    {
+        "label": "parking",
+        "category": "garage",
+        "width_ft": 10.472,
+        "height_ft": 16.908
+    },
+    {
+        "label": "parking_space",
+        "category": "garage",
+        "width_ft": 10.472,
+        "height_ft": 16.908
+    },
+    {
+        "label": "parking shelter",
+        "category": "garage",
+        "width_ft": 10.472,
+        "height_ft": 16.908
+    },
+    {
+        "label": "car shelter",
+        "category": "garage",
+        "width_ft": 10.472,
+        "height_ft": 16.908
+    },
+    {
+        "label": "service pit",
+        "category": "garage",
+        "width_ft": 10.472,
+        "height_ft": 16.908
+    },
+    {
+        "label": "stair",
+        "category": "staircase",
+        "width_ft": 6,
+        "height_ft": 10
+    },
+    {
+        "label": "staircase",
+        "category": "staircase",
+        "width_ft": 6,
+        "height_ft": 10
+    },
+    {
+        "label": "steps",
+        "category": "staircase",
+        "width_ft": 6,
+        "height_ft": 10
+    },
+    {
+        "label": "avoparvi",
+        "category": "staircase",
+        "width_ft": 6,
+        "height_ft": 10
+    },
+    {
+        "label": "entry",
+        "category": "entry",
+        "width_ft": 7.535,
+        "height_ft": 9.843
+    },
+    {
+        "label": "foyer",
+        "category": "entry",
+        "width_ft": 7.535,
+        "height_ft": 9.843
+    },
+    {
+        "label": "entrance",
+        "category": "entry",
+        "width_ft": 7.535,
+        "height_ft": 9.843
+    },
+    {
+        "label": "lobby",
+        "category": "entry",
+        "width_ft": 7.535,
+        "height_ft": 9.843
+    },
+    {
+        "label": "aula/khh",
+        "category": "entry",
+        "width_ft": 7.535,
+        "height_ft": 9.843
+    },
+    {
+        "label": "vastaanotto",
+        "category": "entry",
+        "width_ft": 7.535,
+        "height_ft": 9.843
+    },
+    {
+        "label": "ask",
+        "category": "study",
+        "width_ft": 9.163,
+        "height_ft": 10.591
+    },
+    {
+        "label": "askarteluhuone",
+        "category": "study",
+        "width_ft": 9.163,
+        "height_ft": 10.591
+    },
+    {
+        "label": "(ask)",
+        "category": "study",
+        "width_ft": 9.163,
+        "height_ft": 10.591
+    },
+    {
+        "label": "at/ty\u00f6tila",
+        "category": "study",
+        "width_ft": 9.163,
+        "height_ft": 10.591
+    },
+    {
+        "label": "ateljee",
+        "category": "study",
+        "width_ft": 9.163,
+        "height_ft": 10.591
+    },
+    {
+        "label": "ty\u00f6tila",
+        "category": "study",
+        "width_ft": 9.163,
+        "height_ft": 10.591
+    },
+    {
+        "label": "vierash/ty\u00f6h",
+        "category": "study",
+        "width_ft": 9.163,
+        "height_ft": 10.591
+    },
+    {
+        "label": "vierash/kirj",
+        "category": "study",
+        "width_ft": 9.163,
+        "height_ft": 10.591
+    },
+    {
+        "label": "ty\u00f6h/kirjasto",
+        "category": "study",
+        "width_ft": 9.163,
+        "height_ft": 10.591
+    },
+    {
+        "label": "ty\u00f6huone",
+        "category": "study",
+        "width_ft": 9.163,
+        "height_ft": 10.591
+    },
+    {
+        "label": "toimisto",
+        "category": "study",
+        "width_ft": 9.163,
+        "height_ft": 10.591
+    },
+    {
+        "label": "personalrum",
+        "category": "study",
+        "width_ft": 9.163,
+        "height_ft": 10.591
+    },
+    {
+        "label": "sihteeri",
+        "category": "study",
+        "width_ft": 9.163,
+        "height_ft": 10.591
+    },
+    {
+        "label": "kirjasto/ty\u00f6h",
+        "category": "study",
+        "width_ft": 9.163,
+        "height_ft": 10.591
+    },
+    {
+        "label": "kokoush",
+        "category": "study",
+        "width_ft": 9.163,
+        "height_ft": 10.591
+    },
+    {
+        "label": "koulutustila",
+        "category": "guestroom",
+        "width_ft": 9.927,
+        "height_ft": 11.634
+    },
+    {
+        "label": "library",
+        "category": "library",
+        "width_ft": 9.163,
+        "height_ft": 10.591
+    },
+    {
+        "label": "space_library",
+        "category": "library",
+        "width_ft": 9.163,
+        "height_ft": 10.591
+    },
+    {
+        "label": "office_library",
+        "category": "library",
+        "width_ft": 9.163,
+        "height_ft": 10.591
+    },
+    {
+        "label": "yl\u00e4pohja",
+        "category": "attic",
+        "width_ft": 20,
+        "height_ft": 8
+    },
+    {
+        "label": "ullakokerros",
+        "category": "attic",
+        "width_ft": 20,
+        "height_ft": 8
+    },
+    {
+        "label": "vintti",
+        "category": "attic",
+        "width_ft": 20,
+        "height_ft": 8
+    },
+    {
+        "label": "vinttikerros",
+        "category": "attic",
+        "width_ft": 20,
+        "height_ft": 8
+    },
+    {
+        "label": "v\u00e4likerros",
+        "category": "attic",
+        "width_ft": 20,
+        "height_ft": 8
+    },
+    {
+        "label": "vierash",
+        "category": "guestroom",
+        "width_ft": 10.691,
+        "height_ft": 12.678
+    },
+    {
+        "label": "vierashuone",
+        "category": "guestroom",
+        "width_ft": 10.691,
+        "height_ft": 12.678
+    },
+    {
+        "label": "vierasmaja",
+        "category": "guestroom",
+        "width_ft": 10.691,
+        "height_ft": 12.678
+    },
+    {
+        "label": "majoitush",
+        "category": "guestroom",
+        "width_ft": 10.691,
+        "height_ft": 12.678
+    },
+    {
+        "label": "accommodation room",
+        "category": "guestroom",
+        "width_ft": 10.691,
+        "height_ft": 12.678
+    },
+    {
+        "label": "utility",
+        "category": "utilityroom",
+        "width_ft": 5.114,
+        "height_ft": 7.328
+    },
+    {
+        "label": "var/tekn",
+        "category": "utilityroom",
+        "width_ft": 5.114,
+        "height_ft": 7.328
+    },
+    {
+        "label": "vh/et",
+        "category": "utilityroom",
+        "width_ft": 5.114,
+        "height_ft": 7.328
+    },
+    {
+        "label": "psh/khh",
+        "category": "utilityroom",
+        "width_ft": 5.114,
+        "height_ft": 7.328
+    },
+    {
+        "label": "puk/khh",
+        "category": "utilityroom",
+        "width_ft": 5.114,
+        "height_ft": 7.328
+    },
+    {
+        "label": "pukelttum",
+        "category": "utilityroom",
+        "width_ft": 5.114,
+        "height_ft": 7.328
+    },
+    {
+        "label": "kampaamo-tila",
+        "category": "utilityroom",
+        "width_ft": 5.114,
+        "height_ft": 7.328
+    },
+    {
+        "label": "washingmachine",
+        "category": "utilityroom",
+        "width_ft": 5.114,
+        "height_ft": 7.328
+    },
+    {
+        "label": "wm",
+        "category": "utilityroom",
+        "width_ft": 5.114,
+        "height_ft": 7.328
+    },
+    {
+        "label": "tumbledryer",
+        "category": "utilityroom",
+        "width_ft": 5.114,
+        "height_ft": 7.328
+    },
+    {
+        "label": "watertap",
+        "category": "utilityroom",
+        "width_ft": 5.114,
+        "height_ft": 7.328
+    },
+    {
+        "label": "drying",
+        "category": "utilityroom",
+        "width_ft": 5.114,
+        "height_ft": 7.328
+    },
+    {
+        "label": "oljy",
+        "category": "utilityroom",
+        "width_ft": 5.114,
+        "height_ft": 7.328
+    },
+    {
+        "label": "viherh",
+        "category": "greenhouse",
+        "width_ft": 15,
+        "height_ft": 10
+    },
+    {
+        "label": "viherh.",
+        "category": "greenhouse",
+        "width_ft": 15,
+        "height_ft": 10
+    },
+    {
+        "label": "viinik",
+        "category": "greenhouse",
+        "width_ft": 15,
+        "height_ft": 10
+    },
+    {
+        "label": "greenhouse",
+        "category": "greenhouse",
+        "width_ft": 15,
+        "height_ft": 10
+    },
+    {
+        "label": "vilorum",
+        "category": "relaxation",
+        "width_ft": 10,
+        "height_ft": 12
+    },
+    {
+        "label": "vilpola",
+        "category": "relaxation",
+        "width_ft": 10,
+        "height_ft": 12
+    },
+    {
+        "label": "vilv",
+        "category": "relaxation",
+        "width_ft": 10,
+        "height_ft": 12
+    },
+    {
+        "label": "vilv.h",
+        "category": "relaxation",
+        "width_ft": 10,
+        "height_ft": 12
+    },
+    {
+        "label": "vilvoit",
+        "category": "relaxation",
+        "width_ft": 10,
+        "height_ft": 12
+    },
+    {
+        "label": "valokate/vilvoittelu",
+        "category": "relaxation",
+        "width_ft": 10,
+        "height_ft": 12
+    },
+    {
+        "label": "saunakamari/kirjasto",
+        "category": "relaxation",
+        "width_ft": 10,
+        "height_ft": 12
+    },
+    {
+        "label": "saunatupa",
+        "category": "relaxation",
+        "width_ft": 10,
+        "height_ft": 12
+    },
+    {
+        "label": "saunakammari",
+        "category": "relaxation",
+        "width_ft": 10,
+        "height_ft": 12
+    },
+    {
+        "label": "tornihuone",
+        "category": "relaxation",
+        "width_ft": 10,
+        "height_ft": 12
+    },
+    {
+        "label": "ty\u00f6h/oleskelu",
+        "category": "relaxation",
+        "width_ft": 10,
+        "height_ft": 12
+    },
+    {
+        "label": "recreationroom",
+        "category": "relaxation",
+        "width_ft": 10,
+        "height_ft": 12
+    },
+    {
+        "label": "kotiteatteri",
+        "category": "relaxation",
+        "width_ft": 10,
+        "height_ft": 12
+    },
+    {
+        "label": "kuntosali",
+        "category": "relaxation",
+        "width_ft": 10,
+        "height_ft": 12
+    },
+    {
+        "label": "lepos",
+        "category": "relaxation",
+        "width_ft": 10,
+        "height_ft": 12
+    },
+    {
+        "label": "gym",
+        "category": "relaxation",
+        "width_ft": 10,
+        "height_ft": 12
+    },
+    {
+        "label": "harrasteh",
+        "category": "relaxation",
+        "width_ft": 10,
+        "height_ft": 12
+    },
+    {
+        "label": "harrastetila",
+        "category": "relaxation",
+        "width_ft": 10,
+        "height_ft": 12
+    },
+    {
+        "label": "harrastustila",
+        "category": "relaxation",
+        "width_ft": 10,
+        "height_ft": 12
+    },
+    {
+        "label": "fireplace",
+        "category": "fireplace",
+        "width_ft": 10.0,
+        "height_ft": 12.0
+    },
+    {
+        "label": "firebox",
+        "category": "relaxation",
+        "width_ft": 10,
+        "height_ft": 12
+    },
+    {
+        "label": "fireplacecorner",
+        "category": "relaxation",
+        "width_ft": 10,
+        "height_ft": 12
+    },
+    {
+        "label": "fireplaceround",
+        "category": "relaxation",
+        "width_ft": 10,
+        "height_ft": 12
+    },
+    {
+        "label": "corner_fireplace",
+        "category": "fireplace",
+        "width_ft": 10.0,
+        "height_ft": 12.0
+    },
+    {
+        "label": "round_fireplace",
+        "category": "fireplace",
+        "width_ft": 10.0,
+        "height_ft": 12.0
+    },
+    {
+        "label": "laundry_room",
+        "category": "laundry",
+        "width_ft": 5.114,
+        "height_ft": 7.328
+    },
+    {
+        "label": "laundry",
+        "category": "laundry",
+        "width_ft": 5.114,
+        "height_ft": 7.328
+    },
+    {
+        "label": "laundry cottage",
+        "category": "laundry",
+        "width_ft": 5.114,
+        "height_ft": 7.328
+    },
+    {
+        "label": "laundry wash",
+        "category": "laundry",
+        "width_ft": 5.114,
+        "height_ft": 7.328
+    },
+    {
+        "label": "dressing_room",
+        "category": "dressingroom",
+        "width_ft": 10.0,
+        "height_ft": 11.408
+    },
+    {
+        "label": "dressing",
+        "category": "dressingroom",
+        "width_ft": 10.0,
+        "height_ft": 11.408
+    },
+    {
+        "label": "dressing_space",
+        "category": "dressingroom",
+        "width_ft": 10.0,
+        "height_ft": 11.408
+    },
+    {
+        "label": "changing_room",
+        "category": "dressingroom",
+        "width_ft": 10.0,
+        "height_ft": 11.408
+    },
+    {
+        "label": "makeup_room",
+        "category": "dressingroom",
+        "width_ft": 10.0,
+        "height_ft": 11.408
+    },
+    {
+        "label": "apartment_dressing_room",
+        "category": "dressingroom",
+        "width_ft": 10.0,
+        "height_ft": 11.408
+    },
+    {
+        "label": "laundry_dressing",
+        "category": "dressingroom",
+        "width_ft": 10.0,
+        "height_ft": 11.408
+    },
+    {
+        "label": "laundry_dressing_room",
+        "category": "dressingroom",
+        "width_ft": 10.0,
+        "height_ft": 11.408
+    },
+    {
+        "label": "office",
+        "category": "office",
+        "width_ft": 9.163,
+        "height_ft": 10.591
+    },
+    {
+        "label": "manager",
+        "category": "office",
+        "width_ft": 9.163,
+        "height_ft": 10.591
+    },
+    {
+        "label": "manager's room",
+        "category": "office",
+        "width_ft": 9.163,
+        "height_ft": 10.591
+    },
+    {
+        "label": "meeting_room",
+        "category": "meeting",
+        "width_ft": 14.066,
+        "height_ft": 15.04
+    },
+    {
+        "label": "meeting/conference",
+        "category": "meeting",
+        "width_ft": 14.066,
+        "height_ft": 15.04
+    },
+    {
+        "label": "workshop",
+        "category": "office",
+        "width_ft": 9.163,
+        "height_ft": 10.591
+    },
+    {
+        "label": "work_space",
+        "category": "office",
+        "width_ft": 9.163,
+        "height_ft": 10.591
+    },
+    {
+        "label": "commercial_office",
+        "category": "office",
+        "width_ft": 9.163,
+        "height_ft": 10.591
+    },
+    {
+        "label": "server room",
+        "category": "office",
+        "width_ft": 9.163,
+        "height_ft": 10.591
+    },
+    {
+        "label": "staff_room",
+        "category": "office",
+        "width_ft": 9.163,
+        "height_ft": 10.591
+    },
+    {
+        "label": "multi-purpose room",
+        "category": "office",
+        "width_ft": 9.163,
+        "height_ft": 10.591
+    },
+    {
+        "label": "multi-purpose space",
+        "category": "office",
+        "width_ft": 9.163,
+        "height_ft": 10.591
+    },
+    {
+        "label": "business space",
+        "category": "office",
+        "width_ft": 9.163,
+        "height_ft": 10.591
+    },
+    {
+        "label": "retail space",
+        "category": "office",
+        "width_ft": 9.163,
+        "height_ft": 10.591
+    },
+    {
+        "label": "place_for_fireplace",
+        "category": "fireplace",
+        "width_ft": 10.0,
+        "height_ft": 12.0
+    },
+    {
+        "label": "place_for_fireplace_corner",
+        "category": "fireplace",
+        "width_ft": 10.0,
+        "height_ft": 12.0
+    },
+    {
+        "label": "place_for_fireplace_round",
+        "category": "fireplace",
+        "width_ft": 10.0,
+        "height_ft": 12.0
+    },
+    {
+        "label": "technical_room",
+        "category": "technicalroom",
+        "width_ft": 6.0,
+        "height_ft": 8.0
+    },
+    {
+        "label": "hvac",
+        "category": "technicalroom",
+        "width_ft": 6.0,
+        "height_ft": 8.0
+    },
+    {
+        "label": "hvac room",
+        "category": "technicalroom",
+        "width_ft": 6.0,
+        "height_ft": 8.0
+    },
+    {
+        "label": "pump_room",
+        "category": "technicalroom",
+        "width_ft": 6.0,
+        "height_ft": 8.0
+    },
+    {
+        "label": "machine room",
+        "category": "technicalroom",
+        "width_ft": 6.0,
+        "height_ft": 8.0
+    },
+    {
+        "label": "compressor_room",
+        "category": "technicalroom",
+        "width_ft": 6.0,
+        "height_ft": 8.0
+    },
+    {
+        "label": "oil_room",
+        "category": "technicalroom",
+        "width_ft": 6.0,
+        "height_ft": 8.0
+    },
+    {
+        "label": "fuel_reservation",
+        "category": "technicalroom",
+        "width_ft": 6.0,
+        "height_ft": 8.0
+    },
+    {
+        "label": "technical_space",
+        "category": "technicalroom",
+        "width_ft": 6.0,
+        "height_ft": 8.0
+    },
+    {
+        "label": "technical_area",
+        "category": "technicalroom",
+        "width_ft": 6.0,
+        "height_ft": 8.0
+    },
+    {
+        "label": "cottage",
+        "category": "cottage",
+        "width_ft": 12.15,
+        "height_ft": 14.854
+    },
+    {
+        "label": "villa/cottage",
+        "category": "cottage",
+        "width_ft": 12.15,
+        "height_ft": 14.854
+    },
+    {
+        "label": "summer_cottage",
+        "category": "cottage",
+        "width_ft": 12.15,
+        "height_ft": 14.854
+    },
+    {
+        "label": "work cottage",
+        "category": "cottage",
+        "width_ft": 12.15,
+        "height_ft": 14.854
+    },
+    {
+        "label": "cottage_upper_part",
+        "category": "cottage",
+        "width_ft": 12.15,
+        "height_ft": 14.854
+    },
+    {
+        "label": "garden",
+        "category": "garden",
+        "width_ft": 20,
+        "height_ft": 20
+    },
+    {
+        "label": "yard",
+        "category": "garden",
+        "width_ft": 20,
+        "height_ft": 20
+    },
+    {
+        "label": "lawn",
+        "category": "garden",
+        "width_ft": 20,
+        "height_ft": 20
+    },
+    {
+        "label": "alapiha",
+        "category": "garden",
+        "width_ft": 20,
+        "height_ft": 20
+    },
+    {
+        "label": "yl\u00e4piha",
+        "category": "garden",
+        "width_ft": 20,
+        "height_ft": 20
+    },
+    {
+        "label": "puutarhaa",
+        "category": "garden",
+        "width_ft": 20,
+        "height_ft": 20
+    },
+    {
+        "label": "puutarhav",
+        "category": "garden",
+        "width_ft": 20,
+        "height_ft": 20
+    },
+    {
+        "label": "etu-piha",
+        "category": "garden",
+        "width_ft": 20,
+        "height_ft": 20
+    },
+    {
+        "label": "pool",
+        "category": "pool",
+        "width_ft": 15,
+        "height_ft": 5
+    },
+    {
+        "label": "swimming pool",
+        "category": "pool",
+        "width_ft": 15,
+        "height_ft": 5
+    },
+    {
+        "label": "jacuzzi",
+        "category": "pool",
+        "width_ft": 15,
+        "height_ft": 5
+    },
+    {
+        "label": "ulkotila",
+        "category": "outdoor",
+        "width_ft": 3,
+        "height_ft": 7
+    },
+    {
+        "label": "valokatettupergola",
+        "category": "outdoor",
+        "width_ft": 3,
+        "height_ft": 7
+    },
+    {
+        "label": "covered_area",
+        "category": "outdoor",
+        "width_ft": 3,
+        "height_ft": 7
+    },
+    {
+        "label": "covered_section",
+        "category": "outdoor",
+        "width_ft": 3,
+        "height_ft": 7
+    },
+    {
+        "label": "wood_platform",
+        "category": "outdoor",
+        "width_ft": 3,
+        "height_ft": 7
+    },
+    {
+        "label": "wood_patio",
+        "category": "outdoor",
+        "width_ft": 3,
+        "height_ft": 7
+    },
+    {
+        "label": "open_to_below",
+        "category": "outdoor",
+        "width_ft": 3,
+        "height_ft": 7
+    },
+    {
+        "label": "space_open_to_below",
+        "category": "outdoor",
+        "width_ft": 3,
+        "height_ft": 7
+    },
+    {
+        "label": "high space",
+        "category": "outdoor",
+        "width_ft": 3,
+        "height_ft": 7
+    },
+    {
+        "label": "boundary_polygon",
+        "category": "visual",
+        "width_ft": 0.5,
+        "height_ft": 10.0
+    },
+    {
+        "label": "overlay_polygon",
+        "category": "visual",
+        "width_ft": 0.5,
+        "height_ft": 10.0
+    },
+    {
+        "label": "inner_polygon",
+        "category": "visual",
+        "width_ft": 0.5,
+        "height_ft": 10.0
+    },
+    {
+        "label": "outer_drain",
+        "category": "visual",
+        "width_ft": 0.5,
+        "height_ft": 10.0
+    },
+    {
+        "label": "inner_drain",
+        "category": "visual",
+        "width_ft": 0.5,
+        "height_ft": 10.0
+    },
+    {
+        "label": "visual",
+        "category": "visual",
+        "width_ft": 0.5,
+        "height_ft": 10.0
+    },
+    {
+        "label": "unbuilt_space",
+        "category": "visual",
+        "width_ft": 0.5,
+        "height_ft": 10.0
+    },
+    {
+        "label": "unused_space",
+        "category": "visual",
+        "width_ft": 0.5,
+        "height_ft": 10.0
+    },
+    {
+        "label": "temporary",
+        "category": "visual",
+        "width_ft": 0.5,
+        "height_ft": 10.0
+    },
+    {
+        "label": "positive",
+        "category": "visual",
+        "width_ft": 0.5,
+        "height_ft": 10.0
+    },
+    {
+        "label": "negative",
+        "category": "visual",
+        "width_ft": 0.5,
+        "height_ft": 10.0
+    },
+    {
+        "label": "free_shape",
+        "category": "visual",
+        "width_ft": 0.5,
+        "height_ft": 10.0
+    },
+    {
+        "label": "circle",
+        "category": "visual",
+        "width_ft": 0.5,
+        "height_ft": 10.0
+    },
+    {
+        "label": "rectangle",
+        "category": "visual",
+        "width_ft": 0.5,
+        "height_ft": 10.0
+    },
+    {
+        "label": "coatrack",
+        "category": "coatrack",
+        "width_ft": 6.86,
+        "height_ft": 9.721
+    },
+    {
+        "label": "coat_hanger",
+        "category": "furniture",
+        "width_ft": 7.719,
+        "height_ft": 11.443
+    },
+    {
+        "label": "furniture_set",
+        "category": "furniture",
+        "width_ft": 7.719,
+        "height_ft": 11.443
+    },
+    {
+        "label": "miscellaneous_furniture",
+        "category": "furniture",
+        "width_ft": 7.719,
+        "height_ft": 11.443
+    },
+    {
+        "label": "fixedfurniture",
+        "category": "furniture",
+        "width_ft": 7.719,
+        "height_ft": 11.443
+    },
+    {
+        "label": "retail_space",
+        "category": "retail",
+        "width_ft": 12.15,
+        "height_ft": 14.854
+    },
+    {
+        "label": "commercial_space",
+        "category": "retail",
+        "width_ft": 12.15,
+        "height_ft": 14.854
+    },
+    {
+        "label": "business_space",
+        "category": "retail",
+        "width_ft": 12.15,
+        "height_ft": 14.854
+    },
+    {
+        "label": "cafe",
+        "category": "cafe",
+        "width_ft": 9.934,
+        "height_ft": 13.148
+    },
+    {
+        "label": "cafeteria",
+        "category": "cafe",
+        "width_ft": 9.934,
+        "height_ft": 13.148
+    },
+    {
+        "label": "coffee_room",
+        "category": "cafe",
+        "width_ft": 7.719,
+        "height_ft": 11.443
+    },
+    {
+        "label": "ylakerta",
+        "category": "upper_floor",
+        "width_ft": 3.0,
+        "height_ft": 5.0
+    },
+    {
+        "label": "ylempi",
+        "category": "upper_floor",
+        "width_ft": 3.0,
+        "height_ft": 5.0
+    },
+    {
+        "label": "yl\u00f6s",
+        "category": "upper_floor",
+        "width_ft": 3.0,
+        "height_ft": 5.0
+    },
+    {
+        "label": "yl\u00e4kerran",
+        "category": "upper_floor",
+        "width_ft": 3.0,
+        "height_ft": 5.0
+    },
+    {
+        "label": "yl\u00e4kerta",
+        "category": "upper_floor",
+        "width_ft": 3.0,
+        "height_ft": 5.0
+    },
+    {
+        "label": "yl\u00e4os\u00e4",
+        "category": "upper_floor",
+        "width_ft": 3.0,
+        "height_ft": 5.0
+    },
+    {
+        "label": "\u00e4lakerta",
+        "category": "upper_floor",
+        "width_ft": 3.0,
+        "height_ft": 5.0
+    },
+    {
+        "label": "elevator",
+        "category": "elevator",
+        "width_ft": 5,
+        "height_ft": 8
+    },
+    {
+        "label": "lift",
+        "category": "elevator",
+        "width_ft": 5,
+        "height_ft": 8
+    },
+    {
+        "label": "pillar",
+        "category": "column",
+        "width_ft": 1,
+        "height_ft": 10
+    },
+    {
+        "label": "support column",
+        "category": "column",
+        "width_ft": 1,
+        "height_ft": 10
+    },
+    {
+        "label": "text",
+        "category": "text",
+        "width_ft": 9.875,
+        "height_ft": 5.415
+    },
+    {
+        "label": "label",
+        "category": "text",
+        "width_ft": 9.875,
+        "height_ft": 5.415
+    },
+    {
+        "label": "annotation",
+        "category": "text",
+        "width_ft": 9.875,
+        "height_ft": 5.415
+    },
+    {
+        "label": "note",
+        "category": "text",
+        "width_ft": 9.875,
+        "height_ft": 5.415
+    },
+    {
+        "label": "background",
+        "category": "background",
+        "width_ft": 0.5,
+        "height_ft": 10.0
+    },
+    {
+        "label": "canvas",
+        "category": "background",
+        "width_ft": 0.5,
+        "height_ft": 10.0
+    },
+    {
+        "label": "alcove",
+        "category": "alcove",
+        "width_ft": 10.0,
+        "height_ft": 11.408
+    },
+    {
+        "label": "handle",
+        "category": "handle",
+        "width_ft": 3.0,
+        "height_ft": 7.0
+    },
+    {
+        "label": "hanger",
+        "category": "hanger",
+        "width_ft": 6.0,
+        "height_ft": 8.0
+    },
+    {
+        "label": "basement",
+        "category": "basement",
+        "width_ft": 20,
+        "height_ft": 8
+    },
+    {
+        "label": "basement-1",
+        "category": "basement",
+        "width_ft": 20,
+        "height_ft": 8
+    },
+    {
+        "label": "basement-2",
+        "category": "basement",
+        "width_ft": 20,
+        "height_ft": 8
+    },
+    {
+        "label": "boiler",
+        "category": "boiler",
+        "width_ft": 4,
+        "height_ft": 6
+    },
+    {
+        "label": "chimney",
+        "category": "chimney",
+        "width_ft": 2,
+        "height_ft": 8
+    }
+]

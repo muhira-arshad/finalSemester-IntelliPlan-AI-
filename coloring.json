@@ -1,0 +1,4587 @@
+{
+  "BEDROOM": [
+    135,
+    39,
+    1
+  ],
+  "SPACE_BEDROOM": [
+    135,
+    39,
+    1
+  ],
+  "SPACE_BEDROOM_GUEST": [
+    135,
+    39,
+    1
+  ],
+  "MASTER_BEDROOM": [
+    135,
+    39,
+    1
+  ],
+  "Sleeping Loft": [
+    215,
+    51,
+    3
+  ],
+  "Loft": [
+    223,
+    47,
+    0
+  ],
+  "Loft Floor": [
+    225,
+    52,
+    8
+  ],
+  "Open Loft": [
+    212,
+    56,
+    8
+  ],
+  "ALCOVE": [
+    139,
+    37,
+    14
+  ],
+  "Alcove": [
+    133,
+    36,
+    11
+  ],
+  "BEDROOM_ALCOVE": [
+    140,
+    44,
+    6
+  ],
+  "BEDROOM_NOOK": [
+    133,
+    35,
+    11
+  ],
+  "DRESSING_ALCOVE": [
+    143,
+    38,
+    2
+  ],
+  "OFFICE_ALCOVE": [
+    139,
+    40,
+    1
+  ],
+  "BEDROOM_FIREPLACE": [
+    142,
+    47,
+    0
+  ],
+  "BEDROOM_GARDEN": [
+    151,
+    46,
+    0
+  ],
+  "BEDROOM_HOBBY": [
+    141,
+    49,
+    0
+  ],
+  "BEDROOM_LIBRARY": [
+    152,
+    37,
+    1
+  ],
+  "BEDROOM_LIVING": [
+    151,
+    41,
+    0
+  ],
+  "BEDROOM_LIVING_ROOM": [
+    141,
+    42,
+    1
+  ],
+  "BEDROOM_OFFICE": [
+    142,
+    42,
+    0
+  ],
+  "BEDROOM_STORAGE": [
+    152,
+    43,
+    6
+  ],
+  "BEDROOM_WORK_ROOM": [
+    151,
+    40,
+    3
+  ],
+  "MASTER_BEDROOM_WORK_ROOM": [
+    151,
+    41,
+    0
+  ],
+  "GUEST_ROOM": [
+    144,
+    35,
+    4
+  ],
+  "BEDROOM_GUEST_ROOM": [
+    147,
+    44,
+    9
+  ],
+  "BATHROOM_GUEST_ROOM": [
+    150,
+    37,
+    7
+  ],
+  "GUEST_ROOM_ALCOVE": [
+    143,
+    37,
+    0
+  ],
+  "GUEST_ROOM_BATHROOM": [
+    152,
+    42,
+    5
+  ],
+  "GUEST_ROOM_DRESSING": [
+    144,
+    36,
+    7
+  ],
+  "GUEST_ROOM_ENTRANCE": [
+    148,
+    45,
+    9
+  ],
+  "GUEST_ROOM_LIBRARY": [
+    156,
+    34,
+    5
+  ],
+  "GUEST_ROOM_MAINTENANCE": [
+    146,
+    37,
+    5
+  ],
+  "GUEST_ROOM_OFFICE": [
+    155,
+    42,
+    8
+  ],
+  "GUEST_ROOM_SHOWER": [
+    149,
+    34,
+    13
+  ],
+  "GUEST_ROOM_STORAGE": [
+    157,
+    32,
+    0
+  ],
+  "GUEST_ROOM_WORK_ROOM": [
+    145,
+    34,
+    2
+  ],
+  "OFFICE_GUEST_ROOM": [
+    155,
+    32,
+    9
+  ],
+  "WORK_GUEST_ROOM": [
+    154,
+    44,
+    13
+  ],
+  "STORAGE_GUEST_ROOM": [
+    150,
+    30,
+    0
+  ],
+  "LOFT_CORRIDOR": [
+    217,
+    57,
+    0
+  ],
+  "LOFT_WORK_ROOM": [
+    218,
+    60,
+    0
+  ],
+  "CLOSET": [
+    255,
+    36,
+    255
+  ],
+  "COAT_CLOSET": [
+    255,
+    36,
+    255
+  ],
+  "Closet/Storage": [
+    255,
+    36,
+    255
+  ],
+  "ROUND_CLOSET": [
+    255,
+    36,
+    255
+  ],
+  "TRIANGULAR_CLOSET": [
+    255,
+    36,
+    255
+  ],
+  "Wardrobe": [
+    255,
+    36,
+    255
+  ],
+  "Wardrobe Room": [
+    255,
+    36,
+    255
+  ],
+  "WALKIN_LINE": [
+    255,
+    36,
+    255
+  ],
+  "DRESSING": [
+    152,
+    9,
+    166
+  ],
+  "DRESSING_ROOM": [
+    147,
+    10,
+    174
+  ],
+  "DRESSING_SPACE": [
+    147,
+    12,
+    163
+  ],
+  "Dressing Room": [
+    160,
+    13,
+    167
+  ],
+  "SPACE_CLOSET_WALKIN": [
+    161,
+    21,
+    165
+  ],
+  "SPACE_DRESSING_ROOM": [
+    151,
+    17,
+    171
+  ],
+  "APARTMENT_DRESSING_ROOM": [
+    156,
+    22,
+    175
+  ],
+  "BATHROOM_DRESSING": [
+    235,
+    34,
+    244
+  ],
+  "BATHROOM_DRESSING_ROOM": [
+    228,
+    33,
+    247
+  ],
+  "DRESSING_BATHROOM": [
+    221,
+    38,
+    244
+  ],
+  "DRESSING_HALL": [
+    221,
+    33,
+    238
+  ],
+  "DRESSING_KITCHENETTE": [
+    228,
+    33,
+    238
+  ],
+  "DRESSING_LAUNDRY": [
+    231,
+    33,
+    253
+  ],
+  "DRESSING_TOILET": [
+    228,
+    39,
+    252
+  ],
+  "DRESSING_TOILET_BATHROOM": [
+    227,
+    35,
+    252
+  ],
+  "DRESSING_WORK_ROOM": [
+    228,
+    46,
+    250
+  ],
+  "ENTRANCE_DRESSING_ROOM": [
+    227,
+    34,
+    240
+  ],
+  "LAUNDRY_DRESSING": [
+    234,
+    42,
+    250
+  ],
+  "LAUNDRY_DRESSING_ROOM": [
+    234,
+    45,
+    238
+  ],
+  "LOBBY_DRESSING_ROOM": [
+    224,
+    32,
+    249
+  ],
+  "TOILET_DRESSING": [
+    231,
+    34,
+    244
+  ],
+  "TOILET_DRESSING_BATHROOM": [
+    227,
+    37,
+    251
+  ],
+  "WARDROBE_HOBBY": [
+    232,
+    140,
+    252
+  ],
+  "WARDROBE_STORAGE": [
+    236,
+    141,
+    254
+  ],
+  "WARDROBE_WORK_SPACE": [
+    230,
+    141,
+    250
+  ],
+  "STORAGE_WARDROBE": [
+    229,
+    127,
+    249
+  ],
+  "STORAGE_CLOSET": [
+    235,
+    132,
+    255
+  ],
+  "KITCHEN": [
+    135,
+    1,
+    35
+  ],
+  "Kitchen": [
+    135,
+    1,
+    35
+  ],
+  "Kitchen Space": [
+    135,
+    1,
+    35
+  ],
+  "SPACE_KITCHEN": [
+    135,
+    1,
+    35
+  ],
+  "KITCHENETTE": [
+    135,
+    1,
+    35
+  ],
+  "Kitchenette": [
+    135,
+    1,
+    35
+  ],
+  "SPACE_KITCHENETTE": [
+    135,
+    1,
+    35
+  ],
+  "OPEN_KITCHEN": [
+    158,
+    20,
+    36
+  ],
+  "Open Kitchen": [
+    151,
+    14,
+    38
+  ],
+  "SPACE_OPEN_KITCHEN": [
+    146,
+    6,
+    42
+  ],
+  "KITCHEN_LIVING_ROOM": [
+    146,
+    6,
+    47
+  ],
+  "KITCHEN_DINING": [
+    161,
+    8,
+    35
+  ],
+  "KITCHEN_DINING_AREA": [
+    146,
+    8,
+    32
+  ],
+  "KITCHEN_DINING_LIVING": [
+    150,
+    0,
+    32
+  ],
+  "Kitchen-Dining": [
+    152,
+    4,
+    33
+  ],
+  "DINING_KITCHEN": [
+    152,
+    0,
+    32
+  ],
+  "KITCHENETTE_DINING": [
+    158,
+    8,
+    40
+  ],
+  "LIVING_DINING_KITCHEN": [
+    153,
+    0,
+    40
+  ],
+  "LIVING_KITCHEN_DINING": [
+    152,
+    0,
+    42
+  ],
+  "COTTAGE_KITCHEN": [
+    155,
+    1,
+    50
+  ],
+  "COTTAGE_SUMMER_KITCHEN": [
+    161,
+    0,
+    36
+  ],
+  "Summer Kitchen": [
+    165,
+    0,
+    38
+  ],
+  "ENTRANCE_KITCHEN": [
+    157,
+    8,
+    44
+  ],
+  "GARDEN_KITCHEN": [
+    155,
+    3,
+    38
+  ],
+  "OIL_KITCHEN": [
+    158,
+    3,
+    45
+  ],
+  "Preparation Kitchen": [
+    156,
+    6,
+    45
+  ],
+  "SPACE_OUTDOOR_KITCHEN": [
+    167,
+    0,
+    45
+  ],
+  "Pantry": [
+    154,
+    0,
+    44
+  ],
+  "SMALL_KITCHEN": [
+    219,
+    1,
+    54
+  ],
+  "KITCHEN_KITCHENETTE": [
+    224,
+    7,
+    56
+  ],
+  "LIVING_ROOM_KITCHENETTE": [
+    226,
+    4,
+    58
+  ],
+  "ELECTRICAL_APPLIANCE": [
+    135,
+    1,
+    108
+  ],
+  "GENERAL_APPLIANCE": [
+    135,
+    1,
+    108
+  ],
+  "STOVE": [
+    150,
+    6,
+    121
+  ],
+  "GAS_STOVE": [
+    150,
+    18,
+    114
+  ],
+  "WOOD_STOVE": [
+    147,
+    14,
+    121
+  ],
+  "INTEGRATED_STOVE": [
+    147,
+    16,
+    116
+  ],
+  "SMALL_INTEGRATED_STOVE": [
+    153,
+    8,
+    121
+  ],
+  "STOVE_BURNER": [
+    159,
+    9,
+    117
+  ],
+  "SAUNA_STOVE": [
+    151,
+    10,
+    123
+  ],
+  "ROUND_SAUNA_STOVE": [
+    146,
+    10,
+    120
+  ],
+  "REFRIGERATOR": [
+    146,
+    0,
+    124
+  ],
+  "DOUBLE_REFRIGERATOR": [
+    138,
+    0,
+    128
+  ],
+  "DISHWASHER": [
+    143,
+    7,
+    111
+  ],
+  "SINK": [
+    152,
+    6,
+    125
+  ],
+  "CORNER_SINK": [
+    155,
+    0,
+    121
+  ],
+  "DOUBLE_SINK": [
+    146,
+    0,
+    126
+  ],
+  "DOUBLE_SINK_RIGHT": [
+    156,
+    0,
+    116
+  ],
+  "ROUND_SINK": [
+    154,
+    3,
+    130
+  ],
+  "SIDE_SINK": [
+    158,
+    2,
+    114
+  ],
+  "APPLIANCE_SPACE": [
+    175,
+    6,
+    148
+  ],
+  "APPLIANCE_SPACE_2": [
+    180,
+    0,
+    146
+  ],
+  "ROUND_APPLIANCE": [
+    185,
+    9,
+    153
+  ],
+  "BurnerArea": [
+    221,
+    8,
+    168
+  ],
+  "BATHROOM": [
+    89,
+    1,
+    135
+  ],
+  "Bathroom": [
+    89,
+    1,
+    135
+  ],
+  "Bathroom/Washroom": [
+    89,
+    1,
+    135
+  ],
+  "SPACE_BATH": [
+    89,
+    1,
+    135
+  ],
+  "SPACE_BATH_SHOWER": [
+    89,
+    1,
+    135
+  ],
+  "Washroom/Bathroom": [
+    89,
+    1,
+    135
+  ],
+  "BATHROOM_BATHROOM": [
+    104,
+    8,
+    147
+  ],
+  "BATHROOM_ENTRANCE": [
+    98,
+    2,
+    151
+  ],
+  "BATHROOM_HOBBY": [
+    106,
+    1,
+    147
+  ],
+  "BATHROOM_LAUNDRY": [
+    106,
+    0,
+    147
+  ],
+  "BATHROOM_LAUNDRY_ROOM": [
+    103,
+    2,
+    151
+  ],
+  "BATHROOM_TECHNICAL": [
+    104,
+    10,
+    152
+  ],
+  "BATHROOM_TOILET": [
+    108,
+    2,
+    154
+  ],
+  "BATHROOM_TOILET_LAUNDRY": [
+    109,
+    1,
+    140
+  ],
+  "BATHROOM_TOILET_SHOWER": [
+    103,
+    12,
+    148
+  ],
+  "BATHROOM_WORK_ROOM": [
+    96,
+    3,
+    147
+  ],
+  "LAUNDRY_BATHROOM": [
+    101,
+    2,
+    142
+  ],
+  "LAUNDRY_BATHROOM_TOILET": [
+    94,
+    0,
+    145
+  ],
+  "STORAGE_BATHROOM": [
+    109,
+    0,
+    152
+  ],
+  "STORAGE_BATHROOM_IN_USE": [
+    107,
+    2,
+    150
+  ],
+  "TECHNICAL_BATHROOM": [
+    109,
+    8,
+    145
+  ],
+  "SHOWER": [
+    88,
+    1,
+    135
+  ],
+  "SHOWER_BATHROOM": [
+    97,
+    8,
+    137
+  ],
+  "SHOWER_CABIN": [
+    100,
+    15,
+    133
+  ],
+  "SHOWER_PLATFORM": [
+    91,
+    4,
+    146
+  ],
+  "SHOWER_SCREEN": [
+    88,
+    15,
+    148
+  ],
+  "SHOWER_TOILET": [
+    94,
+    15,
+    148
+  ],
+  "Shower Room": [
+    97,
+    15,
+    137
+  ],
+  "ROUND_SHOWER_SCREEN_LEFT": [
+    99,
+    15,
+    140
+  ],
+  "ROUND_SHOWER_SCREEN_RIGHT": [
+    91,
+    9,
+    148
+  ],
+  "BATHTUB": [
+    114,
+    0,
+    153
+  ],
+  "ROUND_BATHTUB": [
+    113,
+    0,
+    154
+  ],
+  "TOILET": [
+    104,
+    0,
+    156
+  ],
+  "ACCESSIBLE_TOILET": [
+    107,
+    0,
+    150
+  ],
+  "CHILDRENS_TOILET": [
+    101,
+    0,
+    158
+  ],
+  "PRIVATE_TOILET": [
+    101,
+    0,
+    148
+  ],
+  "TOILET_ACCESSIBLE": [
+    110,
+    5,
+    156
+  ],
+  "TOILET_BATHROOM": [
+    111,
+    5,
+    147
+  ],
+  "TOILET_LAUNDRY": [
+    103,
+    5,
+    158
+  ],
+  "TOILET_LAUNDRY_BATHROOM": [
+    97,
+    4,
+    161
+  ],
+  "TOILET_LAUNDRY_ROOM": [
+    97,
+    3,
+    155
+  ],
+  "TOILET_MENS": [
+    109,
+    5,
+    153
+  ],
+  "TOILET_WOMENS": [
+    112,
+    0,
+    154
+  ],
+  "TOILET_SAUNA": [
+    110,
+    7,
+    146
+  ],
+  "TOILET_SHOWER": [
+    109,
+    2,
+    158
+  ],
+  "TOILET_SPACE": [
+    102,
+    6,
+    150
+  ],
+  "TOILET_TECHNICAL": [
+    97,
+    4,
+    146
+  ],
+  "TOILET_WASHROOM": [
+    99,
+    5,
+    150
+  ],
+  "TOILET_WASHROOM_BATHROOM": [
+    111,
+    0,
+    147
+  ],
+  "LAUNDRY_TOILET": [
+    105,
+    4,
+    156
+  ],
+  "CLEANING_TOILET": [
+    103,
+    6,
+    156
+  ],
+  "BATHROOM_WASHROOM": [
+    124,
+    4,
+    184
+  ],
+  "WASHROOM_BATHROOM": [
+    127,
+    0,
+    178
+  ],
+  "WASHROOM_TOILET": [
+    129,
+    0,
+    177
+  ],
+  "URINAL": [
+    158,
+    0,
+    223
+  ],
+  "BATHROOM_FIXTURES": [
+    148,
+    0,
+    228
+  ],
+  "LIVING_ROOM": [
+    17,
+    1,
+    135
+  ],
+  "Living Room": [
+    17,
+    1,
+    135
+  ],
+  "Living Room/Main Room": [
+    17,
+    1,
+    135
+  ],
+  "Living Space": [
+    17,
+    1,
+    135
+  ],
+  "SPACE_LIVING_ROOM": [
+    17,
+    1,
+    135
+  ],
+  "LIVING_AREA": [
+    17,
+    1,
+    135
+  ],
+  "LIVING_HALL": [
+    17,
+    1,
+    135
+  ],
+  "LIVING_DINING": [
+    22,
+    3,
+    139
+  ],
+  "LIVING_ROOM_DINING": [
+    17,
+    0,
+    143
+  ],
+  "LIVING_ROOM_DINING_PLATFORM": [
+    17,
+    0,
+    143
+  ],
+  "DINING_LIVING_ROOM": [
+    26,
+    4,
+    140
+  ],
+  "BACK_LIVING_ROOM": [
+    13,
+    0,
+    153
+  ],
+  "GARDEN_LIVING_ROOM": [
+    20,
+    0,
+    151
+  ],
+  "LIVING_AREA_CARPORT": [
+    22,
+    5,
+    161
+  ],
+  "LIVING_BALCONY": [
+    255,
+    187,
+    226
+  ],
+  "LIVING_FIREPLACE": [
+    11,
+    5,
+    165
+  ],
+  "LIVING_ROOM_UPPER": [
+    14,
+    5,
+    161
+  ],
+  "LOBBY_LIVING_ROOM": [
+    25,
+    0,
+    163
+  ],
+  "OFFICE_LIVING": [
+    16,
+    8,
+    158
+  ],
+  "OUTDOOR_LIVING_CARPORT": [
+    255,
+    163,
+    155
+  ],
+  "Utility Living Room": [
+    19,
+    2,
+    157
+  ],
+  "WORK_ROOM_LIVING": [
+    13,
+    0,
+    164
+  ],
+  "TV_HALL": [
+    21,
+    6,
+    234
+  ],
+  "TV_HALL_LIVING_ROOM": [
+    24,
+    0,
+    237
+  ],
+  "TV_HALL_WORK_ROOM": [
+    24,
+    0,
+    237
+  ],
+  "TV_LOBBY": [
+    20,
+    3,
+    230
+  ],
+  "TV_ROOM": [
+    24,
+    0,
+    230
+  ],
+  "LOBBY_TV_ROOM": [
+    14,
+    8,
+    228
+  ],
+  "FIREPLACE": [
+    255,
+    200,
+    255
+  ],
+  "FIREPLACE_ROOM": [
+    255,
+    200,
+    255
+  ],
+  "FIREPLACE_HALL": [
+    255,
+    200,
+    255
+  ],
+  "PLACE_FOR_FIREPLACE": [
+    255,
+    200,
+    255
+  ],
+  "CORNER_FIREPLACE": [
+    233,
+    85,
+    228
+  ],
+  "CORNER_FIREPLACE_SPACE": [
+    243,
+    83,
+    230
+  ],
+  "PLACE_FOR_FIREPLACE_CORNER": [
+    242,
+    91,
+    237
+  ],
+  "FIREPLACE_COTTAGE": [
+    242,
+    89,
+    231
+  ],
+  "FIREPLACE_ROUND": [
+    255,
+    184,
+    251
+  ],
+  "ROUND_FIREPLACE": [
+    255,
+    178,
+    250
+  ],
+  "ROUND_FIREPLACE_SPACE": [
+    250,
+    176,
+    253
+  ],
+  "PLACE_FOR_FIREPLACE_ROUND": [
+    250,
+    175,
+    249
+  ],
+  "FIREPLACE_HOBBY_ROOM": [
+    253,
+    191,
+    236
+  ],
+  "FIREPLACE_RESERVATION": [
+    255,
+    185,
+    231
+  ],
+  "SPACE_DEN_FIREPLACE": [
+    253,
+    185,
+    235
+  ],
+  "DRESSING_FIREPLACE": [
+    255,
+    181,
+    237
+  ],
+  "STORAGE": [
+    162,
+    0,
+    80
+  ],
+  "Storage": [
+    162,
+    0,
+    80
+  ],
+  "Storage Space": [
+    162,
+    0,
+    80
+  ],
+  "STORAGE_SPACE": [
+    162,
+    0,
+    80
+  ],
+  "SPACE_STORAGE": [
+    162,
+    0,
+    80
+  ],
+  "Archive/Storage": [
+    162,
+    0,
+    80
+  ],
+  "Shed/Storehouse": [
+    162,
+    0,
+    80
+  ],
+  "ATTIC_STORAGE": [
+    147,
+    5,
+    82
+  ],
+  "COLD_ATTIC": [
+    145,
+    2,
+    81
+  ],
+  "COLD_ATTIC_SPACE": [
+    140,
+    0,
+    71
+  ],
+  "Cold Attic": [
+    137,
+    0,
+    76
+  ],
+  "BASEMENT_STORAGE": [
+    135,
+    0,
+    76
+  ],
+  "STORAGE_BASEMENT": [
+    138,
+    0,
+    74
+  ],
+  "Basement/Cellar": [
+    133,
+    5,
+    83
+  ],
+  "Cellar": [
+    148,
+    1,
+    70
+  ],
+  "Cold Cellar": [
+    140,
+    1,
+    78
+  ],
+  "Food Cellar": [
+    147,
+    0,
+    76
+  ],
+  "COLD_STORAGE": [
+    145,
+    8,
+    75
+  ],
+  "COLD_STORAGE_SPACE": [
+    140,
+    9,
+    66
+  ],
+  "Cold Storage": [
+    145,
+    6,
+    64
+  ],
+  "Cool Storage": [
+    138,
+    7,
+    71
+  ],
+  "SPACE_STORAGE_COLD": [
+    146,
+    16,
+    65
+  ],
+  "STORAGE_COLD": [
+    151,
+    11,
+    74
+  ],
+  "WARM_STORAGE": [
+    142,
+    11,
+    89
+  ],
+  "STORAGE_WARM": [
+    148,
+    0,
+    75
+  ],
+  "FUEL_STORAGE": [
+    163,
+    9,
+    77
+  ],
+  "Fuel Storage": [
+    150,
+    1,
+    76
+  ],
+  "SPACE_STORAGE_FUEL": [
+    150,
+    7,
+    70
+  ],
+  "OIL_STORAGE": [
+    155,
+    14,
+    85
+  ],
+  "Oil Storage": [
+    164,
+    7,
+    74
+  ],
+  "SPACE_STORAGE_OIL": [
+    163,
+    14,
+    71
+  ],
+  "PELLET_STORAGE": [
+    165,
+    10,
+    82
+  ],
+  "WOOD_STORAGE": [
+    152,
+    2,
+    70
+  ],
+  "SPACE_STORAGE_WOOD": [
+    147,
+    2,
+    80
+  ],
+  "FIREWOOD_STORAGE": [
+    157,
+    1,
+    79
+  ],
+  "BICYCLE_STORAGE": [
+    165,
+    6,
+    70
+  ],
+  "STORAGE_BICYCLE": [
+    174,
+    0,
+    78
+  ],
+  "SPACE_STORAGE_BIKE": [
+    167,
+    4,
+    84
+  ],
+  "BOILER_STORAGE": [
+    181,
+    13,
+    91
+  ],
+  "BUILDING_STORAGE": [
+    182,
+    5,
+    94
+  ],
+  "CARPORT_STORAGE": [
+    192,
+    14,
+    92
+  ],
+  "CHEMICAL_STORAGE": [
+    182,
+    5,
+    86
+  ],
+  "GARAGE_STORAGE": [
+    185,
+    8,
+    92
+  ],
+  "GREENHOUSE_STORAGE": [
+    196,
+    2,
+    78
+  ],
+  "HOBBY_STORAGE": [
+    188,
+    4,
+    87
+  ],
+  "LOBBY_STORAGE": [
+    181,
+    12,
+    80
+  ],
+  "OUTDOOR_STORAGE": [
+    188,
+    2,
+    92
+  ],
+  "OUTDOOR_INTERMEDIATE_STORAGE": [
+    184,
+    3,
+    93
+  ],
+  "PLATFORM_STORAGE": [
+    190,
+    15,
+    86
+  ],
+  "SHOP_STORAGE": [
+    194,
+    14,
+    93
+  ],
+  "STORAGE_OFFICE": [
+    188,
+    13,
+    82
+  ],
+  "STORAGE_TECHNICAL": [
+    193,
+    5,
+    94
+  ],
+  "STORAGE_TECHNICAL_SPACE": [
+    185,
+    1,
+    86
+  ],
+  "TECHNICAL_STORAGE": [
+    194,
+    9,
+    94
+  ],
+  "TOOL_STORAGE": [
+    189,
+    0,
+    87
+  ],
+  "WORK_ROOM_STORAGE": [
+    190,
+    14,
+    82
+  ],
+  "WORK_STORAGE_SPACE": [
+    195,
+    14,
+    89
+  ],
+  "STORAGE_HALL": [
+    201,
+    4,
+    104
+  ],
+  "STORAGE_HALL_L": [
+    201,
+    0,
+    97
+  ],
+  "STORAGE_HALL_R": [
+    203,
+    0,
+    103
+  ],
+  "SPACE_STORAGE_SHED": [
+    220,
+    2,
+    118
+  ],
+  "BOAT_SHED_STORAGE": [
+    231,
+    4,
+    107
+  ],
+  "Garden Storage": [
+    234,
+    0,
+    107
+  ],
+  "MOVABLE_STORAGE": [
+    250,
+    7,
+    116
+  ],
+  "Movable Storage": [
+    248,
+    0,
+    129
+  ],
+  "Indoor Storage": [
+    248,
+    0,
+    117
+  ],
+  "Low Storage": [
+    247,
+    1,
+    115
+  ],
+  "STORAGE_RESERVE": [
+    249,
+    5,
+    123
+  ],
+  "Wine Cellar": [
+    246,
+    0,
+    123
+  ],
+  "STORE": [
+    246,
+    7,
+    128
+  ],
+  "Store/Shop": [
+    1,
+    163,
+    193
+  ],
+  "BASE_CABINET": [
+    140,
+    0,
+    72
+  ],
+  "ROUND_BASE_CABINET": [
+    141,
+    5,
+    73
+  ],
+  "TRIANGULAR_BASE_CABINET": [
+    151,
+    9,
+    66
+  ],
+  "WALL_CABINET": [
+    157,
+    8,
+    75
+  ],
+  "COUNTER_TOP": [
+    250,
+    0,
+    120
+  ],
+  "UTILITY_ROOM": [
+    255,
+    246,
+    0
+  ],
+  "Utility": [
+    255,
+    246,
+    0
+  ],
+  "Utility Room": [
+    255,
+    246,
+    0
+  ],
+  "Utility Space": [
+    255,
+    246,
+    0
+  ],
+  "Equipment Room": [
+    255,
+    246,
+    0
+  ],
+  "LAUNDRY_ROOM": [
+    145,
+    134,
+    5
+  ],
+  "LAUNDRY_HALL": [
+    142,
+    123,
+    8
+  ],
+  "Laundry": [
+    141,
+    123,
+    0
+  ],
+  "Laundry Room": [
+    148,
+    132,
+    3
+  ],
+  "LAUNDRY_WASH": [
+    144,
+    130,
+    2
+  ],
+  "SPACE_UTILITY_LAUNDRY": [
+    141,
+    127,
+    0
+  ],
+  "LAUNDRY_SAUNA": [
+    134,
+    132,
+    10
+  ],
+  "Laundry Cottage": [
+    134,
+    134,
+    0
+  ],
+  "SAUNA_LAUNDRY": [
+    135,
+    132,
+    6
+  ],
+  "DRYING_ROOM": [
+    185,
+    143,
+    2
+  ],
+  "SPACE_UTILITY_DRYING": [
+    176,
+    149,
+    12
+  ],
+  "DRESSING_DRYING": [
+    188,
+    146,
+    1
+  ],
+  "TECHNICAL": [
+    206,
+    180,
+    10
+  ],
+  "TECHNICAL_ROOM": [
+    208,
+    168,
+    15
+  ],
+  "TECHNICAL_SPACE": [
+    200,
+    169,
+    8
+  ],
+  "Technical": [
+    210,
+    176,
+    3
+  ],
+  "Technical Space": [
+    210,
+    165,
+    9
+  ],
+  "SPACE_TECHNICAL_ROOM": [
+    201,
+    179,
+    12
+  ],
+  "TECHNICAL_AREA": [
+    206,
+    177,
+    12
+  ],
+  "TECHNICAL_BUILDING": [
+    201,
+    172,
+    16
+  ],
+  "TECHNICAL_ENTRANCE": [
+    198,
+    175,
+    8
+  ],
+  "TECHNICAL_HALL": [
+    200,
+    179,
+    10
+  ],
+  "TECHNICAL_NETWORK": [
+    211,
+    168,
+    5
+  ],
+  "TECHNICAL_PORCH": [
+    199,
+    166,
+    10
+  ],
+  "TECHNICAL_UTILITY": [
+    213,
+    168,
+    4
+  ],
+  "UTILITY_TECHNICAL_ROOM": [
+    205,
+    169,
+    13
+  ],
+  "SPACE_TECHNICAL_ROOM_BOILER": [
+    212,
+    176,
+    14
+  ],
+  "DINING_TECHNICAL": [
+    202,
+    178,
+    4
+  ],
+  "ENTRANCE_TECHNICAL": [
+    213,
+    178,
+    9
+  ],
+  "HOBBY_TECHNICAL": [
+    199,
+    176,
+    7
+  ],
+  "TECHNICAL_PUMP": [
+    233,
+    194,
+    7
+  ],
+  "TECHNICAL_PUMP_ROOM": [
+    230,
+    183,
+    11
+  ],
+  "TECHNICAL_PAINT_ROOM": [
+    230,
+    181,
+    12
+  ],
+  "UTILITY_BASEMENT": [
+    255,
+    215,
+    0
+  ],
+  "Utility Basement": [
+    255,
+    211,
+    0
+  ],
+  "UTILITY_BUILDING": [
+    247,
+    219,
+    28
+  ],
+  "Utility Building": [
+    254,
+    222,
+    24
+  ],
+  "UTILITY_ENTRANCE": [
+    249,
+    225,
+    54
+  ],
+  "Utility Entrance": [
+    254,
+    229,
+    52
+  ],
+  "Electrical": [
+    57,
+    217,
+    248
+  ],
+  "Server Room": [
+    251,
+    228,
+    77
+  ],
+  "Sports Equipment": [
+    250,
+    221,
+    96
+  ],
+  "Garage": [
+    107,
+    0,
+    145
+  ],
+  "SPACE_GARAGE": [
+    107,
+    0,
+    145
+  ],
+  "Garage Hall": [
+    107,
+    0,
+    145
+  ],
+  "HEATED_GARAGE": [
+    107,
+    0,
+    145
+  ],
+  "POSSIBLE_GARAGE": [
+    107,
+    0,
+    145
+  ],
+  "Carport": [
+    102,
+    1,
+    142
+  ],
+  "SPACE_CARPORT": [
+    107,
+    16,
+    141
+  ],
+  "Parking Shelter": [
+    96,
+    15,
+    152
+  ],
+  "PARKING": [
+    176,
+    8,
+    224
+  ],
+  "PARKING_SPACE": [
+    179,
+    8,
+    228
+  ],
+  "OUTDOOR": [
+    255,
+    142,
+    127
+  ],
+  "Outdoor": [
+    255,
+    142,
+    127
+  ],
+  "Outdoor Space": [
+    255,
+    142,
+    127
+  ],
+  "SPACE_OUTDOOR": [
+    255,
+    142,
+    127
+  ],
+  "OUTDOOR_SPACE": [
+    255,
+    142,
+    127
+  ],
+  "OUTDOOR_SPACE_1": [
+    255,
+    142,
+    127
+  ],
+  "OUTDOOR_SPACE_2": [
+    255,
+    142,
+    127
+  ],
+  "Apartment Yard": [
+    231,
+    44,
+    24
+  ],
+  "Covered Yard": [
+    233,
+    44,
+    18
+  ],
+  "Front Yard": [
+    237,
+    52,
+    26
+  ],
+  "Inner Courtyard": [
+    245,
+    51,
+    28
+  ],
+  "LAWN_YARD": [
+    245,
+    55,
+    17
+  ],
+  "Lower Yard": [
+    232,
+    48,
+    27
+  ],
+  "Upper Yard": [
+    243,
+    49,
+    27
+  ],
+  "TERRACE_YARD": [
+    239,
+    56,
+    26
+  ],
+  "YARD_TERRACE": [
+    242,
+    45,
+    24
+  ],
+  "Yard Area": [
+    242,
+    52,
+    22
+  ],
+  "Yard Terrace": [
+    240,
+    46,
+    29
+  ],
+  "Yard/Courtyard": [
+    231,
+    44,
+    16
+  ],
+  "Sauna Yard": [
+    231,
+    55,
+    17
+  ],
+  "Fenced Garden": [
+    255,
+    86,
+    68
+  ],
+  "Greenhouse/Garden Room": [
+    2,
+    138,
+    167
+  ],
+  "SPACE_OUTDOOR_GARDEN": [
+    255,
+    95,
+    68
+  ],
+  "OUTDOOR_ENTRANCE": [
+    255,
+    162,
+    155
+  ],
+  "Outdoor Entrance": [
+    250,
+    169,
+    150
+  ],
+  "OUTDOOR_EXERCISE": [
+    251,
+    168,
+    151
+  ],
+  "OUTDOOR_EXERCISE_SPACE": [
+    250,
+    164,
+    155
+  ],
+  "OUTDOOR_UPPER_EXERCISE": [
+    250,
+    161,
+    151
+  ],
+  "Outdoor Shelter": [
+    12,
+    166,
+    194
+  ],
+  "Outdoor Terrace": [
+    247,
+    158,
+    152
+  ],
+  "SPACE_OUTDOOR_BALCONY": [
+    247,
+    158,
+    148
+  ],
+  "SPACE_OUTDOOR_PATIO": [
+    255,
+    155,
+    148
+  ],
+  "SPACE_OUTDOOR_PERGOLA": [
+    247,
+    155,
+    160
+  ],
+  "SPACE_OUTDOOR_PORCH": [
+    253,
+    165,
+    157
+  ],
+  "SPACE_OUTDOOR_TERRACE": [
+    237,
+    230,
+    2
+  ],
+  "SPACE_OUTDOOR_VERANDA": [
+    211,
+    252,
+    63
+  ],
+  "COLD": [
+    244,
+    185,
+    180
+  ],
+  "COLD_PORCH": [
+    247,
+    185,
+    178
+  ],
+  "COLD_WATER_HEATER": [
+    250,
+    198,
+    189
+  ],
+  "Cold Room": [
+    255,
+    198,
+    189
+  ],
+  "Cold/Unheated": [
+    250,
+    190,
+    192
+  ],
+  "ENTRANCE_COLD": [
+    245,
+    195,
+    189
+  ],
+  "SHED_COLD": [
+    245,
+    193,
+    191
+  ],
+  "SPACE_ROOM_COLD": [
+    255,
+    193,
+    177
+  ],
+  "PATIO": [
+    206,
+    200,
+    255
+  ],
+  "WOOD_PATIO": [
+    206,
+    200,
+    255
+  ],
+  "PATIO_TERRACE": [
+    223,
+    233,
+    247
+  ],
+  "TERRACE_PATIO": [
+    229,
+    231,
+    246
+  ],
+  "SPACE_PATIO_GLAZED": [
+    232,
+    237,
+    241
+  ],
+  "Terrace": [
+    237,
+    230,
+    2
+  ],
+  "Covered Terrace": [
+    131,
+    150,
+    17
+  ],
+  "SPACE_TERRACE_COVERED": [
+    141,
+    153,
+    13
+  ],
+  "SPACE_TERRACE_COVERED_OPEN": [
+    132,
+    152,
+    4
+  ],
+  "Roof Terrace": [
+    157,
+    147,
+    14
+  ],
+  "SPACE_TERRACE_ROOF": [
+    158,
+    144,
+    13
+  ],
+  "Glazed Terrace": [
+    206,
+    213,
+    9
+  ],
+  "GLASS_TERRACE": [
+    215,
+    222,
+    0
+  ],
+  "Front Terrace": [
+    252,
+    252,
+    5
+  ],
+  "Lower Terrace": [
+    247,
+    253,
+    0
+  ],
+  "Open Terrace": [
+    242,
+    255,
+    0
+  ],
+  "Upper Terrace": [
+    255,
+    255,
+    1
+  ],
+  "BALCONY_TERRACE": [
+    255,
+    244,
+    63
+  ],
+  "TERRACE_BALCONY": [
+    254,
+    236,
+    63
+  ],
+  "GLASS_PORCH_TERRACE": [
+    255,
+    239,
+    64
+  ],
+  "PORCH_TERRACE": [
+    251,
+    235,
+    64
+  ],
+  "SKYLIGHT_TERRACE": [
+    255,
+    247,
+    73
+  ],
+  "TERRACE_GLAZING_RESERVATION": [
+    255,
+    243,
+    63
+  ],
+  "TERRACE_WOOD_SPACE": [
+    255,
+    235,
+    74
+  ],
+  "BALCONY": [
+    255,
+    127,
+    197
+  ],
+  "Balcony": [
+    255,
+    127,
+    197
+  ],
+  "Covered Balcony": [
+    255,
+    15,
+    113
+  ],
+  "SPACE_BALCONY_COVERED": [
+    253,
+    23,
+    114
+  ],
+  "GLAZED_BALCONY": [
+    241,
+    124,
+    187
+  ],
+  "Glazed Balcony": [
+    253,
+    109,
+    189
+  ],
+  "GLASS_BALCONY": [
+    245,
+    118,
+    190
+  ],
+  "Glass Balcony": [
+    255,
+    112,
+    176
+  ],
+  "SPACE_BALCONY_GLAZED": [
+    253,
+    111,
+    185
+  ],
+  "BALCONY_GLAZING": [
+    241,
+    124,
+    180
+  ],
+  "Open Balcony": [
+    242,
+    178,
+    224
+  ],
+  "STAIRS": [
+    255,
+    127,
+    255
+  ],
+  "STAIRWAY": [
+    255,
+    127,
+    255
+  ],
+  "STAIR_FLIGHT": [
+    235,
+    26,
+    238
+  ],
+  "STAIR_LANDING": [
+    245,
+    25,
+    243
+  ],
+  "STEPS": [
+    237,
+    26,
+    237
+  ],
+  "WINDING_STAIR": [
+    35,
+    212,
+    250
+  ],
+  "Stair Hall": [
+    255,
+    113,
+    249
+  ],
+  "ENTRANCE_STAIRWAY": [
+    255,
+    121,
+    255
+  ],
+  "STAIRWAY_LOBBY": [
+    251,
+    125,
+    249
+  ],
+  "RoundedWinding": [
+    255,
+    179,
+    255
+  ],
+  "WalkinLine": [
+    247,
+    174,
+    255
+  ],
+  "HALL": [
+    237,
+    104,
+    2
+  ],
+  "Hall": [
+    237,
+    104,
+    2
+  ],
+  "CORRIDOR": [
+    237,
+    104,
+    2
+  ],
+  "Hall Space": [
+    237,
+    104,
+    2
+  ],
+  "Hall/Lobby": [
+    237,
+    104,
+    2
+  ],
+  "Corridor/Hallway": [
+    237,
+    104,
+    2
+  ],
+  "SPACE_HALL": [
+    237,
+    104,
+    2
+  ],
+  "SPACE_CORRIDOR": [
+    237,
+    104,
+    2
+  ],
+  "ENTRANCE_HALL": [
+    143,
+    60,
+    17
+  ],
+  "ENTRANCE_LOBBY": [
+    150,
+    58,
+    11
+  ],
+  "Entrance Hall": [
+    138,
+    69,
+    5
+  ],
+  "Entrance Lobby": [
+    139,
+    62,
+    6
+  ],
+  "LOBBY_ENTRANCE": [
+    148,
+    58,
+    14
+  ],
+  "SPACE_ENTRY_LOBBY": [
+    145,
+    64,
+    15
+  ],
+  "ATTIC_HALL": [
+    220,
+    97,
+    0
+  ],
+  "CLEANING_HALL": [
+    218,
+    92,
+    7
+  ],
+  "COOLING_HALL": [
+    217,
+    94,
+    6
+  ],
+  "DINING_HALL": [
+    225,
+    92,
+    4
+  ],
+  "DRYING_HALL": [
+    227,
+    99,
+    5
+  ],
+  "ENTRANCE_CORRIDOR": [
+    216,
+    89,
+    0
+  ],
+  "GALLERY_CORRIDOR": [
+    219,
+    84,
+    7
+  ],
+  "GUEST_HALL": [
+    222,
+    86,
+    8
+  ],
+  "HOBBY_HALL": [
+    214,
+    92,
+    0
+  ],
+  "LIBRARY_HALL": [
+    216,
+    91,
+    6
+  ],
+  "LOBBY_HALL": [
+    227,
+    87,
+    5
+  ],
+  "LOBBY_WORK_ROOM": [
+    213,
+    90,
+    6
+  ],
+  "Lower Hall": [
+    222,
+    83,
+    5
+  ],
+  "MACHINE_HALL": [
+    212,
+    95,
+    8
+  ],
+  "MAIN_HALL": [
+    222,
+    90,
+    4
+  ],
+  "MULTIPURPOSE_HALL": [
+    213,
+    94,
+    0
+  ],
+  "Main Room/Hall": [
+    211,
+    93,
+    0
+  ],
+  "OFFICE_HALL": [
+    221,
+    87,
+    0
+  ],
+  "OIL_HALL": [
+    212,
+    92,
+    7
+  ],
+  "PLAYROOM_HALL": [
+    215,
+    98,
+    6
+  ],
+  "PRIVATE_HALL": [
+    211,
+    85,
+    0
+  ],
+  "PRIVATE_SPACE_HALL": [
+    219,
+    89,
+    0
+  ],
+  "Production Hall": [
+    227,
+    96,
+    0
+  ],
+  "ROOF_HALL": [
+    220,
+    90,
+    1
+  ],
+  "SERVICE_HALL": [
+    214,
+    84,
+    0
+  ],
+  "SMOKING_ROOM_HALL": [
+    224,
+    97,
+    0
+  ],
+  "SPACE_DRAUGHT_LOBBY": [
+    214,
+    98,
+    0
+  ],
+  "TOOL_FACTORY_HALL": [
+    227,
+    90,
+    0
+  ],
+  "Upper Hall": [
+    220,
+    96,
+    0
+  ],
+  "WORK_ROOM_HALL": [
+    222,
+    90,
+    5
+  ],
+  "Elevator Lobby": [
+    248,
+    135,
+    63
+  ],
+  "SPACE_ELEVATOR": [
+    254,
+    135,
+    63
+  ],
+  "Sauna": [
+    192,
+    2,
+    237
+  ],
+  "SPACE_SAUNA": [
+    192,
+    2,
+    237
+  ],
+  "Sauna Building": [
+    192,
+    2,
+    237
+  ],
+  "Sauna Chamber": [
+    192,
+    2,
+    237
+  ],
+  "Sauna Cottage": [
+    192,
+    2,
+    237
+  ],
+  "SAUNA_BENCH": [
+    119,
+    18,
+    131
+  ],
+  "HIGH_SAUNA_BENCH": [
+    130,
+    14,
+    132
+  ],
+  "LOW_SAUNA_BENCH": [
+    129,
+    11,
+    130
+  ],
+  "MID_SAUNA_BENCH": [
+    130,
+    17,
+    134
+  ],
+  "SAUNA_BENCH_HIGH": [
+    133,
+    22,
+    134
+  ],
+  "SAUNA_BENCH_LOW": [
+    123,
+    9,
+    143
+  ],
+  "SAUNA_BENCH_MID": [
+    120,
+    16,
+    135
+  ],
+  "INFRARED_SAUNA": [
+    168,
+    6,
+    198
+  ],
+  "SAUNA_LIBRARY": [
+    177,
+    9,
+    213
+  ],
+  "Sauna Steam Room": [
+    179,
+    15,
+    205
+  ],
+  "SAUNA_STEAM": [
+    168,
+    6,
+    206
+  ],
+  "WINDOW_SAUNA": [
+    17,
+    144,
+    9
+  ],
+  "SWIMMING_POOL": [
+    0,
+    179,
+    112
+  ],
+  "Swimming Pool": [
+    0,
+    179,
+    112
+  ],
+  "Pool Room": [
+    0,
+    179,
+    112
+  ],
+  "Pool/Basin": [
+    0,
+    179,
+    112
+  ],
+  "SPACE_SWIMMING_POOL": [
+    0,
+    179,
+    112
+  ],
+  "JACUZZI": [
+    9,
+    144,
+    94
+  ],
+  "SPACE_RECREATION_ROOM": [
+    18,
+    255,
+    171
+  ],
+  "Exercise Space": [
+    19,
+    255,
+    162
+  ],
+  "SPACE_GYM": [
+    16,
+    249,
+    173
+  ],
+  "Multi-purpose Space": [
+    201,
+    255,
+    0
+  ],
+  "HOBBY_SPACE": [
+    201,
+    255,
+    0
+  ],
+  "Hobby Space": [
+    201,
+    255,
+    0
+  ],
+  "MAIN_SPACE": [
+    201,
+    255,
+    0
+  ],
+  "SPACE_ROOM": [
+    201,
+    255,
+    0
+  ],
+  "Space/Room": [
+    201,
+    255,
+    0
+  ],
+  "Business Space": [
+    105,
+    156,
+    4
+  ],
+  "Commercial Space": [
+    94,
+    144,
+    13
+  ],
+  "RETAIL_SPACE": [
+    95,
+    144,
+    1
+  ],
+  "Retail Space": [
+    101,
+    151,
+    10
+  ],
+  "SPACE_RETAIL": [
+    106,
+    141,
+    3
+  ],
+  "Common Space": [
+    131,
+    179,
+    9
+  ],
+  "SOCIAL_SPACE": [
+    131,
+    170,
+    2
+  ],
+  "SOCIAL_SPACES": [
+    133,
+    179,
+    10
+  ],
+  "Dining Space": [
+    127,
+    176,
+    5
+  ],
+  "SPACE_DINING": [
+    120,
+    168,
+    3
+  ],
+  "SPACE_OFFICE": [
+    255,
+    212,
+    134
+  ],
+  "WORK_SPACE": [
+    150,
+    219,
+    8
+  ],
+  "Work Space": [
+    161,
+    217,
+    9
+  ],
+  "Salon Space": [
+    162,
+    217,
+    3
+  ],
+  "SPACE_BAR": [
+    181,
+    246,
+    12
+  ],
+  "SPACE_BASEMENT": [
+    182,
+    255,
+    0
+  ],
+  "SPACE_ATTIC": [
+    99,
+    159,
+    0
+  ],
+  "SPACE_COVERED_AREA": [
+    186,
+    253,
+    3
+  ],
+  "SPACE_ELEVATED": [
+    182,
+    255,
+    14
+  ],
+  "SPACE_ENTRY": [
+    184,
+    247,
+    4
+  ],
+  "SPACE_GARBAGE": [
+    181,
+    251,
+    13
+  ],
+  "SPACE_LIBRARY": [
+    177,
+    255,
+    9
+  ],
+  "SPACE_LIBRARY_ARCHIVE": [
+    191,
+    248,
+    0
+  ],
+  "SPACE_OPEN_TO_BELOW": [
+    179,
+    253,
+    10
+  ],
+  "SPACE_SCULLERY": [
+    192,
+    255,
+    11
+  ],
+  "High Space": [
+    190,
+    246,
+    2
+  ],
+  "SPACE_ROOM_HIGH_CEILING": [
+    187,
+    246,
+    12
+  ],
+  "REST_SPACE": [
+    0,
+    116,
+    150
+  ],
+  "Training Space": [
+    181,
+    249,
+    2
+  ],
+  "SPACE_UNDEFINED": [
+    198,
+    255,
+    19
+  ],
+  "SPACE_USER_DEFINED": [
+    188,
+    255,
+    22
+  ],
+  "SPACES": [
+    194,
+    252,
+    23
+  ],
+  "SPACE_5_6_7_8": [
+    195,
+    254,
+    29
+  ],
+  "UNBUILT_SPACE": [
+    50,
+    211,
+    252
+  ],
+  "UNUSED_SPACE": [
+    46,
+    213,
+    248
+  ],
+  "SPACE_VERANDA_GLAZED": [
+    199,
+    255,
+    61
+  ],
+  "SPACE_DIMENSIONS_LABEL": [
+    200,
+    251,
+    98
+  ],
+  "DOOR": [
+    255,
+    200,
+    227
+  ],
+  "DOORS": [
+    255,
+    200,
+    227
+  ],
+  "ACCORDION_DOOR": [
+    229,
+    86,
+    130
+  ],
+  "FOLDING_DOOR": [
+    238,
+    86,
+    128
+  ],
+  "SLIDING_DOOR": [
+    241,
+    80,
+    135
+  ],
+  "SWING_DOOR": [
+    231,
+    72,
+    126
+  ],
+  "OPPOSITE_SWING_DOOR": [
+    243,
+    84,
+    136
+  ],
+  "PARALLEL_SLIDING_DOOR": [
+    243,
+    77,
+    131
+  ],
+  "ROLL_UP_DOOR": [
+    233,
+    81,
+    131
+  ],
+  "DOORWAY_NO_DOOR": [
+    240,
+    83,
+    125
+  ],
+  "DOOR_HANDLE": [
+    255,
+    184,
+    202
+  ],
+  "WINDOW": [
+    4,
+    135,
+    1
+  ],
+  "WINDOW_FULL": [
+    11,
+    141,
+    7
+  ],
+  "WINDOW_REGULAR": [
+    5,
+    146,
+    16
+  ],
+  "SKYLIGHT": [
+    2,
+    226,
+    4
+  ],
+  "SKYLIGHT_COOLING": [
+    0,
+    231,
+    14
+  ],
+  "SKYLIGHT_PERGOLA": [
+    6,
+    231,
+    7
+  ],
+  "Skylight/Light Shelter": [
+    7,
+    216,
+    0
+  ],
+  "WALL": [
+    255,
+    255,
+    56
+  ],
+  "WALL_EXTERNAL": [
+    255,
+    255,
+    56
+  ],
+  "WALL_DEPTH_CONTROL": [
+    192,
+    196,
+    14
+  ],
+  "WALL_NORMAL_FLIP_CONTROL": [
+    206,
+    210,
+    14
+  ],
+  "WALL_PROPERTY_CONTROL": [
+    191,
+    198,
+    18
+  ],
+  "BoundaryPolygon": [
+    249,
+    253,
+    158
+  ],
+  "InnerPolygon": [
+    255,
+    255,
+    148
+  ],
+  "STRUCTURAL_COLUMN": [
+    127,
+    222,
+    255
+  ],
+  "Column": [
+    127,
+    222,
+    255
+  ],
+  "CIRCULAR_COLUMN": [
+    180,
+    213,
+    242
+  ],
+  "RECTANGULAR_COLUMN": [
+    181,
+    220,
+    254
+  ],
+  "FREEFORM_COLUMN": [
+    177,
+    207,
+    244
+  ],
+  "PIPE": [
+    127,
+    255,
+    255
+  ],
+  "INNER_DRAIN": [
+    170,
+    255,
+    237
+  ],
+  "OUTER_DRAIN": [
+    166,
+    255,
+    245
+  ],
+  "OuterDrain": [
+    176,
+    247,
+    234
+  ],
+  "InnerDrain": [
+    161,
+    250,
+    243
+  ],
+  "HEATING": [
+    255,
+    174,
+    36
+  ],
+  "Heating": [
+    255,
+    174,
+    36
+  ],
+  "HEATING_CENTER": [
+    255,
+    174,
+    36
+  ],
+  "Heating Center": [
+    255,
+    174,
+    36
+  ],
+  "DISTRICT_HEATING": [
+    190,
+    117,
+    21
+  ],
+  "District Heating Center": [
+    183,
+    116,
+    6
+  ],
+  "GROUND_SOURCE_HEATING": [
+    185,
+    111,
+    9
+  ],
+  "HEATING_DISTRIBUTION": [
+    187,
+    110,
+    6
+  ],
+  "BURNER_AREA": [
+    249,
+    148,
+    0
+  ],
+  "OIL_BURNER": [
+    235,
+    155,
+    0
+  ],
+  "FUEL_RESERVATION": [
+    255,
+    177,
+    58
+  ],
+  "Fuel": [
+    254,
+    166,
+    57
+  ],
+  "HVAC": [
+    253,
+    194,
+    140
+  ],
+  "HVAC Room": [
+    255,
+    207,
+    130
+  ],
+  "OFFICE": [
+    255,
+    212,
+    134
+  ],
+  "Office": [
+    255,
+    212,
+    134
+  ],
+  "COMMERCIAL_OFFICE": [
+    253,
+    145,
+    39
+  ],
+  "DINING_OFFICE": [
+    255,
+    140,
+    28
+  ],
+  "LIBRARY_OFFICE": [
+    255,
+    140,
+    34
+  ],
+  "OFFICE_FITNESS": [
+    251,
+    145,
+    29
+  ],
+  "OFFICE_LIBRARY": [
+    250,
+    138,
+    32
+  ],
+  "OFFICE_WORKSHOP": [
+    250,
+    139,
+    32
+  ],
+  "Open Office": [
+    249,
+    145,
+    33
+  ],
+  "WORKSHOP_OFFICE": [
+    255,
+    141,
+    31
+  ],
+  "MEETING_ROOM": [
+    255,
+    192,
+    117
+  ],
+  "Meeting Room": [
+    255,
+    200,
+    109
+  ],
+  "Meeting/Conference": [
+    255,
+    190,
+    114
+  ],
+  "BREAK_ROOM": [
+    249,
+    200,
+    119
+  ],
+  "Break Room": [
+    255,
+    204,
+    111
+  ],
+  "Manager": [
+    249,
+    226,
+    176
+  ],
+  "Manager's Room": [
+    247,
+    221,
+    175
+  ],
+  "BUILDING_CLUB_ROOM": [
+    250,
+    219,
+    184
+  ],
+  "HOBBY_CLUB_ROOM": [
+    250,
+    225,
+    169
+  ],
+  "HOUSE_CLUB_ROOM": [
+    246,
+    231,
+    178
+  ],
+  "FLOOR": [
+    77,
+    135,
+    1
+  ],
+  "FLOOR_1": [
+    77,
+    135,
+    1
+  ],
+  "FLOOR_2": [
+    77,
+    135,
+    1
+  ],
+  "FLOOR_3": [
+    77,
+    135,
+    1
+  ],
+  "FLOOR_4": [
+    77,
+    135,
+    1
+  ],
+  "Ground Floor": [
+    77,
+    135,
+    1
+  ],
+  "Residential Floor": [
+    77,
+    135,
+    1
+  ],
+  "BASEMENT_1": [
+    85,
+    138,
+    7
+  ],
+  "BASEMENT_2": [
+    89,
+    134,
+    6
+  ],
+  "BASEMENT_FLOOR": [
+    99,
+    138,
+    3
+  ],
+  "Basement Floor": [
+    85,
+    133,
+    3
+  ],
+  "UPPER_BASEMENT_FLOOR": [
+    87,
+    143,
+    3
+  ],
+  "Upper Basement Floor": [
+    98,
+    149,
+    9
+  ],
+  "FLOOR_1_BASEMENT": [
+    88,
+    149,
+    8
+  ],
+  "1st FLOOR": [
+    78,
+    143,
+    4
+  ],
+  "2nd FLOOR": [
+    80,
+    142,
+    15
+  ],
+  "3rd FLOOR": [
+    78,
+    142,
+    1
+  ],
+  "UPPER_FLOOR": [
+    80,
+    146,
+    7
+  ],
+  "Upper Floor": [
+    75,
+    149,
+    14
+  ],
+  "LOWER_FLOOR": [
+    86,
+    147,
+    3
+  ],
+  "Lower Floor": [
+    82,
+    140,
+    6
+  ],
+  "Middle Floor": [
+    74,
+    152,
+    11
+  ],
+  "Intermediate Floor": [
+    77,
+    137,
+    9
+  ],
+  "Upper Floor/Ceiling": [
+    82,
+    144,
+    15
+  ],
+  "ATTIC_FLOOR": [
+    93,
+    160,
+    1
+  ],
+  "Attic Floor": [
+    85,
+    158,
+    3
+  ],
+  "Attic": [
+    92,
+    151,
+    0
+  ],
+  "Entrance Floor": [
+    103,
+    183,
+    2
+  ],
+  "ENTRY": [
+    0,
+    201,
+    247
+  ],
+  "Apartment Floor": [
+    118,
+    217,
+    0
+  ],
+  "FLOOR_PLAN": [
+    2,
+    67,
+    237
+  ],
+  "FLOOR_PLAN_DEPTH": [
+    2,
+    67,
+    237
+  ],
+  "FLOOR_COMPOSITION": [
+    2,
+    67,
+    237
+  ],
+  "BASEMENT_1_FLOORPLAN": [
+    12,
+    40,
+    145
+  ],
+  "BASEMENT_2_FLOORPLAN": [
+    22,
+    47,
+    159
+  ],
+  "FLOOR_1_FLOORPLAN": [
+    17,
+    35,
+    146
+  ],
+  "FLOOR_2_FLOORPLAN": [
+    7,
+    49,
+    149
+  ],
+  "FLOOR_3_FLOORPLAN": [
+    10,
+    38,
+    153
+  ],
+  "FLOOR_4_FLOORPLAN": [
+    22,
+    47,
+    146
+  ],
+  "FLOOR_NUMBER_LABEL": [
+    62,
+    126,
+    249
+  ],
+  "TILED_FLOOR": [
+    72,
+    125,
+    248
+  ],
+  "DIMENSION_LINE": [
+    77,
+    135,
+    1
+  ],
+  "DIMENSION_MARKER": [
+    77,
+    135,
+    1
+  ],
+  "DIMENSION_LABEL": [
+    77,
+    135,
+    1
+  ],
+  "BOUNDARY_PATH": [
+    95,
+    142,
+    6
+  ],
+  "BOUNDARY_POLYGON": [
+    89,
+    136,
+    7
+  ],
+  "TEXT_LABEL": [
+    96,
+    160,
+    0
+  ],
+  "NAME_LABEL": [
+    84,
+    151,
+    7
+  ],
+  "DRAWING_LINES": [
+    84,
+    158,
+    5
+  ],
+  "MODEL": [
+    129,
+    221,
+    5
+  ],
+  "MODEL_V1_1": [
+    135,
+    229,
+    6
+  ],
+  "WASHING_MACHINE": [
+    85,
+    248,
+    131
+  ],
+  "TUMBLE_DRYER": [
+    81,
+    250,
+    145
+  ],
+  "HEATER": [
+    180,
+    255,
+    201
+  ],
+  "HIGH_HEATER": [
+    174,
+    255,
+    205
+  ],
+  "HEATER_SIGN": [
+    171,
+    255,
+    200
+  ],
+  "COAT_RACK": [
+    170,
+    248,
+    220
+  ],
+  "COAT_HANGER": [
+    167,
+    254,
+    213
+  ],
+  "CHIMNEY": [
+    165,
+    14,
+    2
+  ],
+  "FIREBOX": [
+    168,
+    8,
+    3
+  ],
+  "THRESHOLD": [
+    251,
+    3,
+    0
+  ],
+  "RAILING": [
+    255,
+    71,
+    76
+  ],
+  "PANEL": [
+    255,
+    133,
+    118
+  ],
+  "PANEL_AREA": [
+    251,
+    138,
+    132
+  ],
+  "PANEL_CENTER_NEGATIVE": [
+    247,
+    136,
+    129
+  ],
+  "PANEL_CENTER_POSITIVE": [
+    255,
+    135,
+    130
+  ],
+  "PANEL_LEFT_CENTER": [
+    255,
+    129,
+    126
+  ],
+  "PANEL_LEFT_NEGATIVE": [
+    255,
+    130,
+    132
+  ],
+  "PANEL_LEFT_POSITIVE": [
+    253,
+    132,
+    126
+  ],
+  "PANEL_RIGHT_CENTER": [
+    250,
+    139,
+    118
+  ],
+  "PANEL_RIGHT_NEGATIVE": [
+    255,
+    138,
+    133
+  ],
+  "PANEL_RIGHT_POSITIVE": [
+    250,
+    137,
+    124
+  ],
+  "BUILDING": [
+    175,
+    13,
+    3
+  ],
+  "BUILDING_19": [
+    169,
+    7,
+    8
+  ],
+  "BUILDING_A": [
+    182,
+    7,
+    12
+  ],
+  "BUILDING_B": [
+    176,
+    1,
+    8
+  ],
+  "BUILDING_ADDRESS": [
+    173,
+    4,
+    17
+  ],
+  "BUILDING_BASEMENT": [
+    174,
+    7,
+    14
+  ],
+  "MAIN_BUILDING": [
+    174,
+    11,
+    11
+  ],
+  "Additional Building": [
+    179,
+    15,
+    13
+  ],
+  "Extension Reserve": [
+    176,
+    9,
+    13
+  ],
+  "FIXED_FURNITURE": [
+    255,
+    50,
+    41
+  ],
+  "FURNITURE_SET": [
+    242,
+    50,
+    37
+  ],
+  "HOUSING_UNIT": [
+    245,
+    46,
+    37
+  ],
+  "COMPOSE_ELEMENT": [
+    252,
+    36,
+    34
+  ],
+  "164_SQUARE_METERS": [
+    245,
+    125,
+    125
+  ],
+  "40_SQUARE_METERS": [
+    254,
+    134,
+    121
+  ],
+  "576_SQUARE_METERS": [
+    247,
+    135,
+    124
+  ],
+  "RESIZE_E_CONTROL": [
+    18,
+    50,
+    149
+  ],
+  "RESIZE_NE_CONTROL": [
+    14,
+    41,
+    148
+  ],
+  "RESIZE_NW_CONTROL": [
+    18,
+    41,
+    145
+  ],
+  "RESIZE_N_CONTROL": [
+    19,
+    37,
+    146
+  ],
+  "RESIZE_SE_CONTROL": [
+    4,
+    36,
+    157
+  ],
+  "RESIZE_SW_CONTROL": [
+    7,
+    43,
+    146
+  ],
+  "RESIZE_S_CONTROL": [
+    7,
+    36,
+    150
+  ],
+  "RESIZE_W_CONTROL": [
+    19,
+    50,
+    155
+  ],
+  "COPY_PASTE_CONTROL": [
+    56,
+    121,
+    255
+  ],
+  "REMOVE_CONTROL": [
+    55,
+    106,
+    255
+  ],
+  "ROTATE_CONTROL": [
+    55,
+    106,
+    255
+  ],
+  "TRANSLATE_CONTROL": [
+    63,
+    115,
+    247
+  ],
+  "SELECTION_CONTROLS": [
+    71,
+    119,
+    252
+  ],
+  "LIBRARY": [
+    0,
+    118,
+    155
+  ],
+  "Library": [
+    0,
+    121,
+    148
+  ],
+  "PLAYROOM": [
+    3,
+    126,
+    151
+  ],
+  "CLASSROOM": [
+    16,
+    124,
+    153
+  ],
+  "MUSIC_ROOM": [
+    1,
+    127,
+    143
+  ],
+  "MUSIC_STUDIO": [
+    12,
+    121,
+    141
+  ],
+  "Reading Room": [
+    3,
+    120,
+    154
+  ],
+  "Rest Room": [
+    0,
+    118,
+    148
+  ],
+  "Workshop": [
+    0,
+    121,
+    144
+  ],
+  "Carpenter's Workshop": [
+    5,
+    109,
+    144
+  ],
+  "Home Theater": [
+    15,
+    121,
+    157
+  ],
+  "Reception": [
+    10,
+    110,
+    145
+  ],
+  "WAITING_ROOM": [
+    4,
+    110,
+    150
+  ],
+  "ARCHIVE": [
+    12,
+    128,
+    135
+  ],
+  "Archive": [
+    13,
+    114,
+    149
+  ],
+  "CHAMBER": [
+    9,
+    111,
+    150
+  ],
+  "Chamber": [
+    21,
+    120,
+    151
+  ],
+  "CHANGING_ROOM": [
+    10,
+    133,
+    153
+  ],
+  "Changing Room": [
+    10,
+    125,
+    141
+  ],
+  "CLEANING": [
+    0,
+    114,
+    148
+  ],
+  "Cleaning": [
+    0,
+    115,
+    146
+  ],
+  "Cleaning Room": [
+    1,
+    112,
+    153
+  ],
+  "COOLING_AREA": [
+    7,
+    126,
+    144
+  ],
+  "COOLING_ROOM": [
+    0,
+    118,
+    152
+  ],
+  "Cooling": [
+    0,
+    124,
+    147
+  ],
+  "COTTAGE": [
+    5,
+    114,
+    142
+  ],
+  "COTTAGE_UPPER_PART": [
+    1,
+    112,
+    149
+  ],
+  "Villa/Cottage": [
+    0,
+    122,
+    137
+  ],
+  "DINING_ROOM": [
+    15,
+    110,
+    147
+  ],
+  "Dining": [
+    7,
+    118,
+    153
+  ],
+  "Dining Room": [
+    6,
+    111,
+    146
+  ],
+  "Driveway Ramp": [
+    0,
+    113,
+    155
+  ],
+  "CAFE": [
+    6,
+    122,
+    146
+  ],
+  "Café": [
+    7,
+    126,
+    144
+  ],
+  "Cafeteria": [
+    14,
+    120,
+    140
+  ],
+  "Cash Register": [
+    5,
+    124,
+    153
+  ],
+  "COMPRESSOR_ROOM": [
+    0,
+    116,
+    156
+  ],
+  "Covered": [
+    0,
+    123,
+    155
+  ],
+  "COVERED_AREA": [
+    7,
+    128,
+    152
+  ],
+  "COVERED_SECTION": [
+    3,
+    126,
+    160
+  ],
+  "ELEVATED": [
+    14,
+    124,
+    143
+  ],
+  "EMERGENCY_ROOM": [
+    8,
+    144,
+    166
+  ],
+  "FIRE_SAFETY": [
+    6,
+    141,
+    172
+  ],
+  "GYM": [
+    11,
+    123,
+    162
+  ],
+  "Gym": [
+    15,
+    134,
+    162
+  ],
+  "GREENHOUSE": [
+    4,
+    135,
+    170
+  ],
+  "GREEN_ROOM": [
+    0,
+    144,
+    165
+  ],
+  "Housekeeping Room": [
+    0,
+    139,
+    170
+  ],
+  "Machine Room": [
+    0,
+    137,
+    162
+  ],
+  "MAKEUP_ROOM": [
+    14,
+    136,
+    171
+  ],
+  "MUDROOM": [
+    0,
+    144,
+    174
+  ],
+  "Mudroom Entrance": [
+    0,
+    143,
+    166
+  ],
+  "OIL_ROOM": [
+    0,
+    153,
+    178
+  ],
+  "OIL": [
+    4,
+    146,
+    184
+  ],
+  "Oil": [
+    4,
+    146,
+    184
+  ],
+  "PERGOLA": [
+    0,
+    135,
+    180
+  ],
+  "Porch/Vestibule": [
+    1,
+    145,
+    193
+  ],
+  "Covered Porch": [
+    0,
+    141,
+    180
+  ],
+  "Glass Porch": [
+    0,
+    153,
+    182
+  ],
+  "GLASS_PORCH": [
+    0,
+    145,
+    196
+  ],
+  "GLASS_ROOM": [
+    6,
+    138,
+    180
+  ],
+  "GLAZED_PORCH": [
+    2,
+    141,
+    193
+  ],
+  "GLAZED_ROOM": [
+    0,
+    153,
+    182
+  ],
+  "Safe/Vault": [
+    8,
+    163,
+    184
+  ],
+  "Vault": [
+    4,
+    154,
+    192
+  ],
+  "Secretary": [
+    3,
+    146,
+    177
+  ],
+  "Service Pit": [
+    10,
+    145,
+    188
+  ],
+  "Shed": [
+    1,
+    157,
+    185
+  ],
+  "Wood Shed": [
+    4,
+    155,
+    196
+  ],
+  "Firewood Shed": [
+    5,
+    145,
+    198
+  ],
+  "Shelter Wood": [
+    13,
+    147,
+    187
+  ],
+  "Shelter/Canopy": [
+    3,
+    159,
+    184
+  ],
+  "SHOP": [
+    3,
+    165,
+    193
+  ],
+  "SLOPED_CEILING": [
+    7,
+    152,
+    196
+  ],
+  "SMOKING_ROOM": [
+    0,
+    174,
+    210
+  ],
+  "STAFF_ROOM": [
+    7,
+    167,
+    199
+  ],
+  "Studio/Atelier": [
+    0,
+    173,
+    214
+  ],
+  "Atelier/Studio": [
+    4,
+    169,
+    206
+  ],
+  "TANK": [
+    14,
+    166,
+    224
+  ],
+  "Tank": [
+    0,
+    175,
+    218
+  ],
+  "Tiling/Paving": [
+    0,
+    179,
+    217
+  ],
+  "Tower": [
+    3,
+    178,
+    219
+  ],
+  "Tower Room": [
+    0,
+    173,
+    206
+  ],
+  "VERANDA": [
+    0,
+    171,
+    210
+  ],
+  "Veranda": [
+    0,
+    164,
+    216
+  ],
+  "Waste": [
+    10,
+    171,
+    231
+  ],
+  "WET_ROOM_ENTRANCE": [
+    8,
+    189,
+    227
+  ],
+  "WINTER_COTTAGE": [
+    1,
+    180,
+    229
+  ],
+  "SUMMER_COTTAGE": [
+    1,
+    185,
+    223
+  ],
+  "WOOD_PLATFORM": [
+    8,
+    183,
+    224
+  ],
+  "Work Room": [
+    2,
+    197,
+    225
+  ],
+  "Work Room/Study": [
+    1,
+    198,
+    230
+  ],
+  "Work Cottage": [
+    0,
+    192,
+    225
+  ],
+  "ATTIC_ROOM": [
+    5,
+    187,
+    239
+  ],
+  "Accommodation Room": [
+    0,
+    198,
+    229
+  ],
+  "Alteration": [
+    0,
+    188,
+    232
+  ],
+  "Car Shelter": [
+    0,
+    194,
+    240
+  ],
+  "Car Shed": [
+    7,
+    205,
+    241
+  ],
+  "Car": [
+    4,
+    194,
+    236
+  ],
+  "DIVISIBLE": [
+    0,
+    193,
+    228
+  ],
+  "Shared/Divisible": [
+    0,
+    195,
+    238
+  ],
+  "EMPTY": [
+    6,
+    204,
+    243
+  ],
+  "ENTRANCE": [
+    1,
+    188,
+    255
+  ],
+  "Entrance": [
+    7,
+    202,
+    253
+  ],
+  "FAN": [
+    10,
+    194,
+    249
+  ],
+  "FIREWOOD": [
+    0,
+    198,
+    245
+  ],
+  "Firewood": [
+    8,
+    195,
+    239
+  ],
+  "Wood/Firewood": [
+    0,
+    202,
+    239
+  ],
+  "Geothermal": [
+    12,
+    212,
+    250
+  ],
+  "Guest House": [
+    2,
+    211,
+    248
+  ],
+  "Heated Porch": [
+    15,
+    212,
+    250
+  ],
+  "WARM_PORCH": [
+    9,
+    218,
+    250
+  ],
+  "Heated/Warm": [
+    7,
+    196,
+    253
+  ],
+  "WARM": [
+    2,
+    210,
+    243
+  ],
+  "Hobby": [
+    2,
+    210,
+    255
+  ],
+  "HOBBY_ROOM": [
+    0,
+    215,
+    246
+  ],
+  "Hobby Room": [
+    11,
+    212,
+    253
+  ],
+  "INDICATOR": [
+    3,
+    207,
+    255
+  ],
+  "DIRECTION_INDICATOR": [
+    0,
+    216,
+    253
+  ],
+  "Lean-to/Annex": [
+    17,
+    205,
+    246
+  ],
+  "Lawn": [
+    14,
+    213,
+    255
+  ],
+  "Main Building": [
+    21,
+    217,
+    249
+  ],
+  "MISCELLANEOUS_FURNITURE": [
+    15,
+    218,
+    247
+  ],
+  "MULTIPURPOSE_ROOM": [
+    25,
+    222,
+    242
+  ],
+  "Multi-purpose Room": [
+    28,
+    211,
+    254
+  ],
+  "Old": [
+    26,
+    198,
+    253
+  ],
+  "RESERVATION": [
+    33,
+    202,
+    255
+  ],
+  "Reserve": [
+    32,
+    196,
+    251
+  ],
+  "OPEN": [
+    19,
+    207,
+    248
+  ],
+  "Open Downward": [
+    18,
+    221,
+    255
+  ],
+  "Open Upward": [
+    22,
+    219,
+    249
+  ],
+  "Open Porch": [
+    14,
+    221,
+    251
+  ],
+  "POSITIVE": [
+    25,
+    201,
+    244
+  ],
+  "NEGATIVE": [
+    26,
+    203,
+    250
+  ],
+  "Recreation Room": [
+    33,
+    214,
+    255
+  ],
+  "RECREATION_ROOM": [
+    36,
+    216,
+    255
+  ],
+  "ROOM_NAME": [
+    43,
+    211,
+    254
+  ],
+  "ROUNDED_WINDING": [
+    34,
+    214,
+    251
+  ],
+  "INNER_CIRCLE": [
+    28,
+    226,
+    255
+  ],
+  "OUTER_CIRCLE": [
+    33,
+    225,
+    250
+  ],
+  "INNER_POLYGON": [
+    43,
+    206,
+    255
+  ],
+  "INNER_POLYGON_BOTTOM": [
+    41,
+    214,
+    255
+  ],
+  "INNER_POLYGON_LEFT": [
+    35,
+    202,
+    252
+  ],
+  "INNER_POLYGON_RIGHT": [
+    41,
+    201,
+    253
+  ],
+  "INNER_POLYGON_TOP": [
+    42,
+    204,
+    249
+  ],
+  "OVERLAY_POLYGON": [
+    39,
+    211,
+    255
+  ],
+  "LEFT": [
+    41,
+    203,
+    248
+  ],
+  "RIGHT": [
+    33,
+    207,
+    239
+  ],
+  "BESIDE": [
+    37,
+    216,
+    246
+  ],
+  "CIRCLE": [
+    39,
+    216,
+    247
+  ],
+  "RECTANGLE": [
+    40,
+    205,
+    244
+  ],
+  "FREE_SHAPE": [
+    37,
+    209,
+    248
+  ],
+  "TEMPORARY": [
+    42,
+    228,
+    255
+  ],
+  "UNDEFINED": [
+    38,
+    218,
+    249
+  ],
+  "Undefined": [
+    36,
+    212,
+    253
+  ],
+  "UNBUILT": [
+    50,
+    214,
+    249
+  ],
+  "USE": [
+    60,
+    219,
+    255
+  ],
+  "USER_DEFINED": [
+    47,
+    219,
+    255
+  ],
+  "VISUAL": [
+    45,
+    217,
+    253
+  ],
+  "WALK_IN": [
+    55,
+    209,
+    253
+  ],
+  "WATER_SYSTEM": [
+    68,
+    219,
+    248
+  ],
+  "WATER_TAP": [
+    61,
+    224,
+    255
+  ],
+  "WOOD_GYM": [
+    55,
+    223,
+    246
+  ],
+  "ELECTRICITY_SIGN": [
+    55,
+    212,
+    254
+  ],
+  "Faucet": [
+    185,
+    252,
+    237
+  ],
+  "electricitySign": [
+    253,
+    193,
+    57
+  ],
+  "FixedFurniture BaseCabinet": [
+    167,
+    0,
+    96
+  ],
+  "FixedFurniture BaseCabinetRound": [
+    172,
+    0,
+    96
+  ],
+  "FixedFurniture BaseCabinetTriangle": [
+    176,
+    3,
+    94
+  ],
+  "FixedFurniture CounterTop": [
+    169,
+    0,
+    99
+  ],
+  "FixedFurniture GeneralAppliance": [
+    248,
+    0,
+    134
+  ],
+  "FixedFurniture WashingMachine": [
+    241,
+    0,
+    138
+  ],
+  "FixedFurniture WaterTap": [
+    246,
+    0,
+    138
+  ],
+  "FixedFurniture CoatRack": [
+    241,
+    66,
+    165
+  ],
+  "FixedFurniture Housing": [
+    247,
+    71,
+    164
+  ],
+  "FixedFurniture Misc": [
+    255,
+    138,
+    185
+  ],
+  "TextLabel NameLabel": [
+    18,
+    69,
+    229
+  ],
+  "TextLabel DimensionMeasureLabel": [
+    9,
+    64,
+    223
+  ]
+}
