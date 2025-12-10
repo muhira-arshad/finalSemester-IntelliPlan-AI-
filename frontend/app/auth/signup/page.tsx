@@ -47,6 +47,7 @@ export default function SignUpPage() {
   const [message, setMessage] = useState("")
   const [messageType, setMessageType] = useState<"success" | "error" | "info">("info")
   const [showVerificationDialog, setShowVerificationDialog] = useState(false)
+  const [passwordMatchAlert, setPasswordMatchAlert] = useState(false)
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -67,11 +68,16 @@ export default function SignUpPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
+    // Check password match before submitting
     if (formData.password !== formData.confirmPassword) {
-      setMessage("Passwords don't match!")
+      setPasswordMatchAlert(true)
+      setMessage("Passwords don't match! Please make sure both password fields match.")
       setMessageType("error")
       return
     }
+    
+    // Clear password match alert if passwords match
+    setPasswordMatchAlert(false)
 
     const passwordValidation = validatePassword(formData.password)
     if (!passwordValidation.isValid) {
@@ -94,25 +100,48 @@ export default function SignUpPage() {
     setMessage("")
 
     try {
-      console.log("🎯 Attempting signup with cleaned data:", { email, firstName, lastName, gender: formData.gender })
-
       const { error } = await signUp(email, formData.password, firstName, lastName, formData.gender)
 
       if (error) {
-        console.error("🔥 Signup failed:", error)
-
-        if (error.message.includes("already registered") || error.message.includes("already been registered")) {
-          setMessage("This email is already registered. Please use a different email or sign in instead.")
-        } else if (error.message.includes("Database error")) {
+        // Check for duplicate email errors - Supabase may return various formats
+        const errorMessage = error.message || ""
+        const errorStatus = (error as any).status
+        const errorCode = (error as any).code || (error as any).name
+        
+        // Comprehensive duplicate email detection
+        const isDuplicateEmail = 
+          errorMessage.toLowerCase().includes("already registered") ||
+          errorMessage.toLowerCase().includes("already been registered") ||
+          errorMessage.toLowerCase().includes("user already registered") ||
+          errorMessage.toLowerCase().includes("email already exists") ||
+          errorMessage.toLowerCase().includes("already exists") ||
+          errorMessage.toLowerCase().includes("user already exists") ||
+          errorMessage.toLowerCase().includes("duplicate") ||
+          errorMessage.toLowerCase().includes("email address is already") ||
+          errorMessage.toLowerCase().includes("this email is already") ||
+          errorCode === "user_already_registered" ||
+          errorCode === "email_already_exists" ||
+          errorCode === "duplicate_email" ||
+          (errorStatus === 400 && (
+            errorMessage.toLowerCase().includes("already") ||
+            errorMessage.toLowerCase().includes("exists") ||
+            errorMessage.toLowerCase().includes("registered")
+          ))
+        
+        if (isDuplicateEmail) {
+          setMessage("Use another email. This email is already registered.")
+          setMessageType("error")
+        } else if (errorMessage.includes("Database error")) {
           setMessage("There's a temporary issue with our system. Please try again in a few moments.")
-        } else if (error.message.includes("Invalid email")) {
+          setMessageType("error")
+        } else if (errorMessage.includes("Invalid email")) {
           setMessage("Please enter a valid email address.")
+          setMessageType("error")
         } else {
-          setMessage(`Signup failed: ${error.message}`)
+          setMessage(`Signup failed: ${errorMessage}`)
+          setMessageType("error")
         }
-        setMessageType("error")
       } else {
-        console.log("🎉 Signup successful!")
         setShowVerificationDialog(true)
         setFormData({
           firstName: "",
@@ -124,8 +153,9 @@ export default function SignUpPage() {
         })
       }
     } catch (error: any) {
-      console.error("💥 Unexpected error during signup:", error)
-      setMessage("An unexpected error occurred. Please try again.")
+      // Handle unexpected errors without triggering unhandled error handler
+      const errorMessage = error?.message || "An unexpected error occurred. Please try again."
+      setMessage(errorMessage)
       setMessageType("error")
     } finally {
       setIsLoading(false)
@@ -151,7 +181,29 @@ export default function SignUpPage() {
   }
 
   const handleInputChange = (field: string, value: string) => {
-    setFormData((prev) => ({ ...prev, [field]: value }))
+    setFormData((prev) => {
+      const newData = { ...prev, [field]: value }
+      
+      // Real-time password match validation
+      if (field === "password" || field === "confirmPassword") {
+        // Only show alert if both fields have values and they don't match
+        if (field === "password") {
+          if (newData.confirmPassword && value && value !== newData.confirmPassword) {
+            setPasswordMatchAlert(true)
+          } else if (!value || !newData.confirmPassword || value === newData.confirmPassword) {
+            setPasswordMatchAlert(false)
+          }
+        } else if (field === "confirmPassword") {
+          if (newData.password && value && value !== newData.password) {
+            setPasswordMatchAlert(true)
+          } else if (!value || !newData.password || value === newData.password) {
+            setPasswordMatchAlert(false)
+          }
+        }
+      }
+      
+      return newData
+    })
     if (message) setMessage("")
   }
 
@@ -241,13 +293,20 @@ export default function SignUpPage() {
                       exit={{ opacity: 0, y: -10, scale: 0.95 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <Alert variant={messageType === "error" ? "destructive" : "default"} className="border-gray-700">
+                      <Alert 
+                        variant={messageType === "error" ? "destructive" : "default"} 
+                        className={`${
+                          messageType === "error" 
+                            ? "border-red-500 bg-red-500/10 text-red-200" 
+                            : "border-gray-700"
+                        }`}
+                      >
                         {messageType === "success" ? (
                           <CheckCircle className="h-4 w-4" />
                         ) : (
                           <AlertCircle className="h-4 w-4" />
                         )}
-                        <AlertDescription>{message}</AlertDescription>
+                        <AlertDescription className="font-medium">{message}</AlertDescription>
                       </Alert>
                     </motion.div>
                   )}
@@ -470,7 +529,9 @@ export default function SignUpPage() {
                         placeholder="Confirm your password"
                         value={formData.confirmPassword}
                         onChange={(e) => handleInputChange("confirmPassword", e.target.value)}
-                        className="pl-10 pr-10 bg-gray-800/50 border-gray-600 text-white placeholder:text-gray-500 focus:ring-yellow-400 focus:border-yellow-400 transition-all duration-300"
+                        className={`pl-10 pr-10 bg-gray-800/50 border-gray-600 text-white placeholder:text-gray-500 focus:ring-yellow-400 focus:border-yellow-400 transition-all duration-300 ${
+                          passwordMatchAlert && formData.confirmPassword ? "border-yellow-500/50" : ""
+                        }`}
                         required
                         disabled={isLoading}
                       />
@@ -485,6 +546,24 @@ export default function SignUpPage() {
                         {showConfirmPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                       </Button>
                     </div>
+                    {/* Real-time password match alert */}
+                    <AnimatePresence>
+                      {passwordMatchAlert && formData.password && formData.confirmPassword && (
+                        <motion.div
+                          initial={{ opacity: 0, y: -10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -10 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          <Alert variant="default" className="border-yellow-500/50 bg-yellow-500/10">
+                            <AlertCircle className="h-4 w-4 text-yellow-400" />
+                            <AlertDescription className="text-yellow-300 text-sm">
+                              Passwords do not match. Please make sure both fields have the same password.
+                            </AlertDescription>
+                          </Alert>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </motion.div>
 
                   <motion.div

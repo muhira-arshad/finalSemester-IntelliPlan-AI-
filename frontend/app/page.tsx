@@ -31,7 +31,6 @@ export default function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isVideoPlaying, setIsVideoPlaying] = useState(true)
   const [is3DReady, setIs3DReady] = useState(false)
-  const [isMounted, setIsMounted] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
   const router = useRouter()
   const { isSignedIn } = useAuth()
@@ -169,13 +168,9 @@ export default function HomePage() {
 ]
   // Initialize 3D background after component mounts
   useEffect(() => {
-    setIsMounted(true)
-    // Small delay to ensure DOM is fully ready
-    const timer = setTimeout(() => {
-      setIs3DReady(true)
-    }, 100)
-
-    return () => clearTimeout(timer)
+    // schedule on next frame to avoid layout thrash; no manual refresh needed
+    const id = requestAnimationFrame(() => setIs3DReady(true))
+    return () => cancelAnimationFrame(id)
   }, [])
 
   // Autoplay logic for the carousel
@@ -360,15 +355,6 @@ export default function HomePage() {
       isHighlighted: false,
     },
   ]
-
-  // Prevent SSR hydration mismatch
-  if (!isMounted) {
-    return (
-      <div className="relative min-h-screen overflow-hidden bg-black text-white">
-        <div className="fixed inset-0 z-0 w-full h-full bg-gradient-to-br from-black via-gray-900 to-black" />
-      </div>
-    )
-  }
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-black text-white">

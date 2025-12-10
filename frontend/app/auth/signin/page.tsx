@@ -59,27 +59,50 @@ export default function SignInPage() {
       const { error } = await signIn(formData.email, formData.password)
 
       if (error) {
-        console.error("🔥 Sign in failed:", error.message)
-
-        if (error.message.includes("Invalid login credentials")) {
-          setMessage("Invalid email or password. Please check your credentials.")
-        } else if (error.message.includes("Email not confirmed")) {
+        // Check error properties for email confirmation issues
+        const errorStatus = (error as any).status
+        const errorCode = (error as any).code || (error as any).name
+        const errorMessage = error.message || ""
+        
+        // Check for specific email confirmation error patterns
+        // Supabase may return various formats for unverified email errors
+        const isEmailNotConfirmed = 
+          errorMessage.includes("Email not confirmed") ||
+          errorMessage.includes("email_not_confirmed") ||
+          errorMessage.includes("Email not verified") ||
+          errorMessage.includes("email_not_verified") ||
+          errorMessage.includes("email confirmation") ||
+          errorCode === "email_not_confirmed" ||
+          errorCode === "email_not_verified" ||
+          (errorStatus === 400 && (
+            errorMessage.toLowerCase().includes("confirm") ||
+            errorMessage.toLowerCase().includes("verify")
+          ))
+        
+        if (isEmailNotConfirmed) {
+          // For unverified emails, show proper message without triggering unhandled error
           setMessage("Please verify your email address before signing in. Check your inbox for a verification email.")
           setShowResendVerification(true)
-        } else if (error.message.includes("Too many requests")) {
+          setMessageType("error")
+        } else if (errorMessage.includes("Invalid login credentials") || errorMessage.includes("invalid_credentials")) {
+          setMessage("Invalid email or password. Please check your credentials.")
+          setMessageType("error")
+        } else if (errorMessage.includes("Too many requests") || errorMessage.includes("too_many_requests")) {
           setMessage("Too many sign-in attempts. Please wait a moment and try again.")
+          setMessageType("error")
         } else {
-          setMessage(error.message)
+          setMessage(errorMessage || "An error occurred during sign in. Please try again.")
+          setMessageType("error")
         }
-        setMessageType("error")
       } else {
         console.log("✅ Sign in successful, redirect should happen automatically")
         setMessage("Sign in successful! Redirecting...")
         setMessageType("success")
       }
     } catch (error: any) {
-      console.error("💥 Unexpected error during sign in:", error)
-      setMessage("An unexpected error occurred. Please try again.")
+      // Handle unexpected errors without triggering unhandled error handler
+      const errorMessage = error?.message || "An unexpected error occurred. Please try again."
+      setMessage(errorMessage)
       setMessageType("error")
     } finally {
       setIsLoading(false)
